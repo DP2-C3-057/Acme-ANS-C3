@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>Hello-World-25.1.0</name>
+	<name>Acme-ANS-D01</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -43,7 +43,7 @@
 		<link>
 			<name>target/classes</name>
 			<type>2</type>
-			<location>//C:/WSDP2/Workspace-25/Projects/Acme-ANS-D01/target/classes/</location>
+			<location>C:/WSDP2/Workspace-25/Projects/Acme-ANS-D01/target/classes</location>
 		</link>
 	</linkedResources>
 </projectDescription>
