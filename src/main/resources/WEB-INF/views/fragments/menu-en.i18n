@@ -10,10 +10,9 @@
 
 # master.menu.anonymous #######################################################
 
-master.menu.josmorgue3 = 77864707R: Moreno Guerrero, José Manuel
-master.menu.josmorgue3.favourite-link = Favourite link
-master.menu.pabalcber = 30244224Y: Alcántara Bernal, Pablo
-master.menu.pabalcber.favourite-link = Favourite link
+master.menu.anonymous = Anonymous
+master.menu.josmorgue3.favourite-link = 77864707R: Moreno Guerrero, José Manuel
+master.menu.pabalcber.favourite-link = 30244224Y: Alcántara Bernal, Pablo
 master.menu.roclopmoy = 49093142X: Lopez Moyano, Rocio
 master.menu.roclopmoy.favourite-link = Favourite link
 master.menu.rafharman = 32098944Y: Harana Mancilla, Rafael
