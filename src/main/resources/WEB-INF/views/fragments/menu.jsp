@@ -27,6 +27,9 @@
 		<acme:menu-option code="master.menu.roclopmoy" access="isAnonymous()">
 			<acme:menu-suboption code="master.menu.roclopmoy.favourite-link" action="https://github.com/RukisRo"/>
 		</acme:menu-option>
+		<acme:menu-option code="master.menu.rafharman" access="isAnonymous()">
+			<acme:menu-suboption code="master.menu.rafharman.favourite-link" action="https://github.com/rharana"/>
+		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRealm('Administrator')">
 			<acme:menu-suboption code="master.menu.administrator.list-user-accounts" action="/administrator/user-account/list"/>
