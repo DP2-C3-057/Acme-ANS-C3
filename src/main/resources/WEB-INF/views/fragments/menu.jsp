@@ -28,6 +28,9 @@
 		<acme:menu-option code="master.menu.rafharman" access="isAnonymous()">
 			<acme:menu-suboption code="master.menu.rafharman.favourite-link" action="https://github.com/rharana"/>
 		</acme:menu-option>
+		<acme:menu-option code="master.menu.alemollop" access="isAnonymous()">
+			<acme:menu-suboption code="master.menu.alemollop.favourite-link" action="https://www.laliga.com/laliga-hypermotion"/>
+		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRealm('Administrator')">
 			<acme:menu-suboption code="master.menu.administrator.list-user-accounts" action="/administrator/user-account/list"/>
