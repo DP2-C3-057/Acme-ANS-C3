@@ -19,7 +19,7 @@
 <acme:menu-bar>
 	<acme:menu-left>
 		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
-			<acme:menu-suboption code="master.menu.anonymous.favourite-link" action="https://chatgpt.com/"/>
+			<acme:menu-suboption code="master.menu.josmorgue3.favourite-link" action="https://chatgpt.com/"/>
 			<acme:menu-suboption code="master.menu.pabalcber.favourite-link" action="https://github.com/pabalcber"/>
 		</acme:menu-option>
 		<acme:menu-option code="master.menu.roclopmoy" access="isAnonymous()">
