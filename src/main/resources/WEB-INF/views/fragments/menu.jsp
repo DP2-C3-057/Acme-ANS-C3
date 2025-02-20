@@ -22,12 +22,8 @@
 			<acme:menu-suboption code="master.menu.josmorgue3.favourite-link" action="https://chatgpt.com/"/>
 			<acme:menu-suboption code="master.menu.pabalcber.favourite-link" action="https://github.com/pabalcber"/>
 			<acme:menu-suboption code="master.menu.roclopmoy.favourite-link" action="https://github.com/RukisRo"/>
-		</acme:menu-option>
-		<acme:menu-option code="master.menu.rafharman" access="isAnonymous()">
 			<acme:menu-suboption code="master.menu.rafharman.favourite-link" action="https://github.com/rharana"/>
-			<acme:menu-suboption code="master.menu.alemollop.favourite-link" action="https://www.laliga.com/laliga-hypermotion"/>
 		</acme:menu-option>
-
 		<acme:menu-option code="master.menu.administrator" access="hasRealm('Administrator')">
 			<acme:menu-suboption code="master.menu.administrator.list-user-accounts" action="/administrator/user-account/list"/>
 			<acme:menu-separator/>
