@@ -27,7 +27,7 @@ public class Customer extends AbstractEntity {
 	@Mandatory
 	@ValidString(pattern = "^[A-Z]{2,3}\\d{6}$")
 	@Column(unique = true)
-	private String				id;
+	private String				identifier;
 
 	@Mandatory
 	@ValidString(pattern = "^\\+?\\d{6,15}$")
