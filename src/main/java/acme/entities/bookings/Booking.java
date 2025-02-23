@@ -25,7 +25,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Booking<Costumer> extends AbstractEntity {
+public class Booking extends AbstractEntity {
 
 	// Serialisation version --------------------------------------------------
 
