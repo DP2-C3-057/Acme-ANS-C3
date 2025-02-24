@@ -1,8 +1,8 @@
 
-package acme.entities;
+package acme.entities.flights;
 
 import javax.persistence.Entity;
-import javax.validation.constraints.Max;
+import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.datatypes.Money;
@@ -10,6 +10,7 @@ import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoney;
+import acme.client.components.validation.ValidString;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -25,11 +26,12 @@ public class Flight extends AbstractEntity {
 	// Attributes -------------------------------------------------------------
 
 	@Mandatory
+	@ValidString(max = 50)
 	@Automapped
-	@Max(50)
 	private String				tag;
 
 	@Mandatory
+	@Valid
 	@Automapped
 	private Boolean				selfTransfer;
 
@@ -39,20 +41,31 @@ public class Flight extends AbstractEntity {
 	private Money				cost;
 
 	@Optional
+	@ValidString(max = 255)
 	@Automapped
-	@Max(255)
 	private String				description;
 
+	// Derived attributes -----------------------------------------------------
+	/*
+	 * @Transient
+	 * public Date scheduledDeparture() {
+	 * }
+	 * 
+	 * @Transient
+	 * public Date scheduledArrival() {
+	 * 
+	 * }
+	 * 
+	 * @Transient
+	 * public String originCity() {
+	 * 
+	 * }
+	 * 
+	 * @Transient
+	 * public String destinationCity() {
+	 * 
+	 * }
+	 */
 	// Relationships ----------------------------------------------------------
-	/**
-	 * @Mandatory
-	 * @Valid
-	 * @RELACION
-	 *           private Leg leg.scheduledDeparture;
-	 * @Mandatory
-	 * @Valid
-	 * @RELACION
-	 *           private Leg leg.scheduledArrival;
-	 *           Tambien: origen, destino, number layovers
-	 **/
+
 }
