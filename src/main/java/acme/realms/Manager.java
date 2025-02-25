@@ -7,7 +7,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-import javax.persistence.Version;
 
 import acme.client.components.basis.AbstractRole;
 import acme.client.components.mappings.Automapped;
@@ -33,17 +32,13 @@ public class Manager extends AbstractRole {
 	@Column(unique = true)
 	@ValidString(pattern = "^[A-Z]{2-3}\\d{6}$")
 	private String				idNumber;
-
-	@Version
-	private int					version;
-
 	@Mandatory
 	@Automapped
 	private int					experienceYears;
 
 	@Mandatory
 	@ValidMoment(past = true)
-	private Date				birth;
+	private Date				birthdate;
 
 	@Optional
 	@ValidUrl
