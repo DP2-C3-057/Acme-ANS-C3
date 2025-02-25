@@ -5,8 +5,6 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 
 import acme.client.components.basis.AbstractRole;
 import acme.client.components.mappings.Automapped;
@@ -28,10 +26,11 @@ public class Manager extends AbstractRole {
 	private static final long	serialVersionUID	= 1L;
 
 	// Attributes -------------------------------------------------------------
-	@GeneratedValue(strategy = GenerationType.TABLE)
+	@Mandatory
 	@Column(unique = true)
 	@ValidString(pattern = "^[A-Z]{2-3}\\d{6}$")
 	private String				idNumber;
+
 	@Mandatory
 	@Automapped
 	private int					experienceYears;
