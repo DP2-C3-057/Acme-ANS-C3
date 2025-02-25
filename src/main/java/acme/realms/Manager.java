@@ -7,7 +7,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.Version;
 
 import acme.client.components.basis.AbstractRole;
@@ -15,6 +14,7 @@ import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
+import acme.client.components.validation.ValidString;
 import acme.client.components.validation.ValidUrl;
 import lombok.Getter;
 import lombok.Setter;
@@ -29,11 +29,10 @@ public class Manager extends AbstractRole {
 	private static final long	serialVersionUID	= 1L;
 
 	// Attributes -------------------------------------------------------------
-	@Id
 	@GeneratedValue(strategy = GenerationType.TABLE)
 	@Column(unique = true)
-	//@Pattern("^[A-Z]{2-3}\d{6}$")
-	private int					id;
+	@ValidString(pattern = "^[A-Z]{2-3}\\d{6}$")
+	private String				idNumber;
 
 	@Version
 	private int					version;
