@@ -5,7 +5,7 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
@@ -62,12 +62,12 @@ public class Booking extends AbstractEntity {
 
 	@Mandatory
 	@Valid
-	@OneToOne(optional = true)
-	private Customer			custumer;
+	@ManyToOne
+	private Customer			customer;
 
 	//	@Mandatory
 	//	@Valid
-	//	@OneToOne(optional = true)
+	//	@ManyToOne
 	//	private Flight				flight;
 
 }
