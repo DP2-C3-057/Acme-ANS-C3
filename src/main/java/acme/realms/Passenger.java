@@ -1,15 +1,15 @@
 
-package acme.entities.passengers;
+package acme.realms;
 
 import java.util.Date;
 
 import javax.persistence.Entity;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
 
-import acme.client.components.basis.AbstractEntity;
+import acme.client.components.basis.AbstractRole;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
@@ -23,7 +23,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Passenger extends AbstractEntity {
+public class Passenger extends AbstractRole {
 
 	// Serialisation version --------------------------------------------------
 
@@ -60,6 +60,6 @@ public class Passenger extends AbstractEntity {
 
 	@Mandatory
 	@Valid
-	@OneToOne(optional = false)
+	@ManyToOne(optional = false)
 	private Booking				booking;
 }
