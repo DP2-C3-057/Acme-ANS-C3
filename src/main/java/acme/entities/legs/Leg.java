@@ -54,25 +54,10 @@ public class Leg extends AbstractEntity {
 	private LegStatus			status;
 
 	// Derived attributes -----------------------------------------------------
+
+	// Relationships ----------------------------------------------------------
 	@Mandatory
 	@Valid
 	@ManyToOne(optional = false)
 	private Flight				flight;
-
-	/*
-	 * @Mandatory
-	 * 
-	 * @Valid
-	 * 
-	 * @OneToOne
-	 * 
-	 * private Airport departureAirport;
-	 * 
-	 * @Mandatory
-	 * 
-	 * @Valid
-	 * 
-	 * @OneToOne
-	 * private Airport ArrivalAirport;
-	 */
 }
