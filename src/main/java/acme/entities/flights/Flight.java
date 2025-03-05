@@ -62,24 +62,35 @@ public class Flight extends AbstractEntity {
 	}
 
 	@Transient
-	public Date scheduledArrival() {
+	public Date getScheduledArrival() {
 		Date result;
 		FlightRepository repository;
 		repository = SpringHelper.getBean(FlightRepository.class);
 		result = repository.findScheduledArrival(this.getId());
 		return result;
 	}
-	/*
-	 * @Transient
-	 * public String originCity() {
-	 * 
-	 * }
-	 * 
-	 * @Transient
-	 * public String destinationCity() {
-	 * 
-	 * }
-	 */
+
+	@Transient
+	public String getOriginCity() {
+		String result;
+		Date departure;
+		FlightRepository repository;
+		repository = SpringHelper.getBean(FlightRepository.class);
+		departure = repository.findScheduledDeparture(this.getId());
+		result = repository.findOriginCity(this.getId(), departure);
+		return result;
+	}
+
+	@Transient
+	public String getDestinationCity() {
+		String result;
+		Date arrival;
+		FlightRepository repository;
+		repository = SpringHelper.getBean(FlightRepository.class);
+		arrival = repository.findScheduledArrival(this.getId());
+		result = repository.findDestinationCity(this.getId(), arrival);
+		return result;
+	}
 
 	// Relationships ----------------------------------------------------------
 
