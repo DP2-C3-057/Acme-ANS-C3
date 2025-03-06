@@ -22,4 +22,7 @@ public interface FlightRepository extends AbstractRepository {
 
 	@Query("select l.arrivalAirport.city from Leg l where l.flight.id = :flightId and l.scheduledArrival = :arrival")
 	String findDestinationCity(int flightId, Date arrival);
+
+	@Query("select count(l) from Leg l where l.flight.id = :flightId")
+	int countLayovers(int flightId);
 }

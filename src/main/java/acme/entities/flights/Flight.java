@@ -5,7 +5,6 @@ import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.Transient;
-import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.datatypes.Money;
@@ -35,9 +34,8 @@ public class Flight extends AbstractEntity {
 	private String				tag;
 
 	@Mandatory
-	@Valid
 	@Automapped
-	private Boolean				selfTransfer;
+	private boolean				selfTransfer;
 
 	@Mandatory
 	@ValidMoney
@@ -89,6 +87,15 @@ public class Flight extends AbstractEntity {
 		repository = SpringHelper.getBean(FlightRepository.class);
 		arrival = repository.findScheduledArrival(this.getId());
 		result = repository.findDestinationCity(this.getId(), arrival);
+		return result;
+	}
+
+	@Transient
+	public int getNumberOfLayovers() {
+		int result = 0;
+		FlightRepository repository;
+		repository = SpringHelper.getBean(FlightRepository.class);
+		result = repository.countLayovers(this.getId());
 		return result;
 	}
 

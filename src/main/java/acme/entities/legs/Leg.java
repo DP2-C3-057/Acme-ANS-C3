@@ -11,6 +11,7 @@ import javax.validation.Valid;
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
+import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
 import acme.entities.aircraft.Aircraft;
@@ -36,17 +37,17 @@ public class Leg extends AbstractEntity {
 	private String				flightNumber;
 
 	@Mandatory
-	//@ValidMoment(max = )
+	@ValidMoment
 	@Automapped
 	private Date				scheduledDeparture;
 
 	@Mandatory
-	//@ValidMoment(min = )
+	@ValidMoment
 	@Automapped
 	private Date				scheduledArrival;
 
 	@Mandatory
-	@ValidNumber
+	@ValidNumber(min = 0, max = 50)
 	@Automapped
 	private int					duration;
 
