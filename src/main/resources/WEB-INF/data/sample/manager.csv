@@ -1,0 +1,4 @@
+key,key:userAccount,idNumber,experienceYears,birthdate,picture,key:airline
+manager-01,user-account-manager-01,SM000001,0,2005/01/09 00:00,,airline-01
+manager-02,user-account-manager-02,SM999992,33,2000/09/01 00:00,,airline-01
+manager-03,user-account-manager-03,SD555553,12,2002/11/27 23:59,,airline-01

@@ -1,0 +1,4 @@
+key,name,IATACode,website,type,foundationMoment,email,phoneNumber
+airline-01,Ryanair,FRZ,https://www.ryanair.com,LOW_COST,2000/06/21 00:00,null,
+airline-02,Iberia,IBX,https://www.iberia.com,LUXURY,2000/06/21 00:00,null,+34900111500
+airline-03,Vueling,VYC,https://www.vueling.com,LOW_COST,2000/06/21 00:00,null,+34931518158

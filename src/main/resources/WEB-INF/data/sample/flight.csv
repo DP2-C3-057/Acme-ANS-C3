@@ -1,0 +1,6 @@
+key,tag,selfTransfer,cost,description,key:manager
+flight-01,"the cheapest",false,EUR 0.00,"This flight is so cheap... it's free!",manager-01
+flight-02,"the most expensive",true,EUR 10000.00,,manager-01
+flight-03,"the fastest",false,EUR 20.00,,manager-02
+flight-04,"a simple flight",false,EUR 20.00,,manager-02
+flight-05,"the longest",true,EUR 20.00,"Too many legs for this flight",manager-02
