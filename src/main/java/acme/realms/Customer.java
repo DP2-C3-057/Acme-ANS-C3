@@ -35,7 +35,7 @@ public class Customer extends AbstractRole {
 	private String				phoneNumber;
 
 	@Mandatory
-	@ValidString(max = 255)
+	@ValidString
 	@Automapped
 	private String				physicalAddress;
 

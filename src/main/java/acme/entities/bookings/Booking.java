@@ -18,6 +18,7 @@ import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidMoney;
 import acme.client.components.validation.ValidString;
+import acme.entities.flights.Flight;
 import acme.realms.Customer;
 import lombok.Getter;
 import lombok.Setter;
@@ -54,20 +55,20 @@ public class Booking extends AbstractEntity {
 	private Money				price;
 
 	@Optional
-	@ValidMoment(past = true)
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date				lastNibble;
+	@ValidString(pattern = "^[0-9]{4}$")
+	@Automapped
+	private String				lastCardNibble;
 
 	// Relationships ----------------------------------------------------------
 
 	@Mandatory
 	@Valid
-	@ManyToOne
+	@ManyToOne(optional = false)
 	private Customer			customer;
 
-	//	@Mandatory
-	//	@Valid
-	//	@ManyToOne
-	//	private Flight				flight;
+	@Mandatory
+	@Valid
+	@ManyToOne(optional = false)
+	private Flight				flight;
 
 }
