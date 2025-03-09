@@ -1,17 +1,19 @@
 
-package acme.entities.activityLog;
+package acme.entities.flightAssignments;
 
 import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
+import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
-import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
 import acme.entities.flightCrewMembers.FlightCrewMember;
 import lombok.Getter;
@@ -20,7 +22,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class ActivityLog extends AbstractEntity {
+public class FlightAssignment extends AbstractEntity {
 
 	// Serialisation version --------------------------------------------------
 
@@ -29,24 +31,24 @@ public class ActivityLog extends AbstractEntity {
 	// Attributes -------------------------------------------------------------
 
 	@Mandatory
+	@Valid
+	@Automapped
+	private Duty				duty;
+
+	@Mandatory
 	@ValidMoment(past = true)
-	@Automapped
-	private Date				registratioMoment;
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date				moment;
 
 	@Mandatory
-	@ValidString(max = 50)
+	@Valid
 	@Automapped
-	private String				typeOfIncident;
+	private CurrentStatus		currentStatus;
 
-	@Mandatory
+	@Optional
 	@ValidString(max = 255)
 	@Automapped
-	private String				description;
-
-	@Mandatory
-	@ValidNumber(min = 0, max = 10)
-	@Automapped
-	private Integer				severityLevel;
+	private String				remarks;
 
 	// Relationships ----------------------------------------------------------
 
@@ -58,6 +60,6 @@ public class ActivityLog extends AbstractEntity {
 	//	@Mandatory
 	//	@Valid
 	//	@ManyToOne
-	//	private Leg					leg;
+	//	private Leg leg;
 
 }
