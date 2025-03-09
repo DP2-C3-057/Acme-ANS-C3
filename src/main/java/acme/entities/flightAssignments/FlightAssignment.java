@@ -15,7 +15,8 @@ import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidString;
-import acme.entities.flightCrewMembers.FlightCrewMember;
+import acme.entities.legs.Leg;
+import acme.realms.flightCrewMembers.FlightCrewMember;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -46,7 +47,7 @@ public class FlightAssignment extends AbstractEntity {
 	private CurrentStatus		currentStatus;
 
 	@Optional
-	@ValidString(max = 255)
+	@ValidString(min = 0, max = 255)
 	@Automapped
 	private String				remarks;
 
@@ -54,12 +55,12 @@ public class FlightAssignment extends AbstractEntity {
 
 	@Mandatory
 	@Valid
-	@ManyToOne
+	@ManyToOne(optional = false)
 	private FlightCrewMember	flightCrewMember;
 
-	//	@Mandatory
-	//	@Valid
-	//	@ManyToOne
-	//	private Leg leg;
+	@Mandatory
+	@Valid
+	@ManyToOne(optional = false)
+	private Leg					leg;
 
 }
