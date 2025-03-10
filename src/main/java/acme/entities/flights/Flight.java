@@ -106,6 +106,16 @@ public class Flight extends AbstractEntity {
 		return result;
 	}
 
+	@Transient
+	public boolean isAvailable() {
+		boolean result;
+		FlightRepository repository;
+		repository = SpringHelper.getBean(FlightRepository.class);
+		result = !this.draftMode && repository.publishedLegs(this.getId()) != null;
+
+		return result;
+	}
+
 
 	// Relationships ----------------------------------------------------------
 	@Mandatory

@@ -65,6 +65,15 @@ public class Leg extends AbstractEntity {
 		return durationHours;
 	}
 
+	@Transient
+	public boolean isAvailable() {
+		boolean result;
+
+		result = !this.draftMode && this.scheduledArrival.after(this.scheduledDeparture);
+
+		return result;
+	}
+
 
 	// Relationships ----------------------------------------------------------
 	@Mandatory
