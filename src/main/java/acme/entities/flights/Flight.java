@@ -16,7 +16,7 @@ import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoney;
 import acme.client.components.validation.ValidString;
 import acme.client.helpers.SpringHelper;
-import acme.realms.Manager;
+import acme.realms.managers.Manager;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -46,7 +46,7 @@ public class Flight extends AbstractEntity {
 	private Money				cost;
 
 	@Optional
-	@ValidString(max = 255)
+	@ValidString
 	@Automapped
 	private String				description;
 
