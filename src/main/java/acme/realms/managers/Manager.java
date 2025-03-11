@@ -16,8 +16,8 @@ import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidNumber;
-import acme.client.components.validation.ValidString;
 import acme.client.components.validation.ValidUrl;
+import acme.constraints.ValidEmployeeCode;
 import acme.constraints.ValidManager;
 import acme.entities.airlines.Airline;
 import lombok.Getter;
@@ -36,7 +36,7 @@ public class Manager extends AbstractRole {
 	// Attributes -------------------------------------------------------------
 	@Mandatory
 	@Column(unique = true)
-	@ValidString(pattern = "^[A-Z]{2,3}\\d{6}$")
+	@ValidEmployeeCode
 	private String				idNumber;
 
 	@Mandatory
