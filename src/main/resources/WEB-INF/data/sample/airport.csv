@@ -1,0 +1,6 @@
+key,name,iataCode,operationalScope,city,country,emailAddress,website,contactPhoneNumber
+airport-00,Aeropuerto Internacional de Sevilla-San Pablo,SVQ,INTERNATIONAL,Sevilla,España,aeropuerto-sevilla@spain.com,https://www.aena.es/es/sevilla.html?utm_source=Google&utm_medium=GMB_SVQ,null
+airport-01,Aeropuerto de Málaga-Costa del Sol,AGP,INTERNATIONAL,Málaga,España,aeropuerto-malaga@spain.com,https://www.aena.es/es/malaga-costa-del-sol.html,null
+airport-02,Aeropuerto de Córdoba,ODB,REGIONAL,Córdoba,España,aeropuerto-cordoba@spain.com,https://www.aena.es/es/cordoba.html,null
+airport-03,Aeropuerto Federico García Lorca Granada-Jaén,GRX,INTERNATIONAL,Granada,España,aeropuerto-granada@spain.com,https://www.aena.es/es/federico-garcia-lorca-granada-jaen.html,null
+airport-04,Aeropuerto de Jerez,XRY,INTERNATIONAL,Jerez,España,aeropuerto-jerez@spain.com,https://www.aena.es/es/jerez.html,null
