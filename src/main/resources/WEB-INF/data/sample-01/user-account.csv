@@ -16,3 +16,5 @@ user-account-member-01,true,"UserIdentity{name: 'Rocío', surname: 'López', ema
 user-account-member-02,true,"UserIdentity{name: 'Roony', surname: 'López', email: 'roony@cat.es'}",member2,member2
 user-account-member-03,true,"UserIdentity{name: 'Meggy', surname: 'López', email: 'meggy@cat.es'}",member3,member3
 user-account-member-04,true,"UserIdentity{name: 'Mateo', surname: 'Moreno', email: 'mateo@cat.es'}",member4,member4
+user-account-administrator-01,true,"UserIdentity{name: 'Administrator1', surname: 'Acme', email: 'administrator1@acme.com'}",administrator1,administrator1
+user-account-administrator-02,true,"UserIdentity{name: 'Administrator2', surname: 'Acme', email: 'administrator2@acme.com'}",administrator2,administrator2
