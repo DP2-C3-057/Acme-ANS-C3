@@ -18,7 +18,7 @@ import javax.validation.constraints.Pattern;
 @ReportAsSingleViolation
 
 @NotBlank
-@Pattern(regexp = "^[A-Z]{2}[0-9]{4}$")
+@Pattern(regexp = "^[A-Z]{3}[0-9]{4}$")
 
 public @interface ValidFlightNumber {
 

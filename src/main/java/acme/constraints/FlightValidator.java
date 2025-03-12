@@ -38,7 +38,7 @@ public class FlightValidator extends AbstractValidator<ValidFlight, Flight> {
 		if (flight == null)
 			super.state(context, false, "*", "javax.validation.constraints.NotNull.message");
 		else {
-			boolean correctPublishingPolitic = true;
+			boolean correctPublishingPolicy = true;
 			if (!flight.isDraftMode()) {
 				boolean areLegsPublished = false;
 				List<Leg> legs = this.repository.findAllLegs(flight.getId());
@@ -50,10 +50,10 @@ public class FlightValidator extends AbstractValidator<ValidFlight, Flight> {
 							break;
 						}
 				}
-				correctPublishingPolitic = areLegsPublished;
+				correctPublishingPolicy = areLegsPublished;
 			}
 
-			super.state(context, correctPublishingPolitic, "flightNumber", "acme.validation.flight.correctPublishingPolitic.message");
+			super.state(context, correctPublishingPolicy, "flightNumber", "acme.validation.flight.correctPublishingPolitic.message");
 		}
 
 		result = !super.hasErrors(context);
