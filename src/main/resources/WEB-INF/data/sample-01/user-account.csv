@@ -8,3 +8,11 @@ user-account-provider-03,true,"UserIdentity{name: 'Antonia', surname: 'אבטי�
 user-account-manager-01,true,"UserIdentity{name: 'Señor', surname: 'Manager', email: 'manager1@acme.com'}",manager1,manager1
 user-account-manager-02,true,"UserIdentity{name: 'Señora', surname: 'Manager', email: 'manager2@acme.com'}",manager2,manager2
 user-account-manager-03,true,"UserIdentity{name: 'Sin', surname: 'Datos', email: 'manager3@acme.com'}",manager3,manager3
+user-account-customer-01,true,"UserIdentity{name: 'Lolo', surname: 'Popo', email: 'customer1@acme.com'}",customer1,customer1
+user-account-customer-02,true,"UserIdentity{name: 'Lala', surname: 'Tata', email: 'customer2@acme.com'}",customer2,customer2
+user-account-customer-03,true,"UserIdentity{name: 'Kete', surname: 'Pasa', email: 'customer3@acme.com'}",customer3,customer3
+user-account-member-00,true,"UserIdentity{name: 'José Manuel', surname: 'Moreno', email: 'josmorgue3@alum.us.es'}",member,member
+user-account-member-01,true,"UserIdentity{name: 'Rocío', surname: 'López', email: 'roclopmoy@alum.us.es'}",member1,member1
+user-account-member-02,true,"UserIdentity{name: 'Roony', surname: 'López', email: 'roony@cat.es'}",member2,member2
+user-account-member-03,true,"UserIdentity{name: 'Meggy', surname: 'López', email: 'meggy@cat.es'}",member3,member3
+user-account-member-04,true,"UserIdentity{name: 'Mateo', surname: 'Moreno', email: 'mateo@cat.es'}",member4,member4

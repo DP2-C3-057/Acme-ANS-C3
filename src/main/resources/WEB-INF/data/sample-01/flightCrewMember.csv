@@ -1,0 +1,6 @@
+key,employeeCode,phoneNumber,languageSkills,availabilityStatus,salary,yearsOfExperience,key:airline,key:userAccount
+flightCrewMember-00,JM230702,+34666666666,"español ingles frances",AVAILABLE,EUR 28000.00, 3,airline-01,user-account-member-00
+flightCrewMember-01,RL170492,+34691669977,"español ingles",AVAILABLE,EUR 28000.00, 3,airline-01,user-account-member-01
+flightCrewMember-02,RL150712,+34234567890,"español esperanto",AVAILABLE,EUR 50000.00, 5,airline-01,user-account-member-02
+flightCrewMember-03,ML150915,+34234567899,"ingles frances italiano aleman",AVAILABLE,EUR 70000.00, 10,airline-01,user-account-member-03
+flightCrewMember-04,MM150824,+34234567777,"español",AVAILABLE,EUR 20000.00, 1,airline-01,user-account-member-04

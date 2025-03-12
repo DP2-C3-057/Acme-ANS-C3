@@ -20,11 +20,11 @@ import javax.validation.constraints.Pattern;
 @NotBlank
 @Pattern(regexp = "^[A-Z]{2,3}\\d{6}$")
 
-public @interface ValidEmployeeCode {
+public @interface ValidIdentifier {
 
 	// Standard validation properties -----------------------------------------
 
-	String message() default "{acme.validation.employeeCode.message}";
+	String message() default "{acme.validation.identifier.message}";
 
 	Class<?>[] groups() default {};
 	Class<? extends Payload>[] payload() default {};
