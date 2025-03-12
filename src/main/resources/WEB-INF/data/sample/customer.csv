@@ -1,0 +1,4 @@
+key,key:userAccount,identifier,phoneNumber,physicalAddress,city,country,earnedPoints
+customer-01,user-account-customer-01,LP123456,+176531,"Calle Las Cruces","Sevilla","España",499999
+customer-02,user-account-customer-02,LT763452,+234678743234521,"Residencial Manoli","Guarromán - Jaén","España",1245
+customer-03,user-account-customer-03,KP825753,+56345345436,"Al lao de la fruteria","Puebla","México",null

@@ -14,7 +14,7 @@ import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoney;
 import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
-import acme.constraints.ValidEmployeeCode;
+import acme.constraints.ValidIdentifier;
 import acme.constraints.ValidPhoneNumber;
 import acme.entities.airlines.Airline;
 import lombok.Getter;
@@ -32,7 +32,7 @@ public class FlightCrewMember extends AbstractRole {
 	// Attributes -------------------------------------------------------------
 
 	@Mandatory
-	@ValidEmployeeCode
+	@ValidIdentifier
 	@Column(unique = true)
 	private String				employeeCode;
 
