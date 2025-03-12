@@ -28,7 +28,6 @@ public class ManagerValidator extends AbstractValidator<ValidManager, Manager> {
 
 	@Override
 	public boolean isValid(final Manager manager, final ConstraintValidatorContext context) {
-		// HINT: job can be null
 		assert context != null;
 
 		boolean result;

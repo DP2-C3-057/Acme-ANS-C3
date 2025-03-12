@@ -14,6 +14,7 @@ import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.ValidMoment;
 import acme.constraints.ValidFlightNumber;
+import acme.constraints.ValidLeg;
 import acme.entities.aircraft.Aircraft;
 import acme.entities.airports.Airport;
 import acme.entities.flights.Flight;
@@ -23,6 +24,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
+@ValidLeg
 public class Leg extends AbstractEntity {
 
 	// Serialisation version --------------------------------------------------
@@ -63,15 +65,6 @@ public class Leg extends AbstractEntity {
 		Double durationHours;
 		durationHours = (this.getScheduledArrival().getTime() - this.getScheduledDeparture().getTime()) / (1000.0 * 60 * 60);
 		return durationHours;
-	}
-
-	@Transient
-	public boolean isAvailable() {
-		boolean result;
-
-		result = !this.draftMode && this.scheduledArrival.after(this.scheduledDeparture);
-
-		return result;
 	}
 
 
