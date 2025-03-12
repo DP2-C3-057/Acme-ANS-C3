@@ -34,7 +34,7 @@ public class Aircraft extends AbstractEntity {
 	@Mandatory
 	@ValidString(max = 50)
 	@Column(unique = true)
-	private String				registrationNumer;
+	private String				registrationNumber;
 
 	@Mandatory
 	@ValidNumber
