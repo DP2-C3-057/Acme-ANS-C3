@@ -6,3 +6,15 @@ flight-04,"a simple flight",false,EUR 999999.99,,false,manager-02
 flight-05,"the longest",true,EUR 1.00,"Too many legs for this flight",true,manager-02
 flight-06,"Esto es una cadena de 50 caracteres Esto es una ca",false,EUR 20.00,,true,manager-01
 flight-07,"flight with us!",false,EUR 20.00,Esto es una cadena de 255 caracteres Esto es una cadena de 255 caracteres Esto es una cadena de 255 caracteres Esto es una cadena de 255 caracteres Esto es una cadena de 255 caracteres Esto es una cadena de 255 caracteres Esto es una cadena de 255 caracte,true,manager-02
+flight-08,"just testing text",false,EUR 20.00,لوريم إيبسوم,true,manager-02
+flight-09,"just testing text",false,EUR 20.00,โลเร็ม อิปซัม,true,manager-02
+flight-10,"just testing text",false,EUR 20.00,洛伦·伊普森,true,manager-02
+flight-11,"just testing text",false,EUR 20.00,<marquee>Hacked</marquee>,true,manager-01
+flight-12,"just testing text",false,EUR 20.00,<script>alert(‘Hacked!’);</script>,true,manager-01
+flight-13,"just testing text",false,EUR 20.00,' or 'A' = 'A ,true,manager-01
+flight-14,لوريم إيبسوم,false,EUR 20.00,,true,manager-01
+flight-15,โลเร็ม อิปซัม,false,EUR 20.00,,true,manager-01
+flight-16,洛伦·伊普森,false,EUR 20.00,,true,manager-01
+flight-17,<marquee>Hacked</marquee>,false,EUR 20.00,,true,manager-02
+flight-18,<script>alert(‘Hacked!’);</script>,false,EUR 20.00,,true,manager-02
+flight-19,' or 'A' = 'A ,false,EUR 20.00,,true,manager-02
