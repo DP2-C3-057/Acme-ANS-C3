@@ -16,13 +16,15 @@ import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoney;
 import acme.client.components.validation.ValidString;
 import acme.client.helpers.SpringHelper;
-import acme.realms.Manager;
+import acme.constraints.ValidFlight;
+import acme.realms.managers.Manager;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
+@ValidFlight
 public class Flight extends AbstractEntity {
 
 	// Serialisation version --------------------------------------------------
@@ -46,9 +48,13 @@ public class Flight extends AbstractEntity {
 	private Money				cost;
 
 	@Optional
-	@ValidString(max = 255)
+	@ValidString
 	@Automapped
 	private String				description;
+
+	@Mandatory
+	@Automapped
+	private boolean				draftMode;
 
 	// Derived attributes -----------------------------------------------------
 
@@ -98,7 +104,7 @@ public class Flight extends AbstractEntity {
 		int result = 0;
 		FlightRepository repository;
 		repository = SpringHelper.getBean(FlightRepository.class);
-		result = repository.countLayovers(this.getId());
+		result = repository.findAllLegs(this.getId()).size();
 		return result;
 	}
 

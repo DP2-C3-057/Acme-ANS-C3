@@ -14,6 +14,9 @@ import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoney;
 import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
+import acme.constraints.ValidFlightCrewMember;
+import acme.constraints.ValidIdentifier;
+import acme.constraints.ValidPhoneNumber;
 import acme.entities.airlines.Airline;
 import lombok.Getter;
 import lombok.Setter;
@@ -21,6 +24,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
+@ValidFlightCrewMember
 public class FlightCrewMember extends AbstractRole {
 
 	// Serialisation version --------------------------------------------------
@@ -30,12 +34,12 @@ public class FlightCrewMember extends AbstractRole {
 	// Attributes -------------------------------------------------------------
 
 	@Mandatory
-	@ValidString(pattern = "^[A-Z]{2,3}\\d{6}$")
+	@ValidIdentifier
 	@Column(unique = true)
 	private String				employeeCode;
 
 	@Mandatory
-	@ValidString(pattern = "^\\+?\\d{6,15}$")
+	@ValidPhoneNumber
 	@Automapped
 	private String				phoneNumber;
 

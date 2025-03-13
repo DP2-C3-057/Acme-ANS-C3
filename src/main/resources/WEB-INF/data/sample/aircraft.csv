@@ -1,0 +1,9 @@
+key,model,registrationNumber,capacity,cargoWeight,status,details,key:airline
+aircraft-01,Airbus A320,2876U,180,19000,TRUE,Avión de fuselaje estrecho utilizado en vuelos de corta y media distancia,airline-01
+aircraft-02,Boeing 777-300ER,3876A,396,42000,TRUE,Avión de fuselaje ancho usado en vuelos de larga distancia,airline-01
+aircraft-03,Embraer E190,4345676A,100,13000,TRUE,Avión regional eficiente para rutas de corto alcance,airline-01
+aircraft-04,Airbus A350-900,532987T,325,44000,TRUE,Avión moderno y eficiente con tecnología de última generación,airline-02
+aircraft-05,Antonov An-225 Mriya,678676R,88,25000,FALSE,"Avión de carga más grande jamás construido, diseñado para transportar cargas pesadas y de gran tamaño",airline-02
+aircraft-06,Concorde,788932N,100,11000,FALSE,Avión supersónico de pasajeros que podía volar a más del doble de la velocidad del sonido,airline-02
+aircraft-07,Boeing 747 Dreamlifter,86636M,0,36235,TRUE,Versión modificada del Boeing 747 para transportar secciones de aviones de gran tamaño,airline-03
+aircraft-08,BAC One-Eleven,97855292L,119,14000,FALSE,Avión británico de corto alcance que estuvo en servicio entre los años 60 y 90,airline-03
