@@ -1,2 +1,5 @@
 key,flightNumber,scheduledDeparture,scheduledArrival,status,draftMode,key:flight,key:aircraft,key:departureAirport,key:arrivalAirport
-leg-01,FRZ0001,2025/04/16 10:00,2025/04/16 14:00,ON_TIME,false,1,1,1,2
+leg-01,FRZ0000,2025/04/16 10:00,2025/04/16 14:00,ON_TIME,false,flight-01,aircraft-01,airport-01,airport-02
+leg-02,FRZ9999,2025/04/16 10:00,2025/04/16 14:00,ON_TIME,false,flight-02,aircraft-02,airport-01,airport-02
+leg-03,FRZ0001,2025/04/16 14:01,2025/04/16 14:02,ON_TIME,false,flight-02,aircraft-02,airport-02,airport-01
+leg-04,FRZ9998,2025/04/16 14:03,2025/04/16 23:59,ON_TIME,false,flight-02,aircraft-02,airport-01,airport-02
