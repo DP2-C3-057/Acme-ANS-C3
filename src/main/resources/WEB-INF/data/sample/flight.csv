@@ -1,6 +1,8 @@
 key,tag,selfTransfer,cost,description,draftMode,key:manager
 flight-01,"the cheapest",false,EUR 0.00,"This flight is so cheap... it's free!",false,manager-01
-flight-02,"the most expensive",true,EUR 10000.00,,false,manager-01
-flight-03,"the fastest",false,EUR 20.00,,true,manager-02
-flight-04,"a simple flight",false,EUR 20.00,,false,manager-02
-flight-05,"the longest",true,EUR 20.00,"Too many legs for this flight",true,manager-02
+flight-02,"the most expensive",true,EUR 1000000.00,,false,manager-01
+flight-03,"a",false,EUR 0.01,,true,manager-02
+flight-04,"a simple flight",false,EUR 999999.99,,false,manager-02
+flight-05,"the longest",true,EUR 1.00,"Too many legs for this flight",true,manager-02
+flight-06,"Esto es una cadena de 50 caracteres Esto es una ca",false,EUR 20.00,,true,manager-01
+flight-07,"flight with us!",false,EUR 20.00,Esto es una cadena de 255 caracteres Esto es una cadena de 255 caracteres Esto es una cadena de 255 caracteres Esto es una cadena de 255 caracteres Esto es una cadena de 255 caracteres Esto es una cadena de 255 caracteres Esto es una cadena de 255 caracte,true,manager-02
