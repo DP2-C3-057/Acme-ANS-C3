@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>9</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>117</y>
+      <w>486</w>
+      <h>135</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Role&gt;&gt;
+Manager {ValidManager}
+--
+-serialVersionUID: Long
+-idNumber: String {Mandatory, ValidIdNumber, Automapped} 
+-experienceYears: int (Mandatory, ValidNumber(min = 0, max = 120), Automapped)
+-birthdate: Date {Mandatory, ValidMoment(past=true), Automapped}
+-picture: String {Optional, ValidUrl, Automapped}
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>342</y>
+      <w>351</w>
+      <h>207</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Flight {ValidFlight}
+--
+-serialVersionUID: Long
+-tag: String {Mandatory, ValidString(max=50), Automapped}
+-selfTransfer: boolean {Mandatory, Automapped}
+-cost: Money {Mandatory, ValidMoney, Automapped}
+-description: String {Mandatory, ValidString, Automapped}
+-draftmode: boolean {Mandatory, Automapped}
+-
+-getScheduledDeparture: Date
+-getScheduledArrival: Date
+-getOriginCity: String
+-getDestinationCity: String
+-getNumberOfLayovers: int
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>495</x>
+      <y>351</y>
+      <w>396</w>
+      <h>171</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Leg {ValidLeg}
+--
+-serialVersionUID: Long
+-flightNumber: String {Mandatory, ValidFlightNumber, Automapped}
+-scheduledDeparture: Date {Mandatory, ValidMoment, Automapped}
+-scheduledArrival: Date {Mandatory, ValidMoment, Automapped}
+-status: LegStatus
+-draftMode: boolean {Mandatory, Automapped}
+-departureAirport: Airport
+-arrivalAirport: Airport
+-aircraft: Aircraft
+-
+-getDuration: double
+
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>621</x>
+      <y>117</y>
+      <w>450</w>
+      <h>171</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Airline
+--
+-serialVersionUID: Long
+-name: String {Mandatory, ValidString, Automapped} 
+-IATACode: String {Mandatory, ValidIATACode, Automapped} 
+-website: String {Mandatory, ValidUrl, Automapped}
+-type: AirlineType
+-foundationMoment: Date {Mandatory, ValidMoment(past=true), Automapped} 
+-email: String {Mandatory, ValidEmail, Automapped}
+-phoneNumber: String {Mandatory, ValidPhone, Automapped}
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>477</x>
+      <y>162</y>
+      <w>162</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=x-
+m1=0..n
+m2=1
+trabaja para &gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;160.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>180</x>
+      <y>243</y>
+      <w>72</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>lt=-x
+m1=1
+m2=0..n
+gestiona</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>342</x>
+      <y>414</y>
+      <w>171</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=x-
+m1=0..n
+m2=1
+está formado por &gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;170.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>396</x>
+      <y>531</y>
+      <w>396</w>
+      <h>171</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Dashboard&gt;&gt;
+ManagerDashboard
+--
+rankingPosition: int
+yearsToRetire: int
+onTimeDelayedLegsRatio: Double
+mostPopularAirport: Airport
+lessPopularAirport: Airport
+numbLegPerStatus: int
+averageCostFlight: Double
+minimumCostFlight: Double
+maximumCostFlight: Double
+standartDeviationCost: Double
+-
+-getDuration: double
+
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
