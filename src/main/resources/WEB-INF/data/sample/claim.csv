@@ -1,0 +1,28 @@
+key,registrationMoment,passengerEmail,description,type,indicator,key:assistanceAgent,key:leg
+claim-01,2020/06/13 12:00,passcla@acme.com,Descripción de la claim,"FLIGHT_ISSUES",true,agent-01,leg-06
+claim-02,2000/01/01 00:00,passcla@acme.com,Descripción de la claim,"FLIGHT_ISSUES",true,agent-01,leg-06
+claim-03,2000/01/01 00:01,passcla@acme.com,Descripción de la claim,"FLIGHT_ISSUES",true,agent-01,leg-06
+claim-04,2000/01/02 00:00,passcla@acme.com,Descripción de la claim,"FLIGHT_ISSUES",true,agent-01,leg-06
+claim-05,2015/06/24 17:39,passcla@acme.com,Descripción de la claim,"FLIGHT_ISSUES",true,agent-01,leg-06
+claim-06,2020/11/17 20:33,passcla@acme.com,Descripción de la claim,"FLIGHT_ISSUES",true,agent-01,leg-06
+claim-07,2022/07/29 00:00,passcla@acme.com,Descripción de la claim,"FLIGHT_ISSUES",true,agent-01,leg-06
+claim-08,2022/07/29 23:59,passcla@acme.com,Descripción de la claim,"FLIGHT_ISSUES",true,agent-01,leg-06
+claim-09,2022/07/30 00:00,passcla@acme.com,Descripción de la claim,"FLIGHT_ISSUES",true,agent-01,leg-06
+claim-10,2020/06/13 12:00,a@x.c,Descripción de la claim,"FLIGHT_ISSUES",true,agent-01,leg-06
+claim-11,2020/06/13 12:00,aws@xvw.com,Descripción de la claim,"FLIGHT_ISSUES",true,agent-01,leg-06
+claim-12,2020/06/13 12:00,AA@BB.EE,Descripción de la claim,"FLIGHT_ISSUES",true,agent-01,leg-06
+claim-13,2020/06/13 12:00,gato@correo.perro.manzana.cielo.roca.musica.rayo.cabra.luz.silla.coche.libro.monte.rio.nube.fuego.mar.tiempo.sombra.sol.luna.avion.bosque.tormenta.puerta.cuadro.diamante.ventana.pelota.cuerda.tren.cactus.energia.estacion.papel.historia.fantasia.com,Descripción de la claim,"FLIGHT_ISSUES",true,agent-01,leg-06
+claim-14,2020/06/13 12:00,nube@universo.rio.montaña.avion.tren.bicicleta.camara.tigre.leon.jirafa.tormenta.relampago.trueno.oceano.barco.isla.cueva.robot.saturno.jupiter.neptuno.volcan.erupcion.paisaje.estadio.ciudad.puente.torre.caballo.tiburon.estrella.planeta.cometa.com,Descripción de la claim,"FLIGHT_ISSUES",true,agent-01,leg-06
+claim-15,2020/06/13 12:00,passcla@acme.com,a,"FLIGHT_ISSUES",true,agent-01,leg-06
+claim-16,2020/06/13 12:00,passcla@acme.com,aa,"FLIGHT_ISSUES",true,agent-01,leg-06
+claim-17,2020/06/13 12:00,passcla@acme.com,aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa,"FLIGHT_ISSUES",true,agent-01,leg-06
+claim-18,2020/06/13 12:00,passcla@acme.com,aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa,"FLIGHT_ISSUES",true,agent-01,leg-06
+claim-19,2020/06/13 12:00,passcla@acme.com,aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa,"FLIGHT_ISSUES",true,agent-01,leg-06
+claim-20,2020/06/13 12:00,passcla@acme.com,qwertyui sdfghjkl cvbnmnbvc .blosdcip,"FLIGHT_ISSUES",true,agent-01,leg-06
+claim-21,2020/06/13 12:00,passcla@acme.com,"El vuelo sufrió un retraso de 5 horas sin previo aviso, lo que causó la pérdida de mi conexión. No recibí asistencia adecuada ni compensación. Solicito una solución para este inconveniente.","FLIGHT_ISSUES",true,agent-01,leg-06
+claim-22,2020/06/13 12:00,passcla@acme.com,Descripción de la claim,"LUGGAGE_ISSUES",true,agent-01,leg-06
+claim-23,2020/06/13 12:00,passcla@acme.com,Descripción de la claim,"SECURITY_INCIDENT",true,agent-01,leg-06
+claim-24,2020/06/13 12:00,passcla@acme.com,Descripción de la claim,"OTHER_ISSUES",true,agent-01,leg-06
+claim-25,2020/06/13 12:00,passcla@acme.com,Descripción de la claim,"FLIGHT_ISSUES",false,agent-01,leg-06
+claim-26,2020/06/13 12:00,passcla@acme.com,Descripción de la claim,"FLIGHT_ISSUES",true,agent-02,leg-06
+claim-27,2020/06/13 12:00,passcla@acme.com,Descripción de la claim,"FLIGHT_ISSUES",true,agent-01,leg-07
