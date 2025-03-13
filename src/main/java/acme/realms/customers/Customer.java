@@ -1,5 +1,5 @@
 
-package acme.realms;
+package acme.realms.customers;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,6 +10,7 @@ import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
+import acme.constraints.ValidCustomer;
 import acme.constraints.ValidIdentifier;
 import acme.constraints.ValidPhoneNumber;
 import lombok.Getter;
@@ -18,6 +19,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
+@ValidCustomer
 public class Customer extends AbstractRole {
 
 	// Serialisation version --------------------------------------------------
