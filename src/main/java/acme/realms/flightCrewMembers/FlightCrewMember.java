@@ -14,6 +14,7 @@ import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoney;
 import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
+import acme.constraints.ValidFlightCrewMember;
 import acme.constraints.ValidIdentifier;
 import acme.constraints.ValidPhoneNumber;
 import acme.entities.airlines.Airline;
@@ -23,6 +24,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
+@ValidFlightCrewMember
 public class FlightCrewMember extends AbstractRole {
 
 	// Serialisation version --------------------------------------------------
