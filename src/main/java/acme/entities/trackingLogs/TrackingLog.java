@@ -1,5 +1,5 @@
 
-package acme.entities.claims;
+package acme.entities.trackingLogs;
 
 import java.util.Date;
 
@@ -7,7 +7,6 @@ import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.persistence.Transient;
 import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
@@ -17,6 +16,7 @@ import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
+import acme.entities.claims.Claim;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -49,7 +49,7 @@ public class TrackingLog extends AbstractEntity {
 	@Mandatory
 	@Valid
 	@Automapped
-	private Boolean				indicator;
+	private TrackingLogStatus	indicator;
 
 	@Optional
 	@ValidString
@@ -63,12 +63,4 @@ public class TrackingLog extends AbstractEntity {
 	@ManyToOne(optional = false)
 	private Claim				claim;
 
-
-	// Derived attributes ------------------------------------------------------
-	@Transient
-	public boolean isIndicatorTrue() {
-		boolean indicatorValue;
-		indicatorValue = this.getIndicator() == true && !this.getResolution().isBlank() || this.getIndicator() == false && this.getResolution().isBlank();
-		return indicatorValue;
-	}
 }
