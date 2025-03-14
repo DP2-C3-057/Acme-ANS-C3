@@ -1,0 +1,5 @@
+key,duty,moment,currentStatus,remarks,key:flightCrewMember,key:leg
+flight-assignment-01,PILOT,2021/10/01 10:00,CONFIRMED,Asignado a un vuelo internacional de largo recorrido,flightCrewMember-01,leg-01
+flight-assignment-02,CO_PILOT,2021/11/01 10:00,CONFIRMED,Tripulación de respaldo disponible para esta asignación,flightCrewMember-02,leg-02
+flight-assignment-03,CO_PILOT,2021/12/01 10:00,CONFIRMED,Requiere actualización del informe meteorológico antes del despegue,flightCrewMember-03,leg-03
+flight-assignment-04,PILOT,2021/09/01 10:00,CONFIRMED,Ruta del vuelo ajustada recientemente por restricciones de tráfico aéreo,flightCrewMember-04,leg-04
