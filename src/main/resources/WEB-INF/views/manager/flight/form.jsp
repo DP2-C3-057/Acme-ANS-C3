@@ -7,8 +7,8 @@
 	<acme:input-textbox code="manager.flight.form.label.tag" path="tag"/>
 	<acme:input-checkbox code="manager.flight.form.label.selfTransfer" path="selfTransfer"/>
 	<acme:input-money code="manager.flight.form.label.cost" path="cost"/>
-	<acme:input-checkbox code="manager.flight.form.label.selfTransfer" path="selfTransfer"/>
 	<acme:input-textarea code="manager.flight.form.label.description" path="description"/>
+	<acme:input-checkbox code="manager.flight.form.label.draftMode" path="draftMode"/>
 
 	<jstl:choose>
 		<jstl:when test="${acme:anyOf(_command, 'show|update|delete|publish') && draftMode == true}">

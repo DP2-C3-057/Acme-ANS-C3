@@ -3,13 +3,19 @@
 manager.flight.form.title = Flight form 
 manager.flight.list.title = Listing of flights
 
+manager.flight.form.label.tag = Tag:
+manager.flight.form.label.selfTransfer = Self Transfer:
+manager.flight.form.label.cost = Cost:
+manager.flight.form.label.description = Description
+manager.flight.form.label.draftMode = DraftMode
+
 manager.flight.form.button.duties = Duties
 manager.flight.form.button.update = Update
 manager.flight.form.button.delete = Delete
 manager.flight.form.button.publish = Publish
 manager.flight.form.button.create = Create
 
-manager.flight.list.label.tag = Tags
+manager.flight.list.label.tag = Tag
 manager.flight.list.label.selfTransfer = Self Transfer
 manager.flight.list.label.cost = Cost
 manager.flight.list.label.description = Description
