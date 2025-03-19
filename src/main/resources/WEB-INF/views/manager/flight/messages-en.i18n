@@ -1,0 +1,18 @@
+# messages-en.i18n
+
+manager.flight.form.title = Flight form 
+manager.flight.list.title = Listing of flights
+
+manager.flight.form.button.duties = Duties
+manager.flight.form.button.update = Update
+manager.flight.form.button.delete = Delete
+manager.flight.form.button.publish = Publish
+manager.flight.form.button.create = Create
+
+manager.flight.list.label.tag = Tags
+manager.flight.list.label.selfTransfer = Self Transfer
+manager.flight.list.label.cost = Cost
+manager.flight.list.label.description = Description
+manager.flight.list.label.draftMode = DraftMode
+
+manager.flight.list.button.create = Create

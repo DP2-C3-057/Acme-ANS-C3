@@ -1,0 +1,18 @@
+# messages-es.i18n
+
+employer.job.form.title = Detalles de vuelo
+employer.job.list.title = Lista de vuelos
+
+manager.flight.form.button.duties = Responsabilidades
+manager.flight.form.button.update = Actualizar
+manager.flight.form.button.delete = Borrar
+manager.flight.form.button.publish = Publicar
+manager.flight.form.button.create = Crear
+
+manager.flight.list.label.tag = Tags
+manager.flight.list.label.selfTransfer = Tiene escala
+manager.flight.list.label.cost = Coste
+manager.flight.list.label.description = Descripción
+manager.flight.list.label.draftMode = Borrador
+
+manager.flight.list.button.create = Crear
