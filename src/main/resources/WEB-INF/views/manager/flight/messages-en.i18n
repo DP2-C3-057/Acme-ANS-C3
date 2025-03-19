@@ -4,9 +4,9 @@ manager.flight.form.title = Flight form
 manager.flight.list.title = Listing of flights
 
 manager.flight.form.label.tag = Tag:
-manager.flight.form.label.selfTransfer = Self Transfer:
+manager.flight.form.label.selfTransfer = Self Transfer
 manager.flight.form.label.cost = Cost:
-manager.flight.form.label.description = Description
+manager.flight.form.label.description = Description:
 manager.flight.form.label.draftMode = DraftMode
 
 manager.flight.form.button.duties = Duties

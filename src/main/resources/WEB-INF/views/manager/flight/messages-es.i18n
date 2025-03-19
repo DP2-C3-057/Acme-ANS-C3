@@ -4,9 +4,9 @@ employer.job.form.title = Detalles de vuelo
 employer.job.list.title = Lista de vuelos
 
 manager.flight.form.label.tag = Tag:
-manager.flight.form.label.selfTransfer = Tiene escala:
+manager.flight.form.label.selfTransfer = Tiene escala
 manager.flight.form.label.cost = Coste:
-manager.flight.form.label.description = Descripción
+manager.flight.form.label.description = Descripción:
 manager.flight.form.label.draftMode = Borrador
 
 manager.flight.form.button.duties = Responsabilidades
