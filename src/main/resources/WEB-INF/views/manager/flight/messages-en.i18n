@@ -4,10 +4,16 @@ manager.flight.form.title = Flight form
 manager.flight.list.title = Listing of flights
 
 manager.flight.form.label.tag = Tag:
-manager.flight.form.label.selfTransfer = Self Transfer
+manager.flight.form.label.selfTransfer = Self transfer
 manager.flight.form.label.cost = Cost:
 manager.flight.form.label.description = Description:
 manager.flight.form.label.draftMode = DraftMode
+manager.flight.form.label.scheduledDeparture = Scheduled departure
+manager.flight.form.label.scheduledArrival = Scheduled arrival
+manager.flight.form.label.originCity = Origin city
+manager.flight.form.label.destinationCity = Destination city
+manager.flight.form.label.numberOfLayovers = Number of Layovers
+
 
 manager.flight.form.button.duties = Duties
 manager.flight.form.button.update = Update
