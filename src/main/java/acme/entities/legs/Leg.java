@@ -61,7 +61,7 @@ public class Leg extends AbstractEntity {
 
 
 	@Transient
-	private Double getDuration() {
+	public Double getDuration() {
 		Double durationHours;
 		durationHours = (this.getScheduledArrival().getTime() - this.getScheduledDeparture().getTime()) / (1000.0 * 60 * 60);
 		return durationHours;
