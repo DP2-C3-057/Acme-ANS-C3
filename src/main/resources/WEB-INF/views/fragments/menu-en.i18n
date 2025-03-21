@@ -28,6 +28,7 @@ master.menu.administrator.shut-system-down = Shut system down
 # master.menu.manager ########################################################
 master.menu.manager = Manager
 master.menu.manager.list-my-flights = Flight list
+master.menu.manager.list-my-legs = Leg list
 
 # master.menu.provider ########################################################
 
