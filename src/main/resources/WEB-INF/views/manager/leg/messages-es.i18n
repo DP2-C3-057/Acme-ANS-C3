@@ -1,0 +1,32 @@
+# messages-en.i18n
+
+manager.leg.form.title = Detalles de tramos
+manager.leg.list.title = Listado de tramos
+
+manager.leg.form.label.flightNumber = Número de vuelo:
+manager.leg.form.label.scheduledDeparture = Salida programada:
+manager.leg.form.label.scheduledArrival = Scheduled arrival:
+manager.leg.form.label.status = Estado:
+manager.leg.form.label.departureAirport = Aeropuerto de salida:
+manager.leg.form.label.arrivalAirport = Aeropuerto de llegada:
+manager.leg.form.label.flight = Vuelo:
+manager.leg.form.label.aircraft = Aeronave:
+manager.leg.form.label.draftMode = Borrador
+
+
+manager.leg.form.button.update = Actualizar
+manager.leg.form.button.delete = Borrar
+manager.leg.form.button.publish = Publicar
+manager.leg.form.button.create = Crear
+
+manager.leg.list.label.flightNumber = Número de vuelo
+manager.leg.list.label.scheduledDeparture = Salida programada
+manager.leg.list.label.scheduledArrival = Llegada programada
+manager.leg.list.label.status = Estado
+manager.leg.list.label.draftMode = Borrador
+manager.leg.list.label.flight = Vuelo
+manager.leg.list.label.aircraft = Aeronave
+manager.leg.list.label.departureAirport = Aeropuerto de salida
+manager.leg.list.label.arrivalAirport = Aeropuerto de llegada
+
+manager.leg.list.button.create = Crear

@@ -1,0 +1,32 @@
+# messages-en.i18n
+
+manager.leg.form.title = Leg form 
+manager.leg.list.title = Listing of legs
+
+manager.leg.form.label.flightNumber = Flight Number:
+manager.leg.form.label.scheduledDeparture = Scheduled departure:
+manager.leg.form.label.scheduledArrival = Scheduled arrival:
+manager.leg.form.label.status = Status:
+manager.leg.form.label.departureAirport = Departure Airport:
+manager.leg.form.label.arrivalAirport = Arrival Airport:
+manager.leg.form.label.flight = Flight:
+manager.leg.form.label.aircraft = Aircraft:
+manager.leg.form.label.draftMode = DraftMode
+
+manager.leg.form.button.duties = Duties
+manager.leg.form.button.update = Update
+manager.leg.form.button.delete = Delete
+manager.leg.form.button.publish = Publish
+manager.leg.form.button.create = Create
+
+manager.leg.list.label.flightNumber = Flight Number
+manager.leg.list.label.scheduledDeparture = Scheduled Departure
+manager.leg.list.label.scheduledArrival = Scheduled Arrival
+manager.leg.list.label.status = Status
+manager.leg.list.label.draftMode = DraftMode
+manager.leg.list.label.flight = Flight
+manager.leg.list.label.aircraft = Aircraft
+manager.leg.list.label.departureAirport = Departure Airport
+manager.leg.list.label.arrivalAirport = Arrival Airport
+
+manager.leg.list.button.create = Create
