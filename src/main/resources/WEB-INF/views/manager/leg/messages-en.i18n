@@ -6,6 +6,7 @@ manager.leg.list.title = Listing of legs
 manager.leg.form.label.flightNumber = Flight Number:
 manager.leg.form.label.scheduledDeparture = Scheduled departure:
 manager.leg.form.label.scheduledArrival = Scheduled arrival:
+manager.leg.form.label.duration = Duration (in hours):
 manager.leg.form.label.status = Status:
 manager.leg.form.label.departureAirport = Departure Airport:
 manager.leg.form.label.arrivalAirport = Arrival Airport:
