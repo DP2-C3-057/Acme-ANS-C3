@@ -1,16 +1,19 @@
 
 package acme.features.manager.flight;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.models.Dataset;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.flights.Flight;
+import acme.entities.legs.Leg;
 import acme.realms.managers.Manager;
 
 @GuiService
-public class ManagerFlightCreateService extends AbstractGuiService<Manager, Flight> {
+public class ManagerFlightDeleteService extends AbstractGuiService<Manager, Flight> {
 
 	// Internal state ---------------------------------------------------------
 
@@ -22,19 +25,26 @@ public class ManagerFlightCreateService extends AbstractGuiService<Manager, Flig
 
 	@Override
 	public void authorise() {
-		super.getResponse().setAuthorised(true);
+		boolean status;
+		int masterId;
+		Flight flight;
+		Manager manager;
+
+		masterId = super.getRequest().getData("id", int.class);
+		flight = this.repository.findFlightById(masterId);
+		manager = flight == null ? null : flight.getManager();
+		status = flight != null && flight.isDraftMode() && super.getRequest().getPrincipal().hasRealm(manager);
+
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
 	public void load() {
 		Flight flight;
-		Manager manager;
+		int id;
 
-		manager = (Manager) super.getRequest().getPrincipal().getActiveRealm();
-
-		flight = new Flight();
-		flight.setDraftMode(true);
-		flight.setManager(manager);
+		id = super.getRequest().getData("id", int.class);
+		flight = this.repository.findFlightById(id);
 
 		super.getBuffer().addData(flight);
 	}
@@ -51,7 +61,11 @@ public class ManagerFlightCreateService extends AbstractGuiService<Manager, Flig
 
 	@Override
 	public void perform(final Flight flight) {
-		this.repository.save(flight);
+		Collection<Leg> legs;
+
+		legs = this.repository.findLegsByFlightId(flight.getId());
+		this.repository.deleteAll(legs);
+		this.repository.delete(flight);
 	}
 
 	@Override
