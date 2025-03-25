@@ -1,0 +1,10 @@
+key,fullName,email,passportNumber,dateOfBirth,specialNeeds
+passenger-01,Juan Pérez,juan.perez@email.com,T123Y5678,2000/07/12 00:12,none
+passenger-02,Ana Gómez,ana.gomez@email.com,P87W54321,2001/03/25 23:43,wheelchair
+passenger-03,Carlos Rodríguez,carlos.rodriguez@email.com,P45678912,2001/09/15 22:39,none
+passenger-04,Emily Johnson,emily.johnson@email.com,M789E2345,2003/06/30 12:01,vegan meal
+passenger-05,Sophie Müller,sophie.muller@email.com,V32165F98,2005/12/22 21:09,none
+passenger-06,Alberto Sánchez,alberto.sanchez@email.com,654L8732,2001/05/10 13:21,hearing assistance
+passenger-07,Yuki Tanaka,yuki.tanaka@email.com,N85R96374,2000/11/18 16:21,none
+passenger-08,Michael Brown,michael.brown@email.com,U15N75326,2005/08/05 00:08,extra legroom
+passenger-09,Isabelle Dupont,isabelle.dupont@email.com,S75A15984,2002/04/07 02:12,none

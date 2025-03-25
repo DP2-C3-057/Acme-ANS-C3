@@ -11,6 +11,12 @@ user-account-manager-03,true,"UserIdentity{name: 'Sin', surname: 'Datos', email:
 user-account-customer-01,true,"UserIdentity{name: 'Lolo', surname: 'Popo', email: 'customer1@acme.com'}",customer1,customer1
 user-account-customer-02,true,"UserIdentity{name: 'Lala', surname: 'Tata', email: 'customer2@acme.com'}",customer2,customer2
 user-account-customer-03,true,"UserIdentity{name: 'Kete', surname: 'Pasa', email: 'customer3@acme.com'}",customer3,customer3
+user-account-customer-04,true,"UserIdentity{name: 'Mama', surname: 'Bata', email: 'customer4@acme.com'}",customer4,customer4
+user-account-customer-05,true,"UserIdentity{name: 'Xito', surname: 'Roro', email: 'customer5@acme.com'}",customer5,customer5
+user-account-customer-06,true,"UserIdentity{name: 'Queso', surname: 'Pocho', email: 'customer6@acme.com'}",customer6,customer6
+user-account-customer-07,true,"UserIdentity{name: 'Zopa', surname: 'Nori', email: 'customer7@acme.com'}",customer7,customer7
+user-account-customer-08,true,"UserIdentity{name: 'Trono', surname: 'Roto', email: 'customer8@acme.com'}",customer8,customer8
+user-account-customer-09,true,"UserIdentity{name: 'Varo', surname: 'Frodo', email: 'customer9@acme.com'}",customer9,customer9
 user-account-member-00,true,"UserIdentity{name: 'José Manuel', surname: 'Moreno', email: 'josmorgue3@alum.us.es'}",member,member
 user-account-member-01,true,"UserIdentity{name: 'Rocío', surname: 'López', email: 'roclopmoy@alum.us.es'}",member1,member1
 user-account-member-02,true,"UserIdentity{name: 'Roony', surname: 'López', email: 'roony@cat.es'}",member2,member2
