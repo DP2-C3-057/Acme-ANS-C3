@@ -12,6 +12,7 @@ import javax.persistence.Transient;
 import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
+import acme.client.components.datatypes.Money;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
@@ -77,17 +78,23 @@ public class Booking extends AbstractEntity {
 	// Derived attributes -----------------------------------------------------
 
 
-	//Debe devolver tipo Money
 	@Transient
-	public Double getBookingCost() {
+	public Money getBookingCost() {
 		BookingRepository repository = SpringHelper.getBean(BookingRepository.class);
 
 		Double flightPrice = this.flight != null ? this.flight.getCost().getAmount() : 0.0;
 
+		String currency = this.flight != null ? this.flight.getCost().getCurrency() : null;
+
 		Integer passengerCount = repository.countPassengersByLocatorCode(this.locatorCode);
 		passengerCount = passengerCount != null ? passengerCount : 0;
 
-		return passengerCount * flightPrice;
+		Money bookingCost = new Money();
+
+		bookingCost.setCurrency(currency);
+		bookingCost.setAmount(passengerCount * flightPrice);
+
+		return bookingCost;
 	}
 
 }
