@@ -26,3 +26,6 @@ manager.flight.list.label.description = Descripción
 manager.flight.list.label.draftMode = Borrador
 
 manager.flight.list.button.create = Crear
+
+manager.flight.delete.published-legs= No puede borrar vuelos con tramos publicados
+manager.flight.publish.non-published-legs= No puede publicar vuelos con tramos sin publicar o sin tramos.

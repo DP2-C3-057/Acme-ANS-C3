@@ -1,12 +1,15 @@
 
 package acme.features.manager.flight;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.models.Dataset;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.flights.Flight;
+import acme.entities.legs.Leg;
 import acme.realms.managers.Manager;
 
 @GuiService
@@ -53,7 +56,19 @@ public class ManagerFlightPublishService extends AbstractGuiService<Manager, Fli
 
 	@Override
 	public void validate(final Flight flight) {
-		;
+		boolean status = true;
+		int id;
+		id = super.getRequest().getData("id", int.class);
+		Collection<Leg> legs = this.repository.findLegsByFlightId(id);
+		if (legs.isEmpty())
+			status = false;
+		else
+			for (Leg leg : legs)
+				if (leg.isDraftMode()) {
+					status = false;
+					break;
+				}
+		super.state(status, "*", "manager.flight.publish.non-published-legs");
 	}
 
 	@Override
