@@ -18,6 +18,7 @@ manager.flight.form.button.update = Actualizar
 manager.flight.form.button.delete = Borrar
 manager.flight.form.button.publish = Publicar
 manager.flight.form.button.create = Crear
+manager.flight.form.button.legs = Tramos
 
 manager.flight.list.label.tag = Tag
 manager.flight.list.label.selfTransfer = Tiene escala

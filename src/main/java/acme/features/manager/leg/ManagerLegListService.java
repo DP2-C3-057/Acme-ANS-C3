@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import acme.client.components.models.Dataset;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
+import acme.entities.flights.Flight;
 import acme.entities.legs.Leg;
 import acme.realms.managers.Manager;
 
@@ -24,16 +25,24 @@ public class ManagerLegListService extends AbstractGuiService<Manager, Leg> {
 
 	@Override
 	public void authorise() {
-		super.getResponse().setAuthorised(true);
+		boolean status;
+		int masterId;
+		Flight flight;
+
+		masterId = super.getRequest().getData("masterId", int.class);
+		flight = this.repository.findFlightById(masterId);
+		status = flight != null && super.getRequest().getPrincipal().hasRealm(flight.getManager());
+
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
 	public void load() {
 		Collection<Leg> legs;
-		int managerId;
+		int id;
 
-		managerId = super.getRequest().getPrincipal().getActiveRealm().getId();
-		legs = this.repository.findLegsByManagerId(managerId);
+		id = super.getRequest().getData("masterId", int.class);
+		legs = this.repository.findLegsByFlightId(id);
 
 		super.getBuffer().addData(legs);
 	}
@@ -47,6 +56,20 @@ public class ManagerLegListService extends AbstractGuiService<Manager, Leg> {
 		dataset.put("arrivalAirport", leg.getArrivalAirport().getIataCode());
 
 		super.getResponse().addData(dataset);
+	}
+
+	@Override
+	public void unbind(final Collection<Leg> legs) {
+		int masterId;
+		Flight flight;
+		final boolean showCreate;
+
+		masterId = super.getRequest().getData("masterId", int.class);
+		flight = this.repository.findFlightById(masterId);
+		showCreate = flight.isDraftMode() && super.getRequest().getPrincipal().hasRealm(flight.getManager());
+
+		super.getResponse().addGlobal("masterId", masterId);
+		super.getResponse().addGlobal("showCreate", showCreate);
 	}
 
 }

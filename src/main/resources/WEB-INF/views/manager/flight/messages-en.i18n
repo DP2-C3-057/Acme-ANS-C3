@@ -19,6 +19,7 @@ manager.flight.form.button.update = Update
 manager.flight.form.button.delete = Delete
 manager.flight.form.button.publish = Publish
 manager.flight.form.button.create = Create
+manager.flight.form.button.legs = Legs
 
 manager.flight.list.label.tag = Tag
 manager.flight.list.label.selfTransfer = Self Transfer
