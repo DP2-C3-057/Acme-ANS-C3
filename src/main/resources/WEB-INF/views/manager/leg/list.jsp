@@ -11,7 +11,6 @@
 	<acme:list-column code="manager.leg.list.label.status" path="status" width="20%" sortable="false"/>
 </acme:list>
 
-<jstl:if test="${_command == 'list'}">
-	<acme:button code="manager.leg.list.button.create" action="/manager/leg/create"/>
-</jstl:if>		
-	
+<jstl:if test="${showCreate}">
+	<acme:button code="manager.leg.list.button.create" action="/manager/leg/create?masterId=${masterId}"/>
+</jstl:if>

@@ -18,6 +18,7 @@ manager.flight.form.button.update = Actualizar
 manager.flight.form.button.delete = Borrar
 manager.flight.form.button.publish = Publicar
 manager.flight.form.button.create = Crear
+manager.flight.form.button.legs = Tramos
 
 manager.flight.list.label.tag = Tag
 manager.flight.list.label.selfTransfer = Tiene escala
@@ -26,3 +27,6 @@ manager.flight.list.label.description = Descripción
 manager.flight.list.label.draftMode = Borrador
 
 manager.flight.list.button.create = Crear
+
+manager.flight.delete.published-legs= No puede borrar vuelos con tramos publicados
+manager.flight.publish.non-published-legs= No puede publicar vuelos con tramos sin publicar o sin tramos.
