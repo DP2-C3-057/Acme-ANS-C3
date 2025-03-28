@@ -102,7 +102,6 @@ public class ManagerLegCreateService extends AbstractGuiService<Manager, Leg> {
 		dataset = super.unbindObject(leg, "flightNumber", "scheduledDeparture", "scheduledArrival", "draftMode");
 		dataset.put("status", legStatusChoices.getSelected().getKey());
 		dataset.put("legStatuses", legStatusChoices);
-		//dataset.put("duration", leg.getDuration());
 		dataset.put("aircraft", aircraftChoices.getSelected().getKey());
 		dataset.put("aircrafts", aircraftChoices);
 		dataset.put("departureAirport", departureAirportChoices.getSelected().getKey());
