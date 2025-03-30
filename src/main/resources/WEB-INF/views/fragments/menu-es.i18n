@@ -30,6 +30,10 @@ master.menu.manager = Manager
 master.menu.manager.list-my-flights = Listar vuelos
 master.menu.manager.list-my-legs = Listar tramos
 
+# master.menu.customer ########################################################
+master.menu.customer = Customer
+master.menu.customer.list-my-bookings = Listar reservas
+
 # master.menu.provider ########################################################
 
 master.menu.provider = Proveedor
