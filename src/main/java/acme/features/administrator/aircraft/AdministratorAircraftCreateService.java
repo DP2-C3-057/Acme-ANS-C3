@@ -15,7 +15,7 @@ import acme.entities.aircraft.AircraftStatus;
 import acme.entities.airlines.Airline;
 
 @GuiService
-public class AdministratorAircraftListService extends AbstractGuiService<Administrator, Aircraft> {
+public class AdministratorAircraftCreateService extends AbstractGuiService<Administrator, Aircraft> {
 
 	// Internal state ---------------------------------------------------------
 
@@ -27,18 +27,31 @@ public class AdministratorAircraftListService extends AbstractGuiService<Adminis
 
 	@Override
 	public void authorise() {
-		boolean status;
-		status = super.getRequest().getPrincipal().hasRealmOfType(Administrator.class);
-		super.getResponse().setAuthorised(status);
+		super.getResponse().setAuthorised(true);
 	}
 
 	@Override
 	public void load() {
-		Collection<Aircraft> aircrafts;
+		Aircraft aircraft;
 
-		aircrafts = this.repository.findAllAircrafts();
+		aircraft = new Aircraft();
 
-		super.getBuffer().addData(aircrafts);
+		super.getBuffer().addData(aircraft);
+	}
+
+	@Override
+	public void bind(final Aircraft aircraft) {
+		super.bindObject(aircraft, "model", "registrationNumber", "capacity", "cargoWeight", "status", "details", "airline");
+	}
+
+	@Override
+	public void validate(final Aircraft aircraft) {
+		;
+	}
+
+	@Override
+	public void perform(final Aircraft aircraft) {
+		this.repository.save(aircraft);
 	}
 
 	@Override

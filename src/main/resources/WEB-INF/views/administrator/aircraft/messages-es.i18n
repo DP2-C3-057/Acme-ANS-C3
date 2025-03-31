@@ -8,6 +8,8 @@ administrator.aircraft.list.label.registrationNumber= Número de registro
 administrator.aircraft.list.label.status= Estado
 administrator.aircraft.list.label.airline= Aerolínea
 
+administrator.aircraft.list.button.create = Crear
+
 administrator.aircraft.form.label.model= Modelo
 administrator.aircraft.form.label.registrationNumber= Número de registro
 administrator.aircraft.form.label.capacity = Capacidad
@@ -20,3 +22,5 @@ administrator.aircraft.form.button.update = Actualizar
 administrator.aircraft.form.button.delete = Borrar
 administrator.aircraft.form.button.disable = Deshabilitar
 administrator.aircraft.form.button.create = Crear
+
+acme.validation.range = Fuera de rango
