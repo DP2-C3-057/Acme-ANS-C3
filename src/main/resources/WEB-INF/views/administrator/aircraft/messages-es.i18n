@@ -1,0 +1,9 @@
+# messages-en.i18n
+
+administrator.aircraft.form.title = Formulario de aeronaves 
+administrator.aircraft.list.title = Listado de aeronaves
+
+administrator.aircraft.list.label.model= Modelo
+administrator.aircraft.list.label.registrationNumber= Número de registro
+administrator.aircraft.list.label.status= Estado
+administrator.aircraft.list.label.airline= Aerolínea
