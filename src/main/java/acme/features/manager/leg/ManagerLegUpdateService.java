@@ -16,7 +16,7 @@ import acme.entities.legs.LegStatus;
 import acme.realms.managers.Manager;
 
 @GuiService
-public class ManagerLegShowService extends AbstractGuiService<Manager, Leg> {
+public class ManagerLegUpdateService extends AbstractGuiService<Manager, Leg> {
 
 	// Internal state ---------------------------------------------------------
 
@@ -29,14 +29,12 @@ public class ManagerLegShowService extends AbstractGuiService<Manager, Leg> {
 	@Override
 	public void authorise() {
 		boolean status;
-		int masterId;
+		int legId;
 		Leg leg;
-		Manager manager;
 
-		masterId = super.getRequest().getData("id", int.class);
-		leg = this.repository.findLegById(masterId);
-		manager = leg == null ? null : leg.getFlight().getManager();
-		status = super.getRequest().getPrincipal().hasRealm(manager) && leg != null;
+		legId = super.getRequest().getData("id", int.class);
+		leg = this.repository.findLegById(legId);
+		status = leg != null && leg.isDraftMode() && super.getRequest().getPrincipal().hasRealm(leg.getFlight().getManager());
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -50,6 +48,21 @@ public class ManagerLegShowService extends AbstractGuiService<Manager, Leg> {
 		leg = this.repository.findLegById(id);
 
 		super.getBuffer().addData(leg);
+	}
+
+	@Override
+	public void bind(final Leg leg) {
+		super.bindObject(leg, "flightNumber", "scheduledDeparture", "scheduledArrival", "status", "departureAirport", "arrivalAirport", "aircraft");
+	}
+
+	@Override
+	public void validate(final Leg leg) {
+		;
+	}
+
+	@Override
+	public void perform(final Leg leg) {
+		this.repository.save(leg);
 	}
 
 	@Override
@@ -77,16 +90,17 @@ public class ManagerLegShowService extends AbstractGuiService<Manager, Leg> {
 
 		legStatusChoices = SelectChoices.from(LegStatus.class, leg.getStatus());
 
-		dataset = super.unbindObject(leg, "flightNumber", "scheduledDeparture", "scheduledArrival", "status", "draftMode");
+		dataset = super.unbindObject(leg, "flightNumber", "scheduledDeparture", "scheduledArrival", "draftMode");
 		dataset.put("status", legStatusChoices.getSelected().getKey());
 		dataset.put("legStatuses", legStatusChoices);
-		dataset.put("duration", leg.getDuration());
 		dataset.put("aircraft", aircraftChoices.getSelected().getKey());
 		dataset.put("aircrafts", aircraftChoices);
 		dataset.put("departureAirport", departureAirportChoices.getSelected().getKey());
 		dataset.put("departureAirports", departureAirportChoices);
 		dataset.put("arrivalAirport", arrivalAirportChoices.getSelected().getKey());
 		dataset.put("arrivalAirports", arrivalAirportChoices);
+		dataset.put("masterId", super.getRequest().getData("masterId", int.class));
+
 		super.getResponse().addData(dataset);
 	}
 }

@@ -46,7 +46,8 @@ public class LegValidator extends AbstractValidator<ValidLeg, Leg> {
 			}
 			{
 				boolean correctFlightNumber = true;
-
+				if (leg.getFlightNumber() == null)
+					correctFlightNumber = false;
 				for (int i = 0; i < 3; i++)
 					if (correctFlightNumber == true)
 						correctFlightNumber = leg.getFlightNumber().charAt(i) == leg.getFlight().getManager().getAirline().getIATACode().charAt(i);
