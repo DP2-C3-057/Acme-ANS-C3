@@ -15,7 +15,7 @@ import acme.entities.aircraft.AircraftStatus;
 import acme.entities.airlines.Airline;
 
 @GuiService
-public class AdministratorAircraftShowService extends AbstractGuiService<Administrator, Aircraft> {
+public class AdministratorAircraftUpdateService extends AbstractGuiService<Administrator, Aircraft> {
 
 	// Internal state ---------------------------------------------------------
 
@@ -49,6 +49,21 @@ public class AdministratorAircraftShowService extends AbstractGuiService<Adminis
 	}
 
 	@Override
+	public void bind(final Aircraft aircraft) {
+		super.bindObject(aircraft, "model", "registrationNumber", "capacity", "cargoWeight", "status", "details", "airline");
+	}
+
+	@Override
+	public void validate(final Aircraft aircraft) {
+		;
+	}
+
+	@Override
+	public void perform(final Aircraft aircraft) {
+		this.repository.save(aircraft);
+	}
+
+	@Override
 	public void unbind(final Aircraft aircraft) {
 		Dataset dataset;
 		Collection<Airline> airlines;
@@ -68,5 +83,4 @@ public class AdministratorAircraftShowService extends AbstractGuiService<Adminis
 
 		super.getResponse().addData(dataset);
 	}
-
 }
