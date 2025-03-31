@@ -1,0 +1,30 @@
+# messages-en.i18n
+#
+# Copyright (C) 2012-2025 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+flightCrewMember.assignment.list.label.duty = Crew duty
+flightCrewMember.assignment.list.label.lastUpdate = Last update
+flightCrewMember.assignment.list.label.status = Status
+flight-crew-member.flight-assignment.list.title = My Flight Assignments
+
+flight-crew-member.flight-assignment.form.title = Assignment details
+# Labels
+flight-crew-member.flight-assignment.form.label.flightCrewMember = Flight Crew Member
+flight-crew-member.flight-assignment.form.label.flightCrewDuty = Flight Crew Duty
+flight-crew-member.flight-assignment.form.label.lastUpdate = Last Update
+flight-crew-member.flight-assignment.form.label.assignmentStatus = Assignment Status
+flight-crew-member.flight-assignment.form.label.remarks = Remarks
+flight-crew-member.flight-assignment.form.label.draftMode = Draft Mode
+flight-crew-member.flight-assignment.form.label.legStatus = Leg Status
+
+# Buttons
+flight-crew-member.flight-assignment.form.button.return = Return
+flight-crew-member.flight-assignment.form.button.update = Update
+flight-crew-member.flight-assignment.form.button.delete = Delete
+flight-crew-member.flight-assignment.form.button.create = Create

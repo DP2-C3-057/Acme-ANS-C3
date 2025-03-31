@@ -34,6 +34,11 @@ master.menu.manager.list-my-legs = Listar tramos
 master.menu.customer = Customer
 master.menu.customer.list-my-bookings = Listar reservas
 
+# master.menu.flightCrewMember #################################################
+master.menu.flightCrewMember = Tripulante de vuelo
+master.menu.flightCrewMember.listCompleted = Asignaciones completadas
+master.menu.flightCrewMember.listPlanned = Asignaciones planificadas
+ 
 # master.menu.provider ########################################################
 
 master.menu.provider = Proveedor
