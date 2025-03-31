@@ -1,8 +1,6 @@
 
 package acme.features.administrator.aircraft;
 
-import java.util.Collection;
-
 import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.models.Dataset;
@@ -12,7 +10,7 @@ import acme.client.services.GuiService;
 import acme.entities.aircraft.Aircraft;
 
 @GuiService
-public class AdministratorAircraftListService extends AbstractGuiService<Administrator, Aircraft> {
+public class AdministratorAircraftShowService extends AbstractGuiService<Administrator, Aircraft> {
 
 	// Internal state ---------------------------------------------------------
 
@@ -25,17 +23,26 @@ public class AdministratorAircraftListService extends AbstractGuiService<Adminis
 	@Override
 	public void authorise() {
 		boolean status;
-		status = super.getRequest().getPrincipal().hasRealmOfType(Administrator.class);
+		int masterId;
+		Aircraft aircraft;
+
+		masterId = super.getRequest().getData("id", int.class);
+		aircraft = this.repository.findAircraftById(masterId);
+		status = super.getRequest().getPrincipal().hasRealmOfType(Administrator.class) && aircraft != null;
+		super.getResponse().setAuthorised(status);
+
 		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
 	public void load() {
-		Collection<Aircraft> aircrafts;
+		Aircraft aircraft;
+		int id;
 
-		aircrafts = this.repository.findAllAircrafts();
+		id = super.getRequest().getData("id", int.class);
+		aircraft = this.repository.findAircraftById(id);
 
-		super.getBuffer().addData(aircrafts);
+		super.getBuffer().addData(aircraft);
 	}
 
 	@Override
@@ -47,4 +54,5 @@ public class AdministratorAircraftListService extends AbstractGuiService<Adminis
 
 		super.getResponse().addData(dataset);
 	}
+
 }
