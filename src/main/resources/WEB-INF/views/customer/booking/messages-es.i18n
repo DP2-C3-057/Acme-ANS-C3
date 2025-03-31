@@ -14,7 +14,7 @@ customer.booking.form.button.update = Actualizar
 customer.booking.form.button.delete = Borrar
 customer.booking.form.button.publish = Publicar
 customer.booking.form.button.create = Crear
-customer.booking.form.button.passengers = Pasajeros
+customer.booking.form.button.passengers = Ver pasajeros
 
 customer.booking.list.label.locatorCode = Identificador
 customer.booking.list.label.travelClass = Clase

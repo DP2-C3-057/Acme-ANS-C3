@@ -5,7 +5,7 @@
 
 <acme:form> 
 	<acme:input-textbox code="customer.booking.form.label.locatorCode" path="locatorCode"/>
-	<acme:input-checkbox code="customer.booking.form.label.purchaseMoment" path="purchaseMoment" readonly="true"/>
+	<acme:input-moment code="customer.booking.form.label.purchaseMoment" path="purchaseMoment" readonly="true"/>
 	<acme:input-textbox code="customer.booking.form.label.travelClass" path="travelClass"/>
 	<acme:input-textbox code="customer.booking.form.label.lastCardNibble" path="lastCardNibble"/>
 	<acme:input-checkbox code="customer.booking.form.label.draftMode" path="draftMode" readonly="true"/>
@@ -13,7 +13,7 @@
 
 	<jstl:choose>
 		<jstl:when test="${_command == 'show' && draftMode == false}">
-			<acme:button code="customer.booking.form.button.passengers" action="/customer/passenger/list?masterId=${id}"/>	
+			<acme:button code="customer.booking.form.button.passengers" action="/customer/passenger/list?masterId=${id}"/>
 		</jstl:when>
 		<jstl:when test="${acme:anyOf(_command, 'show|update|delete|publish') && draftMode == true}">
 			<acme:button code="customer.booking.form.button.passengers" action="/customer/passengers/list?masterId=${id}"/>
