@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>100</x>
+      <y>200</y>
+      <w>380</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>FlightCrewMember
+--
+-employeeCode: String{Mandatory,ValidString,Column(Unique=True)}
+-phoneNumber: String{Mandatory,ValidString,Automapped}
+-languageSkills: String{Mandatory,ValidString,Automapped}
+-availabilityStatus: Enum{Mandatory,Automapped}
+-salary: Money{Mandatory,ValidMoney,Automapped}
+-yearsOfExperience: Integer{Optional,ValidNumber(max=120)}
+
+
+bg=GREEN</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>120</x>
+      <y>430</y>
+      <w>340</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>FlightAssignment
+--
+-duty: Enum{Mandatory,Automapped}
+-moment: Date{Mandatory,ValidMoment(past=true),Temporal}
+-currentStatus: Enum{Mandatory,Automapped}
+-remarks: String{Optional,ValidString,Automapped}
+-draftMode: Boolean{Mandatory,Valid,Automapped}
+
+
+bg=GREEN</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>580</x>
+      <y>290</y>
+      <w>500</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>ActivityLog
+--
+-registrationMoment: Date{Mandatory,ValidMoment(past=True),Temporal}
+-typeOfIncident: String{Mandatory,ValidString(max=50),Automapped}
+-description: String{Mandatory,ValidString,Automapped}
+-severityLevel: Integer{Mandatory,ValidNumber(min=0,max=10),Automapped}
+-draftMode: Boolean{Mandatory,Valid,Automapped}
+
+bg=GREEN</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>230</x>
+      <y>50</y>
+      <w>140</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enum&gt;&gt;
+AvailabilityStatus
+--
++AVAILABLE
++ON_VACATION
++ON_LEAVE
+bg=MAGENTA</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>290</x>
+      <y>140</y>
+      <w>30</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>30</x>
+      <y>580</y>
+      <w>210</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enum&gt;&gt;
+Duty
+--
++PILOT
++COPILOT
++LEAD_ATTENDANT
++CABIN_ATTENDANT
+
+bg=MAGENTA</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>290</x>
+      <y>580</y>
+      <w>210</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enum&gt;&gt;
+CurrentStatus
+--
++CONFIRMEND
++PENDING
++CANCELLED
+bg=MAGENTA</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>280</x>
+      <y>320</y>
+      <w>40</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+m2=*</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>400</x>
+      <y>530</y>
+      <w>30</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>170</x>
+      <y>530</y>
+      <w>30</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>450</x>
+      <y>480</y>
+      <w>120</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+m2=*</panel_attributes>
+    <additional_attributes>100.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>550</x>
+      <y>480</y>
+      <w>120</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>&lt;Entity&gt;
+Leg
+
+bg=GREEN</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>450</x>
+      <y>390</y>
+      <w>210</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+m2=*</panel_attributes>
+    <additional_attributes>10.0;70.0;190.0;70.0;190.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>470</x>
+      <y>130</y>
+      <w>130</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+m2=*</panel_attributes>
+    <additional_attributes>100.0;10.0;100.0;110.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>470</x>
+      <y>90</y>
+      <w>210</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Airline
+bg=GREEN</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>700</x>
+      <y>440</y>
+      <w>420</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Dashboard&gt;&gt;
+FlightCrewMemberDashboard
+--
+-lastFiveDestinations: List&lt;String&gt;
+-lowSeverityIncidentLegs: Integer
+-midSeverityIncidentLegs: Integer
+-highSeverityIncidentLegs: Integer
+-assignedCrewMembers: List&lt;String&gt;
+-assignmentsByFlightStatus: Map&lt;AssignmentStatus, List&lt;String&gt;&gt;
+-avgFlightAssignments: Double
+-minFlightAssignments: Integer
+-maxFlightAssignments: Integer
+-flightAssignmentDeviation: Double
+
+bg=YELLOW</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
