@@ -24,3 +24,4 @@ administrator.aircraft.form.button.disable = Disable
 administrator.aircraft.form.button.create = Create
 
 acme.validation.range = Out of range
+administrator.aircraft.delete.published-legs= You can't delete aircrafts with published legs

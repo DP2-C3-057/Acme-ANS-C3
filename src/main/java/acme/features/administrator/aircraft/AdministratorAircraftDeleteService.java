@@ -13,9 +13,10 @@ import acme.client.services.GuiService;
 import acme.entities.aircraft.Aircraft;
 import acme.entities.aircraft.AircraftStatus;
 import acme.entities.airlines.Airline;
+import acme.entities.legs.Leg;
 
 @GuiService
-public class AdministratorAircraftCreateService extends AbstractGuiService<Administrator, Aircraft> {
+public class AdministratorAircraftDeleteService extends AbstractGuiService<Administrator, Aircraft> {
 
 	// Internal state ---------------------------------------------------------
 
@@ -28,15 +29,24 @@ public class AdministratorAircraftCreateService extends AbstractGuiService<Admin
 	@Override
 	public void authorise() {
 		boolean status;
-		status = super.getRequest().getPrincipal().hasRealmOfType(Administrator.class);
+		int masterId;
+		Aircraft aircraft;
+
+		masterId = super.getRequest().getData("id", int.class);
+		aircraft = this.repository.findAircraftById(masterId);
+		status = super.getRequest().getPrincipal().hasRealmOfType(Administrator.class) && aircraft != null;
+		super.getResponse().setAuthorised(status);
+
 		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
 	public void load() {
 		Aircraft aircraft;
+		int id;
 
-		aircraft = new Aircraft();
+		id = super.getRequest().getData("id", int.class);
+		aircraft = this.repository.findAircraftById(id);
 
 		super.getBuffer().addData(aircraft);
 	}
@@ -48,12 +58,26 @@ public class AdministratorAircraftCreateService extends AbstractGuiService<Admin
 
 	@Override
 	public void validate(final Aircraft aircraft) {
-		;
+		boolean status = true;
+		int id;
+		id = super.getRequest().getData("id", int.class);
+		Collection<Leg> legs = this.repository.findLegsByAircraftId(id);
+		if (!legs.isEmpty())
+			for (Leg leg : legs)
+				if (!leg.isDraftMode()) {
+					status = false;
+					break;
+				}
+		super.state(status, "*", "administrator.aircraft.delete.published-legs");
 	}
 
 	@Override
 	public void perform(final Aircraft aircraft) {
-		this.repository.save(aircraft);
+		Collection<Leg> legs;
+
+		legs = this.repository.findLegsByAircraftId(aircraft.getId());
+		this.repository.deleteAll(legs);
+		this.repository.delete(aircraft);
 	}
 
 	@Override
