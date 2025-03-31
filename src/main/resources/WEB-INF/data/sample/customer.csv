@@ -2,3 +2,9 @@ key,key:userAccount,identifier,phoneNumber,physicalAddress,city,country,earnedPo
 customer-01,user-account-customer-01,LP123456,+176531,"Calle Las Cruces","Sevilla","España",499999
 customer-02,user-account-customer-02,LT763452,+234678743234521,"Residencial Manoli","Guarromán - Jaén","España",1245
 customer-03,user-account-customer-03,KP825753,+56345345436,"Al lao de la fruteria","Puebla","México",null
+customer-04,user-account-customer-04,MB948372,+34915678901,"Avenida Central 23","Madrid","España",20345
+customer-05,user-account-customer-05,XR375849,+447896541230,"Baker Street 221B","Londres","Reino Unido",78500
+customer-06,user-account-customer-06,QP658392,+15551234567,"5th Avenue 102","Nueva York","EE.UU.",15000
+customer-07,user-account-customer-07,ZN284756,+819012345678,"Shibuya 23","Tokio","Japón",6450
+customer-08,user-account-customer-08,TR193847,+610412345678,"Queen Street","Sídney","Australia",null
+customer-09,user-account-customer-09,VF765432,+4915123456789,"Alexanderplatz","Berlín","Alemania",35789

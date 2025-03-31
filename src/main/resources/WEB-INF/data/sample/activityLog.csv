@@ -1,0 +1,2 @@
+key,registrationMoment,typeOfIncident,description,severityLevel,draftMode,key:flightAssignment
+activityLog-00,2021/04/17 10:00,Fallo hidráulico,Pérdida de presión hidráulica que afecta el despliegue del tren de aterrizaje.,3,True,flight-assignment-04

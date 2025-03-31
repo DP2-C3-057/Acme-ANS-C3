@@ -1,7 +1,7 @@
-key,name,imageUrl,averageUsageTime,promoCode,discountAmount
-service-00,Sala de Siestas Nap&Go,https://example.com/naproom.jpg,2.5,NAGO-25,8.00
-service-01,Simulador de Vuelo,https://example.com/flightsim.jpg,1.5,FLIG-10,12.00
-service-02,Zona de Mascotas Pet&Relax,https://example.com/petarea.jpg,1.0,PETY-10,3.00
-service-03,Cabinas de Realidad Virtual,https://example.com/vrzone.jpg,1.5,VRCA-25,10.00
-service-04,Ducha Exprés Refresh&Go,https://example.com/shower.jpg,1.0,SHOW-10,7.00
-service-05,Observatorio de Aviones,https://example.com/spotting.jpg,2.0,SPOT-15,5.00
+key,name,imageUrl,averageDwellTime,promoCode,discountAmount,key:airport
+service-00,Sala de Siestas Nap&Go,https://example.com/naproom.jpg,2.5,NAGO-25,EUR 8.00,airport-00
+service-01,Simulador de Vuelo,https://example.com/flightsim.jpg,1.5,FLIG-25,EUR 12.00,airport-00
+service-02,Zona de Mascotas Pet&Relax,https://example.com/petarea.jpg,1.0,PETY-25,EUR 3.00,airport-00
+service-03,Cabinas de Realidad Virtual,https://example.com/vrzone.jpg,1.5,VRCA-25,EUR 10.00,airport-00
+service-04,Ducha Exprés Refresh&Go,https://example.com/shower.jpg,1.0,SHOW-25,EUR 7.00,airport-00
+service-05,Observatorio de Aviones,https://example.com/spotting.jpg,2.0,SPOT-25,EUR 5.00,airport-00
