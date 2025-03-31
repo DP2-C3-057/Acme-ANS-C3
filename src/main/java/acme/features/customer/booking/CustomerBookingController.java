@@ -1,5 +1,5 @@
 
-package acme.features.manager.leg;
+package acme.features.customer.booking;
 
 import javax.annotation.PostConstruct;
 
@@ -7,31 +7,32 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.controllers.AbstractGuiController;
 import acme.client.controllers.GuiController;
-import acme.entities.legs.Leg;
-import acme.realms.managers.Manager;
+import acme.entities.bookings.Booking;
+import acme.realms.customers.Customer;
 
 @GuiController
-public class ManagerLegController extends AbstractGuiController<Manager, Leg> {
+public class CustomerBookingController extends AbstractGuiController<Customer, Booking> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	private ManagerLegListService		listService;
+	private CustomerBookingListService		listService;
 
 	@Autowired
-	private ManagerLegShowService		showService;
+	private CustomerBookingShowService		showService;
 
 	@Autowired
-	private ManagerLegCreateService		createService;
+	private CustomerBookingCreateService	createService;
 
 	@Autowired
-	private ManagerLegUpdateService		updateService;
+	private CustomerBookingUpdateService	updateService;
 
 	@Autowired
-	private ManagerLegDeleteService		deleteService;
+	private CustomerBookingDeleteService	deleteService;
 
 	@Autowired
-	private ManagerLegPublishService	publishService;
+	private CustomerBookingPublishService	publishService;
+
 	// Constructors -----------------------------------------------------------
 
 
@@ -45,5 +46,4 @@ public class ManagerLegController extends AbstractGuiController<Manager, Leg> {
 
 		super.addCustomCommand("publish", "update", this.publishService);
 	}
-
 }
