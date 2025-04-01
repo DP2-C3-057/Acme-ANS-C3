@@ -1,0 +1,27 @@
+# messages-en.i18n
+
+administrator.aircraft.form.title = Aircraft form 
+administrator.aircraft.list.title = Listing of aircrafts
+
+administrator.aircraft.list.label.model = Model
+administrator.aircraft.list.label.registrationNumber = Registration Number
+administrator.aircraft.list.label.status = Status
+administrator.aircraft.list.label.airline = Airline
+
+administrator.aircraft.list.button.create = Create
+
+administrator.aircraft.form.label.model = Model
+administrator.aircraft.form.label.registrationNumber = Registration Number
+administrator.aircraft.form.label.capacity = Capacity
+administrator.aircraft.form.label.cargoWeight = Cargo Weight
+administrator.aircraft.form.label.status = Status
+administrator.aircraft.form.label.details = Details
+administrator.aircraft.form.label.airline = Airline
+
+administrator.aircraft.form.button.update = Update
+administrator.aircraft.form.button.delete = Delete
+administrator.aircraft.form.button.disable = Disable
+administrator.aircraft.form.button.create = Create
+
+acme.validation.range = Out of range
+administrator.aircraft.delete.published-legs= You can't delete aircrafts with published legs
