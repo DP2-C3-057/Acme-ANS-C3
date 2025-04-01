@@ -56,7 +56,9 @@ public class FlightCrewMemberAssignmentUpdateService extends AbstractGuiService<
 
 	@Override
 	public void validate(final FlightAssignment assignment) {
-		;
+		boolean status;
+		status = assignment.getDuty().equals(Duty.LEAD_ATTENDANT);
+		super.state(status, "*", "flightCrewMember.flightAssignment.update.correctDuty");
 	}
 
 	@Override

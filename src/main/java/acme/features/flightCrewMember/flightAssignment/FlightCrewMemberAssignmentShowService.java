@@ -72,6 +72,7 @@ public class FlightCrewMemberAssignmentShowService extends AbstractGuiService<Fl
 		dataset = super.unbindObject(assignment, "duty", "moment", "currentStatus", "remarks", "draftMode", "leg", "flightCrewMember");
 		dataset.put("dutyChoice", dutyChoice);
 		dataset.put("currentStatusChoice", currentStatusChoice);
+		dataset.put("leadDuty", Duty.LEAD_ATTENDANT);
 		dataset.put("legChoice", legChoice);
 		dataset.put("flightCrewMemberChoice", flightCrewMemberChoice);
 
