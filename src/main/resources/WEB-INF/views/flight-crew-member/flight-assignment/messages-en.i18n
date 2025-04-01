@@ -21,10 +21,12 @@ flight-crew-member.flight-assignment.form.label.lastUpdate = Last Update
 flight-crew-member.flight-assignment.form.label.assignmentStatus = Assignment Status
 flight-crew-member.flight-assignment.form.label.remarks = Remarks
 flight-crew-member.flight-assignment.form.label.draftMode = Draft Mode
-flight-crew-member.flight-assignment.form.label.legStatus = Leg Status
+flight-crew-member.flight-assignment.form.label.leg = Leg
 
 # Buttons
 flight-crew-member.flight-assignment.form.button.return = Return
 flight-crew-member.flight-assignment.form.button.update = Update
 flight-crew-member.flight-assignment.form.button.delete = Delete
 flight-crew-member.flight-assignment.form.button.create = Create
+
+flight-crew-member.flight-assignment.form.button.activity-log = Activity Logs
