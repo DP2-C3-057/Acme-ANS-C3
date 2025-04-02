@@ -31,3 +31,4 @@ manager.flight.list.button.create = Create
 
 manager.flight.delete.published-legs= You can't delete flights with published legs
 manager.flight.publish.non-published-legs= You can't publish flights with unpublished legs or none
+acme.validation.flight.correctTimeOrder.message= There can't be legs flying at the same time!
