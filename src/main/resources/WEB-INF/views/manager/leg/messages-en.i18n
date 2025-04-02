@@ -31,3 +31,8 @@ manager.leg.list.label.departureAirport = Departure Airport
 manager.leg.list.label.arrivalAirport = Arrival Airport
 
 manager.leg.list.button.create = Create
+
+acme.validation.leg.duplicated-flightNumber.message = This Flight Number already exists
+acme.validation.leg.flightNumber.message = Flight Number must have the airline's IATACode characters and 4 numbers
+acme.validation.leg.scheduledArrival-Departure.message = Scheduled arrival must be after scheduled departure
+acme.validation.flightNumber.message = Flight Number must have this format: XXX0000

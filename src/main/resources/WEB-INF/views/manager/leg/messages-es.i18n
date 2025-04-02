@@ -31,3 +31,8 @@ manager.leg.list.label.departureAirport = Aeropuerto de salida
 manager.leg.list.label.arrivalAirport = Aeropuerto de llegada
 
 manager.leg.list.button.create = Crear
+
+acme.validation.leg.duplicated-flightNumber.message = Este número de vuelo ya existe
+acme.validation.leg.flightNumber.message = El número de vuelo debe tener los carácteres del IATACode y 4 números
+acme.validation.leg.scheduledArrival-Departure.message = La salida programada debe ser después de la llegada programada
+acme.validation.flightNumber.message = El número de vuelo debe tener este formato: XXX0000
