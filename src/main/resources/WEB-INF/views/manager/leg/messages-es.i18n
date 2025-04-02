@@ -36,3 +36,4 @@ acme.validation.leg.duplicated-flightNumber.message = Este número de vuelo ya e
 acme.validation.leg.flightNumber.message = El número de vuelo debe tener los carácteres del IATACode y 4 números
 acme.validation.leg.scheduledArrival-Departure.message = La salida programada debe ser después de la llegada programada
 acme.validation.flightNumber.message = El número de vuelo debe tener este formato: XXX0000
+acme.validation.leg.different-Airport.message = El aeropuerto de llegada y de salida deben ser distintos

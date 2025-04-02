@@ -36,3 +36,4 @@ acme.validation.leg.duplicated-flightNumber.message = This Flight Number already
 acme.validation.leg.flightNumber.message = Flight Number must have the airline's IATACode characters and 4 numbers
 acme.validation.leg.scheduledArrival-Departure.message = Scheduled arrival must be after scheduled departure
 acme.validation.flightNumber.message = Flight Number must have this format: XXX0000
+acme.validation.leg.different-Airport.message = Arrival and departure airport must be different
