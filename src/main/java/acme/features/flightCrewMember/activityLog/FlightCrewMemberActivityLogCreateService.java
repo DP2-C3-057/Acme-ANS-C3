@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.models.Dataset;
 import acme.client.components.views.SelectChoices;
+import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.activityLogs.ActivityLog;
@@ -14,7 +15,7 @@ import acme.entities.flightAssignments.FlightAssignment;
 import acme.realms.flightCrewMembers.FlightCrewMember;
 
 @GuiService
-public class FlightCrewMemberActivityLogUpdateService extends AbstractGuiService<FlightCrewMember, ActivityLog> {
+public class FlightCrewMemberActivityLogCreateService extends AbstractGuiService<FlightCrewMember, ActivityLog> {
 
 	@Autowired
 	private FlightCrewMemberActivityLogRepository repository;
@@ -22,26 +23,33 @@ public class FlightCrewMemberActivityLogUpdateService extends AbstractGuiService
 
 	@Override
 	public void authorise() {
-		ActivityLog log;
-		int logId;
+		FlightAssignment assignment;
+		int masterId;
 		int memberId;
 		boolean status;
 
-		logId = super.getRequest().getData("id", int.class);
-		log = this.repository.findActivityLogById(logId);
+		masterId = super.getRequest().getData("masterId", int.class);
+		assignment = this.repository.findFlightAssignmentById(masterId);
 		memberId = super.getRequest().getPrincipal().getActiveRealm().getId();
+		status = assignment != null && assignment.getDraftMode() && assignment.getFlightCrewMember().getId() == memberId;
 
-		status = log != null && log.getFlightAssignment().getFlightCrewMember().getId() == memberId;
 		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
 	public void load() {
 		ActivityLog log;
-		int id;
+		int masterId;
+		FlightAssignment assignment;
 
-		id = super.getRequest().getData("id", int.class);
-		log = this.repository.findActivityLogById(id);
+		masterId = super.getRequest().getData("masterId", int.class);
+		assignment = this.repository.findFlightAssignmentById(masterId);
+
+		log = new ActivityLog();
+		log.setFlightAssignment(assignment);
+		log.setRegistrationMoment(MomentHelper.getCurrentMoment());
+		log.setDraftMode(false);
+
 		super.getBuffer().addData(log);
 	}
 
@@ -76,5 +84,4 @@ public class FlightCrewMemberActivityLogUpdateService extends AbstractGuiService
 
 		super.getResponse().addData(dataset);
 	}
-
 }
