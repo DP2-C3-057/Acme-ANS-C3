@@ -83,7 +83,7 @@ public class FlightCrewMemberAssignmentDeleteService extends AbstractGuiService<
 		dutyChoice = SelectChoices.from(Duty.class, assignment.getDuty());
 		currentStatusChoice = SelectChoices.from(CurrentStatus.class, assignment.getCurrentStatus());
 
-		legs = this.repository.findAllLegs();
+		legs = this.repository.findAllLegsPublish();
 		legChoice = SelectChoices.from(legs, "id", assignment.getLeg());
 
 		flightCrewMembers = this.repository.findAllFlightCrewMembers();
