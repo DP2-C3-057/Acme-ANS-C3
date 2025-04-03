@@ -25,9 +25,12 @@ manager.flight.list.label.selfTransfer = Tiene escala
 manager.flight.list.label.cost = Coste
 manager.flight.list.label.description = Descripción
 manager.flight.list.label.draftMode = Borrador
+manager.flight.list.label.originCity = Ciudad de origen
+manager.flight.list.label.destinationCity = Ciudad destino
 
 manager.flight.list.button.create = Crear
 
 manager.flight.delete.published-legs= No puede borrar vuelos con tramos publicados
 manager.flight.publish.non-published-legs= No puede publicar vuelos con tramos sin publicar o sin tramos.
 acme.validation.flight.correctTimeOrder.message= ¡No puede haber tramos volando al mismo tiempo!
+manager.flight.publish.correctSelfTransfer= Esta opción debe estar activada si hay dos tramos o más, y desactivada si no
