@@ -73,6 +73,7 @@ public class CustomerBookingDeleteService extends AbstractGuiService<Customer, B
 		Collection<Passenger> passengers;
 
 		passengers = this.repository.findPassengersByBookingId(booking.getId());
+		this.repository.deleteBookingRecordsByBookingId(booking.getId());
 		this.repository.deleteAll(passengers);
 		this.repository.delete(booking);
 	}
