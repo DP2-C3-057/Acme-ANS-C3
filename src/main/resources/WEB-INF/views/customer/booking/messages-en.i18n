@@ -9,6 +9,7 @@ customer.booking.form.label.travelClass = Class:
 customer.booking.form.label.lastCardNibble = Credit card:
 customer.booking.form.label.draftMode = Draft Mode:
 customer.booking.form.label.bookingCost = Booking cost:
+customer.booking.form.label.flight = Flight:
 
 customer.booking.form.button.update = Update
 customer.booking.form.button.delete = Delete
