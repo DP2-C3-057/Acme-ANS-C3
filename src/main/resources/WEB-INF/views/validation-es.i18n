@@ -10,3 +10,9 @@
  
  acme.validation.activitylog.registrationmoment.required = El momento de registro no puede ser nulo
  acme.validation.activitylog.registrationmoment.message = El momento de registro tiene que ser después de la consecución del tramo
+ 
+ acme.validation.flightassignment.flightcrewmember.available.message = Solo se pueden asignar miembros disponibles
+ acme.validation.flightassignment.leg.completed.message = No puedes asignar la tarea a un tramo que ya ha ocurrido
+ acme.validation.flightassignment.leg.overlap.message = Los tramos asignados no se pueden solapar
+ acme.validation.flightassignment.duty.pilot.message = Solo puede haber un piloto por tramo
+ acme.validation.flightassignment.duty.copilot.message = Solo puede haber un copiloto por tramo

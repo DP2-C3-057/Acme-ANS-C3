@@ -23,6 +23,4 @@
 	<acme:list-payload path="payload"/>
 </acme:list>
 
-<jstl:if test="${_command == 'list'}">
-	<acme:button code="flight-crew-member.flight-assignment.form.button.create" action="/flight-crew-member/flight-assignment/create"/>
-</jstl:if>	
+<acme:button code="flight-crew-member.flight-assignment.form.button.create" action="/flight-crew-member/flight-assignment/create"/>
