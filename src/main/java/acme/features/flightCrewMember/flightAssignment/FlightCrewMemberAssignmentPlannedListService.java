@@ -2,7 +2,6 @@
 package acme.features.flightCrewMember.flightAssignment;
 
 import java.util.Collection;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -10,7 +9,6 @@ import acme.client.components.models.Dataset;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.flightAssignments.FlightAssignment;
-import acme.entities.legs.LegStatus;
 import acme.realms.flightCrewMembers.FlightCrewMember;
 
 @GuiService
@@ -28,8 +26,7 @@ public class FlightCrewMemberAssignmentPlannedListService extends AbstractGuiSer
 	@Override
 	public void load() {
 		int memberId = super.getRequest().getPrincipal().getActiveRealm().getId();
-		Collection<LegStatus> statuses = List.of(LegStatus.ON_TIME, LegStatus.DELAYED);
-		Collection<FlightAssignment> assignments = this.repository.assignmentsWithPlannedLegs(statuses, memberId);
+		Collection<FlightAssignment> assignments = this.repository.assignmentsWithPlannedLegs(memberId);
 		super.getBuffer().addData(assignments);
 	}
 

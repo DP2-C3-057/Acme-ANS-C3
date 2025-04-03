@@ -9,7 +9,6 @@ import acme.client.components.models.Dataset;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.flightAssignments.FlightAssignment;
-import acme.entities.legs.LegStatus;
 import acme.realms.flightCrewMembers.FlightCrewMember;
 
 @GuiService
@@ -26,11 +25,9 @@ public class FlightCrewMemberAssignmentCompletedListService extends AbstractGuiS
 
 	@Override
 	public void load() {
-		LegStatus legStatus = LegStatus.LANDED;
 		int memberId = super.getRequest().getPrincipal().getActiveRealm().getId();
 
-		Collection<FlightAssignment> assignments = this.repository.assignmentsWithCompletedLegs(legStatus, memberId);
-
+		Collection<FlightAssignment> assignments = this.repository.assignmentsWithCompletedLegs(memberId);
 		super.getBuffer().addData(assignments);
 	}
 

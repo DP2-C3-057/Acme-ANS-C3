@@ -8,6 +8,7 @@
  	<acme:input-textbox code="flight-crew-member.activity-log.form.label.typeOfIncident" path="typeOfIncident"/>
  	<acme:input-textbox code="flight-crew-member.activity-log.form.label.description" path="description"/>
  	<acme:input-integer code="flight-crew-member.activity-log.form.label.severityLevel" path="severityLevel"/>
+ 	<acme:input-checkbox code="flight-crew-member.activity-log.form.label.draftMode" path="draftMode"/>
  	<acme:input-textbox code="flight-crew-member.activity-log.form.label.flightAssignment" path="flightAssignment" readonly="true"/>
  	
  	<jstl:choose>
