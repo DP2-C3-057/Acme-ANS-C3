@@ -34,12 +34,22 @@ public class TrackingLogValidator extends AbstractValidator<ValidTrackingLog, Tr
 		if (trackingLog == null)
 			super.state(context, false, "*", "javax.validation.constraints.NotNull.message");
 		else {
-			boolean correctPercentaje = true;
-			if (trackingLog.getIndicator() == TrackingLogStatus.ACCEPTED || trackingLog.getIndicator() == TrackingLogStatus.REJECTED)
-				if (trackingLog.getResolutionPercentage() != 100)
-					correctPercentaje = false;
+			{
+				boolean correctPercentaje = true;
+				if (trackingLog.getIndicator() == TrackingLogStatus.ACCEPTED || trackingLog.getIndicator() == TrackingLogStatus.REJECTED)
+					if (trackingLog.getResolutionPercentage() != 100)
+						correctPercentaje = false;
 
-			super.state(context, correctPercentaje, "*", "acme.validation.trackingLog.correctPercentaje.message");
+				super.state(context, correctPercentaje, "*", "acme.validation.trackingLog.correctPercentaje.message");
+			}
+			{
+				boolean correctResolution = true;
+				if (trackingLog.getIndicator() == TrackingLogStatus.ACCEPTED || trackingLog.getIndicator() == TrackingLogStatus.REJECTED)
+					if (trackingLog.getResolution() == null || trackingLog.getResolution().isBlank())
+						correctResolution = false;
+
+				super.state(context, correctResolution, "*", "acme.validation.trackingLog.correctResolution.message");
+			}
 		}
 
 		result = !super.hasErrors(context);

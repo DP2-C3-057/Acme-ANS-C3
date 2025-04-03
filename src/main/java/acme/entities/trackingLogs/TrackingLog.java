@@ -18,6 +18,7 @@ import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
 import acme.constraints.ValidTrackingLog;
 import acme.entities.claims.Claim;
+import acme.realms.assistanceAgents.AssistanceAgent;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -65,4 +66,8 @@ public class TrackingLog extends AbstractEntity {
 	@ManyToOne(optional = false)
 	private Claim				claim;
 
+	@Mandatory
+	@Valid
+	@ManyToOne(optional = false)
+	private AssistanceAgent		assistanceAgent;
 }
