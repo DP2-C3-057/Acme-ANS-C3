@@ -2,6 +2,8 @@
 package acme.features.manager.leg;
 
 import java.util.Collection;
+import java.util.Comparator;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -57,7 +59,22 @@ public class ManagerLegUpdateService extends AbstractGuiService<Manager, Leg> {
 
 	@Override
 	public void validate(final Leg leg) {
-		;
+		boolean correctAirportOrder = true;
+
+		List<Leg> legs = this.repository.findAllLegsByFlightId(leg.getFlight().getId());
+		if (!legs.isEmpty()) {
+			legs.add(leg);
+			legs.sort(Comparator.comparing(Leg::getScheduledDeparture));
+			Airport actualAirport = legs.get(0).getDepartureAirport();
+			for (Leg actualLeg : legs)
+				if (actualLeg.getArrivalAirport().equals(actualAirport) || !actualLeg.getDepartureAirport().equals(actualAirport)) {
+					correctAirportOrder = false;
+					break;
+				} else
+					actualAirport = actualLeg.getArrivalAirport();
+		}
+
+		super.state(correctAirportOrder, "departureAirport", "manager.leg.update.airportOrder");
 	}
 
 	@Override
@@ -91,6 +108,7 @@ public class ManagerLegUpdateService extends AbstractGuiService<Manager, Leg> {
 		legStatusChoices = SelectChoices.from(LegStatus.class, leg.getStatus());
 
 		dataset = super.unbindObject(leg, "flightNumber", "scheduledDeparture", "scheduledArrival", "draftMode");
+		dataset.put("masterId", leg.getFlight().getId());
 		dataset.put("status", legStatusChoices.getSelected().getKey());
 		dataset.put("legStatuses", legStatusChoices);
 		dataset.put("aircraft", aircraftChoices.getSelected().getKey());
@@ -99,7 +117,6 @@ public class ManagerLegUpdateService extends AbstractGuiService<Manager, Leg> {
 		dataset.put("departureAirports", departureAirportChoices);
 		dataset.put("arrivalAirport", arrivalAirportChoices.getSelected().getKey());
 		dataset.put("arrivalAirports", arrivalAirportChoices);
-		dataset.put("masterId", super.getRequest().getData("masterId", int.class));
 
 		super.getResponse().addData(dataset);
 	}

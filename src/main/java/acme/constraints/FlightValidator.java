@@ -70,7 +70,7 @@ public class FlightValidator extends AbstractValidator<ValidFlight, Flight> {
 				else
 					correctSelfTransfer = legs.size() < 2;
 
-				super.state(context, correctSelfTransfer, "*", "acme.validation.flight.correctSelftTransfer.message");
+				super.state(context, correctSelfTransfer, "selfTransfer", "acme.validation.flight.correctSelftTransfer.message");
 
 			}
 			{
@@ -88,7 +88,7 @@ public class FlightValidator extends AbstractValidator<ValidFlight, Flight> {
 							actualTime = leg.getScheduledArrival();
 				}
 
-				super.state(context, correctTimeOrder, "*", "acme.validation.flight.correctTimeOrder.message");
+				super.state(context, correctTimeOrder, "scheduledDeparture", "acme.validation.flight.correctTimeOrder.message");
 			}
 			{
 				boolean correctAirportOrder = true;
@@ -104,7 +104,7 @@ public class FlightValidator extends AbstractValidator<ValidFlight, Flight> {
 							actualAirport = leg.getArrivalAirport();
 				}
 
-				super.state(context, correctAirportOrder, "*", "acme.validation.flight.correctAirportOrder.message");
+				super.state(context, correctAirportOrder, "originCity", "acme.validation.flight.correctAirportOrder.message");
 			}
 		}
 
