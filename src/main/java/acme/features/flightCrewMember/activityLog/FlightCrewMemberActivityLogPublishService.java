@@ -14,7 +14,7 @@ import acme.entities.flightAssignments.FlightAssignment;
 import acme.realms.flightCrewMembers.FlightCrewMember;
 
 @GuiService
-public class FlightCrewMemberActivityLogUpdateService extends AbstractGuiService<FlightCrewMember, ActivityLog> {
+public class FlightCrewMemberActivityLogPublishService extends AbstractGuiService<FlightCrewMember, ActivityLog> {
 
 	@Autowired
 	private FlightCrewMemberActivityLogRepository repository;
@@ -22,16 +22,15 @@ public class FlightCrewMemberActivityLogUpdateService extends AbstractGuiService
 
 	@Override
 	public void authorise() {
-		ActivityLog log;
-		int logId;
-		int memberId;
 		boolean status;
+		int logId;
+		ActivityLog log;
 
 		logId = super.getRequest().getData("id", int.class);
 		log = this.repository.findActivityLogById(logId);
-		memberId = super.getRequest().getPrincipal().getActiveRealm().getId();
 
-		status = log != null && log.getFlightAssignment().getFlightCrewMember().getId() == memberId;
+		status = log != null && log.getDraftMode() && log.getFlightAssignment() != null && !log.getFlightAssignment().getDraftMode();
+
 		super.getResponse().setAuthorised(status);
 	}
 
@@ -42,12 +41,14 @@ public class FlightCrewMemberActivityLogUpdateService extends AbstractGuiService
 
 		id = super.getRequest().getData("id", int.class);
 		log = this.repository.findActivityLogById(id);
+
 		super.getBuffer().addData(log);
 	}
 
 	@Override
 	public void bind(final ActivityLog log) {
 		super.bindObject(log, "registrationMoment", "typeOfIncident", "description", "severityLevel", "flightAssignment");
+
 	}
 
 	@Override
@@ -57,6 +58,7 @@ public class FlightCrewMemberActivityLogUpdateService extends AbstractGuiService
 
 	@Override
 	public void perform(final ActivityLog log) {
+		log.setDraftMode(false);
 		this.repository.save(log);
 	}
 

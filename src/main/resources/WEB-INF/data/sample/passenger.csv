@@ -1,22 +1,22 @@
-key,fullName,email,passportNumber,dateOfBirth,specialNeeds,draftMode
-passenger-01,Juan Pérez,juan.perez@email.com,T123Y5678,2000/07/12 00:12,,false
-passenger-02,Ana Gómez,ana.gomez@email.com,P87W54321,2001/03/25 23:43,Wheelchair,false
-passenger-03,Carlos Rodríguez,carlos.rodriguez@email.com,P45678912,2001/09/15 22:39,,false
-passenger-04,Emily Johnson,emily.johnson@email.com,M789E2345,2003/06/30 12:01,Vegan meal,false
-passenger-05,Sophie Müller,sophie.muller@email.com,V32165F98,2005/12/22 21:09,,false
-passenger-06,Alberto Sánchez,alberto.sanchez@email.com,654L8732,2001/05/10 13:21,Hearing assistance,false
-passenger-07,Yuki Tanaka,yuki.tanaka@email.com,N85R96374,2000/11/18 16:21,,true
-passenger-08,Michael Brown,michael.brown@email.com,U15N75326,2005/08/05 00:08,Extra legroom,true
-passenger-09,Lucas Martínez,lucas.martinez@email.com,J847A1234,2003/04/02 09:15,,true
-passenger-10,Olivia Pérez,olivia.perez@email.com,K564B6789,2007/01/14 14:30,Gluten-free meal,true
-passenger-11,Daniela Hernández,daniela.hernandez@email.com,L345D4567,2002/11/09 18:45,,false
-passenger-12,Miguel Gómez,miguel.gomez@email.com,N812X9876,2003/02/20 11:25,Priority boarding,false
-passenger-13,Sofia López,sofia.lopez@email.com,P654J3210,2004/07/06 06:15,,false
-passenger-14,Antonio Ramírez,antonio.ramirez@email.com,Q987W2345,2000/10/29 13:05,Wheelchair,false
-passenger-15,Isabel García,isabel.garcia@email.com,R654K5678,2002/09/11 20:30,,false
-passenger-16,Juanita Silva,juanita.silva@email.com,S987F2345,2007/05/22 17:00,Assistance with walking,false
-passenger-17,Pablo Ruiz,pablo.ruiz@email.com,T321V7654,2004/01/12 09:50,,false
-passenger-18,María Fernández,maria.fernandez@email.com,U876C1234,2000/03/09 22:40,Extra baggage,false
-passenger-19,Luis Martínez,luis.martinez@email.com,T654A9876,2003/07/21 00:00,Wheelchair,false
-passenger-20,Elena Rivas,elena.rivas@email.com,V543B2198,2005/02/14 00:00,Vegan meal,false
-passenger-21,Roberto Silva,roberto.silva@email.com,W321X7654,2000/11/30 00:00,Extra legroom,false
+key,fullName,email,passportNumber,dateOfBirth,specialNeeds,draftMode,key:customer
+passenger-01,Juan Pérez,juan.perez@email.com,T123Y5678,2000/07/12 00:12,,false,customer-01
+passenger-02,Ana Gómez,ana.gomez@email.com,P87W54321,2001/03/25 23:43,Wheelchair,false,customer-01
+passenger-03,Carlos Rodríguez,carlos.rodriguez@email.com,P45678912,2001/09/15 22:39,,false,customer-01
+passenger-04,Emily Johnson,emily.johnson@email.com,M789E2345,2003/06/30 12:01,Vegan meal,false,customer-02
+passenger-05,Sophie Müller,sophie.muller@email.com,V32165F98,2005/12/22 21:09,,false,customer-02
+passenger-06,Alberto Sánchez,alberto.sanchez@email.com,654L8732,2001/05/10 13:21,Hearing assistance,false,customer-02
+passenger-07,Yuki Tanaka,yuki.tanaka@email.com,N85R96374,2000/11/18 16:21,,true,customer-01
+passenger-08,Michael Brown,michael.brown@email.com,U15N75326,2005/08/05 00:08,Extra legroom,true,customer-01
+passenger-09,Lucas Martínez,lucas.martinez@email.com,J847A1234,2003/04/02 09:15,,true,customer-01
+passenger-10,Olivia Pérez,olivia.perez@email.com,K564B6789,2007/01/14 14:30,Gluten-free meal,true,customer-01
+passenger-11,Daniela Hernández,daniela.hernandez@email.com,L345D4567,2002/11/09 18:45,,false,customer-02
+passenger-12,Miguel Gómez,miguel.gomez@email.com,N812X9876,2003/02/20 11:25,Priority boarding,false,customer-01
+passenger-13,Sofia López,sofia.lopez@email.com,P654J3210,2004/07/06 06:15,,false,customer-01
+passenger-14,Antonio Ramírez,antonio.ramirez@email.com,Q987W2345,2000/10/29 13:05,Wheelchair,false,customer-01
+passenger-15,Isabel García,isabel.garcia@email.com,R654K5678,2002/09/11 20:30,,false,customer-02
+passenger-16,Juanita Silva,juanita.silva@email.com,S987F2345,2007/05/22 17:00,Assistance with walking,false,customer-01
+passenger-17,Pablo Ruiz,pablo.ruiz@email.com,T321V7654,2004/01/12 09:50,,false,customer-01
+passenger-18,María Fernández,maria.fernandez@email.com,U876C1234,2000/03/09 22:40,Extra baggage,false,customer-02
+passenger-19,Luis Martínez,luis.martinez@email.com,T654A9876,2003/07/21 00:00,Wheelchair,false,customer-02
+passenger-20,Elena Rivas,elena.rivas@email.com,V543B2198,2005/02/14 00:00,Vegan meal,false,customer-02
+passenger-21,Roberto Silva,roberto.silva@email.com,W321X7654,2000/11/30 00:00,Extra legroom,false,customer-02

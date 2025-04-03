@@ -6,8 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import acme.client.components.models.Dataset;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
-import acme.entities.bookings.Booking;
-import acme.entities.bookings.BookingRecord;
 import acme.entities.passengers.Passenger;
 import acme.realms.customers.Customer;
 
@@ -24,40 +22,26 @@ public class CustomerPassengerCreateService extends AbstractGuiService<Customer,
 
 	@Override
 	public void authorise() {
-		boolean status;
-		int bookingId;
-		Booking booking;
-
-		bookingId = super.getRequest().getData("masterId", int.class);
-		booking = this.repository.findBookingById(bookingId);
-		status = booking != null && booking.isDraftMode() && super.getRequest().getPrincipal().hasRealm(booking.getCustomer());
-
-		super.getResponse().setAuthorised(status);
+		super.getResponse().setAuthorised(true);
 	}
 
 	@Override
 	public void load() {
 		Passenger passenger;
-		int masterId;
-		Booking booking;
-		BookingRecord bookingRecord;
+		Customer customer;
 
-		masterId = super.getRequest().getData("masterId", int.class);
-		booking = this.repository.findBookingById(masterId);
+		customer = (Customer) super.getRequest().getPrincipal().getActiveRealm();
 
 		passenger = new Passenger();
 		passenger.setDraftMode(true);
-
-		bookingRecord = new BookingRecord();
-		bookingRecord.setPassenger(passenger);
-		bookingRecord.setBooking(booking);
+		passenger.setCustomer(customer);
 
 		super.getBuffer().addData(passenger);
 	}
 
 	@Override
 	public void bind(final Passenger passenger) {
-		super.bindObject(passenger, "fullName", "email", "passportNumber", "dateOfBirth", "specialNeeds", "draftMode");
+		super.bindObject(passenger, "fullName", "email", "passportNumber", "dateOfBirth", "specialNeeds");
 	}
 
 	@Override
@@ -74,7 +58,7 @@ public class CustomerPassengerCreateService extends AbstractGuiService<Customer,
 	public void unbind(final Passenger passenger) {
 		Dataset dataset;
 
-		dataset = super.unbindObject(passenger, "fullName", "email", "passportNumber", "dateOfBirth", "specialNeeds", "draftMode");
+		dataset = super.unbindObject(passenger, "fullName", "email", "passportNumber", "dateOfBirth", "specialNeeds");
 		super.getResponse().addData(dataset);
 	}
 }

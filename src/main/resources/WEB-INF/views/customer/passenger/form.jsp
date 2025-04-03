@@ -9,7 +9,6 @@
 	<acme:input-textbox code="customer.passenger.form.label.passportNumber" path="passportNumber"/>
 	<acme:input-moment code="customer.passenger.form.label.dateOfBirth" path="dateOfBirth"/>
 	<acme:input-textarea code="customer.passenger.form.label.specialNeeds" path="specialNeeds"/>
-	<acme:input-checkbox code="customer.passenger.form.label.draftMode" path="draftMode" readonly="true"/>
 
 	<jstl:choose>
 		<jstl:when test="${acme:anyOf(_command, 'show|update|delete|publish') && draftMode == true}">
@@ -18,7 +17,7 @@
 			<acme:submit code="customer.passenger.form.button.publish" action="/customer/passenger/publish"/>
 		</jstl:when>
 		<jstl:when test="${_command == 'create'}">
-			<acme:submit code="customer.passenger.list.button.create" action="/customer/passenger/create?masterId=${masterId}"/>
+			<acme:submit code="customer.passenger.list.button.create" action="/customer/passenger/create"/>
 		</jstl:when>		
 	</jstl:choose>
 </acme:form>

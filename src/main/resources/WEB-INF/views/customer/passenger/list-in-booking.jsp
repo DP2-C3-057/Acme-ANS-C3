@@ -10,7 +10,3 @@
 	<acme:list-column code="customer.passenger.list.label.specialNeeds" path="specialNeeds" width="20%"/>
 	<acme:list-column code="customer.passenger.list.label.draftMode" path="draftMode" width="20%"/>
 </acme:list>
-
-<jstl:if test="${_command == 'list'}">
-	<acme:button code="customer.passenger.list.button.create" action="/customer/passenger/create"/>
-</jstl:if>		
