@@ -1,11 +1,11 @@
 key,locatorCode,purchaseMoment,travelClass,lastCardNibble,draftMode,key:customer,key:flight
 booking-01,GBJ7DCV,2015/01/09 21:30,ECONOMY,4642,false,customer-01,flight-02
-booking-02,MTX3LQP,2016/05/14 13:12,BUSINESS,7621,false,customer-02,flight-05
-booking-03,KLW9RTY,2017/08/22 17:57,ECONOMY,,true,customer-01,flight-07
+booking-02,MTX3LQP,2016/05/14 13:12,BUSINESS,7621,false,customer-02,flight-01
+booking-03,KLW9RTY,2017/08/22 17:57,ECONOMY,,true,customer-01,flight-01
 booking-04,DFG8HJK,2018/02/17 23:01,ECONOMY,5678,false,customer-02,flight-01
 booking-05,ZXV6BNM,2019/11/03 12:12,ECONOMY,9012,true,customer-01,flight-04
-booking-06,QWE4ASD,2020/07/19 16:43,ECONOMY,3456,false,customer-01,flight-03
-booking-07,YUI5JKL,2021/03/25 20:12,ECONOMY,6789,false,customer-02,flight-06
-booking-08,OPQ2WER,2014/09/29 10:30,BUSINESS,2345,true,customer-01,flight-08
-booking-09,MNB3VCX,2013/11/12 11:45,ECONOMY,7890,false,customer-02,flight-09
-booking-10,UPB3VCX,2013/11/10 11:40,ECONOMY,2355,true,customer-01,flight-09
+booking-06,QWE4ASD,2020/07/19 16:43,ECONOMY,3456,false,customer-01,flight-01
+booking-07,YUI5JKL,2021/03/25 20:12,ECONOMY,6789,false,customer-02,flight-04
+booking-08,OPQ2WER,2014/09/29 10:30,BUSINESS,2345,true,customer-01,flight-02
+booking-09,MNB3VCX,2013/11/12 11:45,ECONOMY,7890,false,customer-02,flight-02
+booking-10,UPB3VCX,2013/11/10 11:40,ECONOMY,2355,true,customer-01,flight-04

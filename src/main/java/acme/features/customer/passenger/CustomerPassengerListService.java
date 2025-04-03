@@ -8,12 +8,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import acme.client.components.models.Dataset;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
-import acme.entities.bookings.Booking;
 import acme.entities.passengers.Passenger;
 import acme.realms.customers.Customer;
 
+// Lista todos los pasajeros del customer
 @GuiService
 public class CustomerPassengerListService extends AbstractGuiService<Customer, Passenger> {
+
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
@@ -24,24 +25,16 @@ public class CustomerPassengerListService extends AbstractGuiService<Customer, P
 
 	@Override
 	public void authorise() {
-		boolean status;
-		int masterId;
-		Booking booking;
-
-		masterId = super.getRequest().getData("masterId", int.class);
-		booking = this.repository.findBookingById(masterId);
-		status = booking != null && super.getRequest().getPrincipal().hasRealm(booking.getCustomer());
-
-		super.getResponse().setAuthorised(status);
+		super.getResponse().setAuthorised(true);
 	}
 
 	@Override
 	public void load() {
 		Collection<Passenger> passengers;
-		int id;
+		int customerId;
 
-		id = super.getRequest().getData("masterId", int.class);
-		passengers = this.repository.findPassengersByBookingId(id);
+		customerId = super.getRequest().getPrincipal().getActiveRealm().getId();
+		passengers = this.repository.findPassengersByCustomerId(customerId);
 
 		super.getBuffer().addData(passengers);
 	}
@@ -55,17 +48,4 @@ public class CustomerPassengerListService extends AbstractGuiService<Customer, P
 		super.getResponse().addData(dataset);
 	}
 
-	@Override
-	public void unbind(final Collection<Passenger> passengers) {
-		int masterId;
-		Booking booking;
-		final boolean showCreate;
-
-		masterId = super.getRequest().getData("masterId", int.class);
-		booking = this.repository.findBookingById(masterId);
-		showCreate = booking.isDraftMode() && super.getRequest().getPrincipal().hasRealm(booking.getCustomer());
-
-		super.getResponse().addGlobal("masterId", masterId);
-		super.getResponse().addGlobal("showCreate", showCreate);
-	}
 }

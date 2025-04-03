@@ -9,6 +9,7 @@ customer.booking.form.label.travelClass = Clase:
 customer.booking.form.label.lastCardNibble = Tarjeta de credito:
 customer.booking.form.label.draftMode = Borrador:
 customer.booking.form.label.bookingCost = Coste de la reserva:
+customer.booking.form.label.flight = Vuelo:
 
 customer.booking.form.button.update = Actualizar
 customer.booking.form.button.delete = Borrar

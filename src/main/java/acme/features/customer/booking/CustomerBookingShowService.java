@@ -1,12 +1,16 @@
 
 package acme.features.customer.booking;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.models.Dataset;
+import acme.client.components.views.SelectChoices;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.bookings.Booking;
+import acme.entities.flights.Flight;
 import acme.realms.customers.Customer;
 
 @GuiService
@@ -49,9 +53,15 @@ public class CustomerBookingShowService extends AbstractGuiService<Customer, Boo
 	@Override
 	public void unbind(final Booking booking) {
 		Dataset dataset;
+		SelectChoices flightChoice;
+		Collection<Flight> flights;
 
-		dataset = super.unbindObject(booking, "locatorCode", "purchaseMoment", "travelClass", "lastCardNibble", "draftMode");
+		flights = this.repository.findAllFlightsDraftModeFalse();
+		flightChoice = SelectChoices.from(flights, "id", booking.getFlight());
+
+		dataset = super.unbindObject(booking, "locatorCode", "purchaseMoment", "travelClass", "lastCardNibble", "flight", "draftMode");
 		dataset.put("bookingCost", booking.getBookingCost());
+		dataset.put("flightChoice", flightChoice);
 		super.getResponse().addData(dataset);
 	}
 

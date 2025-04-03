@@ -33,7 +33,8 @@ master.menu.manager.list-my-legs = Leg list
 
 # master.menu.customer ########################################################
 master.menu.customer = Customer
-master.menu.customer.list-my-bookings = Booking list
+master.menu.customer.list-my-bookings = Bookings list
+master.menu.customer.list-my-passengers = Passengers list
 
 # master.menu.flightCrewMember #################################################
 master.menu.flightCrewMember = FlightCrewMember
