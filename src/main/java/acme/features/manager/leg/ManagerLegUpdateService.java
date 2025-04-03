@@ -2,6 +2,8 @@
 package acme.features.manager.leg;
 
 import java.util.Collection;
+import java.util.Comparator;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -57,7 +59,22 @@ public class ManagerLegUpdateService extends AbstractGuiService<Manager, Leg> {
 
 	@Override
 	public void validate(final Leg leg) {
-		;
+		boolean correctAirportOrder = true;
+
+		List<Leg> legs = this.repository.findAllLegsByFlightId(leg.getFlight().getId());
+		if (!legs.isEmpty()) {
+			legs.add(leg);
+			legs.sort(Comparator.comparing(Leg::getScheduledDeparture));
+			Airport actualAirport = legs.get(0).getDepartureAirport();
+			for (Leg actualLeg : legs)
+				if (actualLeg.getArrivalAirport().equals(actualAirport) || !actualLeg.getDepartureAirport().equals(actualAirport)) {
+					correctAirportOrder = false;
+					break;
+				} else
+					actualAirport = actualLeg.getArrivalAirport();
+		}
+
+		super.state(correctAirportOrder, "departureAirport", "manager.leg.update.airportOrder");
 	}
 
 	@Override

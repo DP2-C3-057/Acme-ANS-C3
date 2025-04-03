@@ -37,3 +37,5 @@ acme.validation.leg.flightNumber.message = Flight Number must have the airline's
 acme.validation.leg.scheduledArrival-Departure.message = Scheduled arrival must be after scheduled departure
 acme.validation.flightNumber.message = Flight Number must have this format: XXX0000
 acme.validation.leg.different-Airport.message = Arrival and departure airport must be different
+manager.leg.create.airportOrder = Departure airport must be the same as the arrival of the one before
+manager.leg.update.airportOrder = Departure airport must be the same as the arrival of the one before

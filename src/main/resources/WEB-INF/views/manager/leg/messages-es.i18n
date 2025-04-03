@@ -37,3 +37,5 @@ acme.validation.leg.flightNumber.message = El número de vuelo debe tener los ca
 acme.validation.leg.scheduledArrival-Departure.message = La salida programada debe ser después de la llegada programada
 acme.validation.flightNumber.message = El número de vuelo debe tener este formato: XXX0000
 acme.validation.leg.different-Airport.message = El aeropuerto de llegada y de salida deben ser distintos
+manager.leg.create.airportOrder = El aeropuerto de llegada debe ser el mismo que el de salida del anterior
+manager.leg.update.airportOrder = El aeropuerto de llegada debe ser el mismo que el de salida del anterior
