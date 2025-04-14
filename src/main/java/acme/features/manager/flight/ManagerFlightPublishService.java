@@ -56,19 +56,32 @@ public class ManagerFlightPublishService extends AbstractGuiService<Manager, Fli
 
 	@Override
 	public void validate(final Flight flight) {
-		boolean status = true;
-		int id;
-		id = super.getRequest().getData("id", int.class);
-		Collection<Leg> legs = this.repository.findLegsByFlightId(id);
-		if (legs.isEmpty())
-			status = false;
-		else
-			for (Leg leg : legs)
-				if (leg.isDraftMode()) {
-					status = false;
-					break;
-				}
-		super.state(status, "*", "manager.flight.publish.non-published-legs");
+		{
+			boolean status = true;
+			int id;
+			id = super.getRequest().getData("id", int.class);
+			Collection<Leg> legs = this.repository.findLegsByFlightId(id);
+			if (legs.isEmpty())
+				status = false;
+			else
+				for (Leg leg : legs)
+					if (leg.isDraftMode()) {
+						status = false;
+						break;
+					}
+			super.state(status, "*", "manager.flight.publish.non-published-legs");
+		}
+		{
+			boolean correctSelfTransfer;
+			int id;
+			id = super.getRequest().getData("id", int.class);
+			Collection<Leg> legs = this.repository.findLegsByFlightId(id);
+			if (flight.isSelfTransfer())
+				correctSelfTransfer = legs.size() >= 2;
+			else
+				correctSelfTransfer = legs.size() == 1;
+			super.state(correctSelfTransfer, "selfTransfer", "manager.flight.publish.correctSelfTransfer");
+		}
 	}
 
 	@Override

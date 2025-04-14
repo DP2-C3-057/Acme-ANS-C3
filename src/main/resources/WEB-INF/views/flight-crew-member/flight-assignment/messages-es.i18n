@@ -1,0 +1,33 @@
+# messages-en.i18n
+#
+# Copyright (C) 2012-2025 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+flightCrewMember.assignment.list.label.duty = Deber
+flightCrewMember.assignment.list.label.lastUpdate = Ult actualización
+flightCrewMember.assignment.list.label.status = Estado
+flight-crew-member.flight-assignment.list.title = Mis asignaciones de vuelo
+
+flight-crew-member.flight-assignment.form.title = Detalles de asignación
+flight-crew-member.flight-assignment.form.label.flightCrewMember = Miembro de la tripulación
+# Etiquetas
+flight-crew-member.flight-assignment.form.label.flightCrewDuty = Función de la tripulación
+flight-crew-member.flight-assignment.form.label.lastUpdate = Última actualización
+flight-crew-member.flight-assignment.form.label.assignmentStatus = Estado de la asignación
+flight-crew-member.flight-assignment.form.label.remarks = Observaciones
+flight-crew-member.flight-assignment.form.label.draftMode = Modo borrador
+flight-crew-member.flight-assignment.form.label.leg = Tramo
+
+# Botones
+flight-crew-member.flight-assignment.form.button.return = Volver
+flight-crew-member.flight-assignment.form.button.update = Actualizar
+flight-crew-member.flight-assignment.form.button.delete = Eliminar
+flight-crew-member.flight-assignment.form.button.create = Crear
+flight-crew-member.flight-assignment.form.button.publish = Publicar
+
+flight-crew-member.flight-assignment.form.button.activity-log = Registro de actividad

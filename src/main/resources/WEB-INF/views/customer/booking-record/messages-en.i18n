@@ -1,0 +1,18 @@
+# messages-en.i18n
+
+customer.booking-record.form.title = Booking record form 
+customer.booking-record.list.title = Listing of relations
+
+customer.bookingRecord.form.label.booking.locatorCode = Booking:
+customer.bookingRecord.form.label.passenger.fullName = Passenger:
+
+customer.bookingRecord.form.button.update = Update
+customer.bookingRecord.form.button.delete = Delete
+customer.bookingRecord.form.button.publish = Publish
+customer.bookingRecord.form.button.create = Create
+
+customer.bookingRecord.list.label.booking.locatorCode = Booking
+customer.bookingRecord.list.label.passenger.fullName = Passenger
+customer.bookingRecord.list.label.draftMode = Draft Mode
+
+customer.bookingRecord.list.button.create = Create

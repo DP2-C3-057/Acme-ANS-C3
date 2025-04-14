@@ -1,0 +1,28 @@
+# messages-es.i18n
+
+customer.booking.form.title = Detalles de la reserva
+customer.booking.list.title = Lista de reservas
+
+customer.booking.form.label.locatorCode = Identificador:
+customer.booking.form.label.purchaseMoment = Momento de la compra:
+customer.booking.form.label.travelClass = Clase:
+customer.booking.form.label.lastCardNibble = Tarjeta de credito:
+customer.booking.form.label.draftMode = Borrador:
+customer.booking.form.label.bookingCost = Coste de la reserva:
+customer.booking.form.label.flight = Vuelo:
+
+customer.booking.form.button.update = Actualizar
+customer.booking.form.button.delete = Borrar
+customer.booking.form.button.publish = Publicar
+customer.booking.form.button.create = Crear
+customer.booking.form.button.passengers = Ver pasajeros
+
+customer.booking.list.label.locatorCode = Identificador
+customer.booking.list.label.travelClass = Clase
+customer.booking.list.label.bookingCost = Coste de la reserva
+customer.booking.list.label.draftMode = Borrador
+
+customer.booking.list.button.create = Crear
+
+customer.booking.delete.published-passengers= No puede borrar reservas con pasajeros publicados
+customer.booking.publish.non-published-legs= No puede publicar reservas con pasajeros sin publicar o sin pasajeros.

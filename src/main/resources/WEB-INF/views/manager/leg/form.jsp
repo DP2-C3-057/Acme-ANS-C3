@@ -8,21 +8,19 @@
 	<acme:input-moment code="manager.leg.form.label.scheduledDeparture" path="scheduledDeparture"/>
 	<acme:input-moment code="manager.leg.form.label.scheduledArrival" path="scheduledArrival"/>
 	<acme:input-textbox code="manager.leg.form.label.duration" path="duration" readonly="true"/>
-	<acme:input-textbox code="manager.leg.form.label.status" path="status"/>
-	<acme:input-textbox code="manager.leg.form.label.departureAirport" path="departureAirport"/>
-	<acme:input-textbox code="manager.leg.form.label.arrivalAirport" path="arrivalAirport"/>
-	<acme:input-textbox code="manager.leg.form.label.flight" path="flight"/>
-	<acme:input-textbox code="manager.leg.form.label.aircraft" path="aircraft"/>
-	<acme:input-checkbox code="manager.leg.form.label.draftMode" path="draftMode" readonly="true"/>
+	<acme:input-select code="manager.leg.form.label.status" path="status" choices="${legStatuses}"/>
+	<acme:input-select code="manager.leg.form.label.departureAirport" path="departureAirport" choices="${departureAirports}"/>
+	<acme:input-select code="manager.leg.form.label.arrivalAirport" path="arrivalAirport" choices="${arrivalAirports}"/>
+	<acme:input-select code="manager.leg.form.label.aircraft" path="aircraft" choices="${aircrafts}"/>
 
 	<jstl:choose>
 		<jstl:when test="${acme:anyOf(_command, 'show|update|delete|publish') && draftMode == true}">
-			<acme:submit code="manager.flight.form.button.update" action="/manager/flight/update"/>
-			<acme:submit code="manager.flight.form.button.delete" action="/manager/flight/delete"/>
-			<acme:submit code="manager.flight.form.button.publish" action="/manager/flight/publish"/>
+			<acme:submit code="manager.leg.form.button.update" action="/manager/leg/update"/>
+			<acme:submit code="manager.leg.form.button.delete" action="/manager/leg/delete"/>
+			<acme:submit code="manager.leg.form.button.publish" action="/manager/leg/publish"/>
 		</jstl:when>
 		<jstl:when test="${_command == 'create'}">
-			<acme:submit code="manager.flight.form.button.create" action="/manager/flight/create"/>
+			<acme:submit code="manager.leg.list.button.create" action="/manager/leg/create?masterId=${masterId}"/>
 		</jstl:when>		
 	</jstl:choose>
 </acme:form>

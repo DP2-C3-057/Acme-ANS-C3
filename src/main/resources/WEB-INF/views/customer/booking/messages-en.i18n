@@ -1,0 +1,28 @@
+# messages-en.i18n
+
+customer.booking.form.title = Booking form 
+customer.booking.list.title = Listing of bookings
+
+customer.booking.form.label.locatorCode = Locator code:
+customer.booking.form.label.purchaseMoment = Time of purchase:
+customer.booking.form.label.travelClass = Class:
+customer.booking.form.label.lastCardNibble = Credit card:
+customer.booking.form.label.draftMode = Draft Mode:
+customer.booking.form.label.bookingCost = Booking cost:
+customer.booking.form.label.flight = Flight:
+
+customer.booking.form.button.update = Update
+customer.booking.form.button.delete = Delete
+customer.booking.form.button.publish = Publish
+customer.booking.form.button.create = Create
+customer.booking.form.button.passengers = See passengers
+
+customer.booking.list.label.locatorCode = Locator code
+customer.booking.list.label.travelClass = Class
+customer.booking.list.label.bookingCost = Booking cost
+customer.booking.list.label.draftMode = Draft Mode
+
+customer.booking.list.button.create = Create
+
+customer.booking.delete.published-passengers= You can't delete bookings with published passengers
+customer.booking.publish.non-published-passengers= You can't publish bookings with unpublished passengers or none

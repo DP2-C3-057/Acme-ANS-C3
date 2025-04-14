@@ -21,6 +21,7 @@ master.menu.alemollop.favourite-link = 29624930X: Molins López, Alexis
 
 master.menu.administrator = Administrator
 master.menu.administrator.list-user-accounts = List user accounts
+master.menu.administrator.list-aircrafts = List aircrafts
 master.menu.administrator.populate-db-initial = Populate DB (initial)
 master.menu.administrator.populate-db-sample = Populate DB (samples)
 master.menu.administrator.shut-system-down = Shut system down
@@ -29,6 +30,18 @@ master.menu.administrator.shut-system-down = Shut system down
 master.menu.manager = Manager
 master.menu.manager.list-my-flights = Flight list
 master.menu.manager.list-my-legs = Leg list
+
+# master.menu.customer ########################################################
+master.menu.customer = Customer
+master.menu.customer.list-my-bookings = Bookings list
+master.menu.customer.list-my-passengers = Passengers list
+master.menu.customer.list-my-bookingRecords = Relations list
+
+
+# master.menu.flightCrewMember #################################################
+master.menu.flightCrewMember = FlightCrewMember
+master.menu.flightCrewMember.listCompleted = Completed assignments
+master.menu.flightCrewMember.listPlanned = Planned assignments
 
 # master.menu.provider ########################################################
 

@@ -36,31 +36,49 @@ public class LegValidator extends AbstractValidator<ValidLeg, Leg> {
 			super.state(context, false, "*", "javax.validation.constraints.NotNull.message");
 		else {
 			{
-				boolean uniqueLeg;
+				boolean uniqueLeg = true;
 				Leg existingLeg;
-
-				existingLeg = this.repository.findLegByFlightNumber(leg.getFlightNumber());
+				if (leg.getFlightNumber() != null)
+					existingLeg = this.repository.findLegByFlightNumber(leg.getFlightNumber());
+				else
+					existingLeg = null;
 				uniqueLeg = existingLeg == null || existingLeg.equals(leg);
 
 				super.state(context, uniqueLeg, "flightNumber", "acme.validation.leg.duplicated-flightNumber.message");
 			}
 			{
 				boolean correctFlightNumber = true;
-
+				Leg existingLeg;
+				if (leg.getFlightNumber() != null)
+					existingLeg = this.repository.findLegByFlightNumber(leg.getFlightNumber());
+				else
+					existingLeg = null;
 				for (int i = 0; i < 3; i++)
 					if (correctFlightNumber == true)
-						correctFlightNumber = leg.getFlightNumber().charAt(i) == leg.getFlight().getManager().getAirline().getIATACode().charAt(i);
+						correctFlightNumber = existingLeg == null || existingLeg.getFlightNumber().charAt(i) == existingLeg.getFlight().getManager().getAirline().getIATACode().charAt(i);
 					else
 						i = 3;
 
-				super.state(context, correctFlightNumber, "*", "acme.validation.leg.flightNumber.message");
+				super.state(context, correctFlightNumber, "flightNumber", "acme.validation.leg.flightNumber.message");
 			}
 			{
 				boolean arrivalAfterDeparture;
 
-				arrivalAfterDeparture = leg.getScheduledArrival().after(leg.getScheduledDeparture());
+				if (leg.getScheduledArrival() == null || leg.getScheduledDeparture() == null)
+					arrivalAfterDeparture = false;
+				else
+					arrivalAfterDeparture = leg.getScheduledArrival().after(leg.getScheduledDeparture());
 
-				super.state(context, arrivalAfterDeparture, "*", "acme.validation.leg.scheduledArrival-Departure.message");
+				super.state(context, arrivalAfterDeparture, "scheduledArrival", "acme.validation.leg.scheduledArrival-Departure.message");
+			}
+			{
+				boolean differentAirport;
+				if (leg.getDepartureAirport() == null || leg.getArrivalAirport() == null)
+					differentAirport = false;
+				else
+					differentAirport = leg.getDepartureAirport() != leg.getArrivalAirport();
+
+				super.state(context, differentAirport, "arrivalAirport", "acme.validation.leg.different-Airport.message");
 			}
 		}
 

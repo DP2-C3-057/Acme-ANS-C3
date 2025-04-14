@@ -6,8 +6,9 @@
 <acme:list>
 	<acme:list-column code="manager.flight.list.label.tag" path="tag" width="50%"/>
 	<acme:list-column code="manager.flight.list.label.selfTransfer" path="selfTransfer" width="10%"/>
-	<acme:list-column code="manager.flight.list.label.cost" path="cost" width="30%"/>
-	<acme:list-column code="manager.flight.list.label.draftMode" path="draftMode" width="10%"/>
+	<acme:list-column code="manager.flight.list.label.cost" path="cost" width="10%"/>
+	<acme:list-column code="manager.flight.list.label.originCity" path="originCity" width="30%"/>
+	<acme:list-column code="manager.flight.list.label.destinationCity" path="destinationCity" width="30%"/>
 </acme:list>
 
 <jstl:if test="${_command == 'list'}">
