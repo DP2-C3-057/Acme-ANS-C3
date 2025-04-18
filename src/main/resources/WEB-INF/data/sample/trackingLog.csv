@@ -1,3 +1,4 @@
 key,lastUpdateMoment,step,resolutionPercentage,indicator,resolution,key:claim,key:assistanceAgent
 log-01,2020/07/19 01:28,Step de ejemplo,50.0,PENDING,Ejemplo de resolution,claim-01,agent-01
-log-02,2020/07/19 01:28,Step de ejemplo,100.0,ACCEPTED," fs",claim-01,agent-01
+log-02,2020/07/19 02:28,Step de ejemplo,60.0,PENDING,Ejemplo de resolution,claim-01,agent-01
+log-03,2020/07/19 03:28,Step de ejemplo,100,ACCEPTED,fs,claim-01,agent-01
