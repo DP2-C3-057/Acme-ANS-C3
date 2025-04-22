@@ -48,7 +48,10 @@ public class AdministratorAircraftCreateService extends AbstractGuiService<Admin
 
 	@Override
 	public void validate(final Aircraft aircraft) {
-		;
+		boolean confirmation;
+
+		confirmation = super.getRequest().getData("confirmation", boolean.class);
+		super.state(confirmation, "confirmation", "acme.validation.confirmation.message");
 	}
 
 	@Override

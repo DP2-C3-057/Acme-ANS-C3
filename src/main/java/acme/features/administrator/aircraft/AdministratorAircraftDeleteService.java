@@ -58,17 +58,25 @@ public class AdministratorAircraftDeleteService extends AbstractGuiService<Admin
 
 	@Override
 	public void validate(final Aircraft aircraft) {
-		boolean status = true;
-		int id;
-		id = super.getRequest().getData("id", int.class);
-		Collection<Leg> legs = this.repository.findLegsByAircraftId(id);
-		if (!legs.isEmpty())
-			for (Leg leg : legs)
-				if (!leg.isDraftMode()) {
-					status = false;
-					break;
-				}
-		super.state(status, "*", "administrator.aircraft.delete.published-legs");
+		{
+			boolean status = true;
+			int id;
+			id = super.getRequest().getData("id", int.class);
+			Collection<Leg> legs = this.repository.findLegsByAircraftId(id);
+			if (!legs.isEmpty())
+				for (Leg leg : legs)
+					if (!leg.isDraftMode()) {
+						status = false;
+						break;
+					}
+			super.state(status, "*", "administrator.aircraft.delete.published-legs");
+		}
+		{
+			boolean confirmation;
+
+			confirmation = super.getRequest().getData("confirmation", boolean.class);
+			super.state(confirmation, "confirmation", "acme.validation.confirmation.message");
+		}
 	}
 
 	@Override
