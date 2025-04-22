@@ -8,7 +8,7 @@
 	<acme:input-textbox code="administrator.aircraft.form.label.registrationNumber" path="registrationNumber"/>
 	<acme:input-integer code="administrator.aircraft.form.label.capacity" path="capacity"/>
 	<acme:input-integer code="administrator.aircraft.form.label.cargoWeight" path="cargoWeight"/>
-	<acme:input-select  code="administrator.aircraft.form.label.status" path="status"  choices="${statuses}"/>
+	<acme:input-select  code="administrator.aircraft.form.label.status" path="status"  choices="${statuses}" readonly="true"/>
 	<acme:input-textarea code="administrator.aircraft.form.label.details" path="details"/>
 	<acme:input-select  code="administrator.aircraft.form.label.airline" path="airline"  choices="${airlines}"/>
 
