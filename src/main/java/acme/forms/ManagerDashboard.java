@@ -2,7 +2,6 @@
 package acme.forms;
 
 import acme.client.components.basis.AbstractForm;
-import acme.entities.airports.Airport;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -19,15 +18,15 @@ public class ManagerDashboard extends AbstractForm {
 	int							rankingPosition;
 	int							yearsToRetire;
 	Double						onTimeDelayedLegsRatio;
-	Airport						mostPopularAirport;
-	Airport						lessPopularAirport;
+	String						mostPopularAirport;
+	String						lessPopularAirport;
 	int							onTimeLegs;
 	int							delayedLegs;
 	int							cancelledLegs;
 	int							landedLegs;
-	Double						averageCostFlight;
-	Double						minimumCostFlight;
-	Double						maximumCostFlight;
+	Double						averageFlightCost;
+	Double						minimumFlightCost;
+	Double						maximumFlightCost;
 	Double						standardDeviationCost;
 
 	// Derived attributes -----------------------------------------------------

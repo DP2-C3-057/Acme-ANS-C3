@@ -62,34 +62,34 @@
 	</tr>
 	<tr>
 		<th scope="row">
-			<acme:print code="manager.dashboard.form.label.average-cost-flight"/>
+			<acme:print code="manager.dashboard.form.label.average-flight-cost"/>
 		</th>
 		<td>
-			<acme:print value="${averageCostFlight}"/>
+			<acme:print value="${averageFlightCost}"/>
 		</td>
 	</tr>
 	<tr>
 		<th scope="row">
-			<acme:print code="manager.dashboard.form.label.minimum-cost-flight"/>
+			<acme:print code="manager.dashboard.form.label.minimum-flight-cost"/>
 		</th>
 		<td>
-			<acme:print value="${minimumCostFlight}"/>
+			<acme:print value="${minimumFlightCost}"/>
 		</td>
 	</tr>
 	<tr>
 		<th scope="row">
-			<acme:print code="manager.dashboard.form.label.maximum-cost-flight"/>
+			<acme:print code="manager.dashboard.form.label.maximum-flight-cost"/>
 		</th>
 		<td>
-			<acme:print value="${maximumCostFlight}"/>
+			<acme:print value="${maximumFlightCost}"/>
 		</td>
 	</tr>
 	<tr>
 		<th scope="row">
-			<acme:print code="manager.dashboard.form.label.standart-deviation-cost"/>
+			<acme:print code="manager.dashboard.form.label.standard-deviation-cost"/>
 		</th>
 		<td>
-			<acme:print value="${standartDeviationCost}"/>
+			<acme:print value="${standardDeviationCost}"/>
 		</td>
 	</tr>
 </table>

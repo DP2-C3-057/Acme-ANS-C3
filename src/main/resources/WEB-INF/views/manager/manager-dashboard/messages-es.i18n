@@ -1,19 +1,12 @@
-# messages-es.i18n
-#
-# Copyright (C) 2012-2025 Rafael Corchuelo.
-#
-# In keeping with the traditional purpose of furthering education and research, it is
-# the policy of the copyright owner to permit non-commercial use and redistribution of
-# this software. It has been tested carefully, but it is not guaranteed for any particular
-# purposes.  The copyright owner does not offer any warranties or representations, nor do
-# they accept any liabilities with respect to them.
-
-administrator.dashboard.form.title = Panel de indicadores de administrador
-
-administrator.dashboard.form.title.general-indicators = Indicadores generales
-administrator.dashboard.form.title.application-statuses = Estados de solicitud
-
-administrator.dashboard.form.label.average-number-jobs-employer =  Número medio de trabajos por empleador
-administrator.dashboard.form.label.average-number-applications-worker =  Número medio de solicitudes por trabajador
-administrator.dashboard.form.label.average-number-applications-employer = Número medio de solicitudes por empleador
-
+manager.manager-dashboard.form.title = Tablero del Manager
+manager.dashboard.form.title.general-indicators = Indicadores generales
+manager.dashboard.form.label.ranking-position = Posición en el ranking por años de experiencia
+manager.dashboard.form.label.years-to-retire = Años para retirarse
+manager.dashboard.form.label.on-time-delayed-legs-ratio = Ratio de tramos en tiempo-atrasados
+manager.dashboard.form.label.most-popular-airport = Aeropuerto más popular
+manager.dashboard.form.label.less-popular-airport = Aeropuerto menos popular
+manager.dashboard.form.label.average-flight-cost = Coste medio de vuelo
+manager.dashboard.form.label.minimum-flight-cost = Coste mínimo de vuelo
+manager.dashboard.form.label.maximum-flight-cost = Coste máximo de vuelo
+manager.dashboard.form.label.standard-deviation-cost = Desviación estándar de costes
+manager.dashboard.form.title.leg-statuses = Estado de tramos

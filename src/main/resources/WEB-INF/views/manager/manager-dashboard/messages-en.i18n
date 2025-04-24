@@ -1,19 +1,12 @@
-# messages-en.i18n
-#
-# Copyright (C) 2012-2025 Rafael Corchuelo.
-#
-# In keeping with the traditional purpose of furthering education and research, it is
-# the policy of the copyright owner to permit non-commercial use and redistribution of
-# this software. It has been tested carefully, but it is not guaranteed for any particular
-# purposes.  The copyright owner does not offer any warranties or representations, nor do
-# they accept any liabilities with respect to them.
-
-administrator.dashboard.form.title = Administrator dashboard
-
-administrator.dashboard.form.title.general-indicators = General indicators
-administrator.dashboard.form.title.application-statuses = Application statuses  
-
-administrator.dashboard.form.label.average-number-jobs-employer =  Average number of jobs per employer
-administrator.dashboard.form.label.average-number-applications-worker =  Average number of applications per worker
-administrator.dashboard.form.label.average-number-applications-employer = Average number of applications per employer
-
+manager.manager-dashboard.form.title = Manager Dashboard
+manager.dashboard.form.title.general-indicators = General indicators
+manager.dashboard.form.label.ranking-position = Ranking Position by experience years
+manager.dashboard.form.label.years-to-retire = Years to retire
+manager.dashboard.form.label.on-time-delayed-legs-ratio = On Time-Delayed Ratio
+manager.dashboard.form.label.most-popular-airport = Most popular airport
+manager.dashboard.form.label.less-popular-airport = Less popular airport
+manager.dashboard.form.label.average-flight-cost = Average Flight Cost
+manager.dashboard.form.label.minimum-flight-cost = Minimum Flight Cost
+manager.dashboard.form.label.maximum-flight-cost = Maximum Flight Cost
+manager.dashboard.form.label.standard-deviation-cost = Standard Deviation Cost
+manager.dashboard.form.title.leg-statuses = Leg Statuses
