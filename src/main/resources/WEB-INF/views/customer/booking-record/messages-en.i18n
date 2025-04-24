@@ -16,3 +16,5 @@ customer.bookingRecord.list.label.passenger.fullName = Passenger
 customer.bookingRecord.list.label.draftMode = Draft Mode
 
 customer.bookingRecord.list.button.create = Create
+
+customer.booking-record.error.passenger-draft = The assigned passenger must be published.

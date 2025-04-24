@@ -5,10 +5,10 @@ passenger-03,Carlos Rodríguez,carlos.rodriguez@email.com,P45678912,2001/09/15 2
 passenger-04,Emily Johnson,emily.johnson@email.com,M789E2345,2003/06/30 12:01,Vegan meal,false,customer-02
 passenger-05,Sophie Müller,sophie.muller@email.com,V32165F98,2005/12/22 21:09,,false,customer-02
 passenger-06,Alberto Sánchez,alberto.sanchez@email.com,654L8732,2001/05/10 13:21,Hearing assistance,false,customer-02
-passenger-07,Yuki Tanaka,yuki.tanaka@email.com,N85R96374,2000/11/18 16:21,,true,customer-01
-passenger-08,Michael Brown,michael.brown@email.com,U15N75326,2005/08/05 00:08,Extra legroom,true,customer-01
-passenger-09,Lucas Martínez,lucas.martinez@email.com,J847A1234,2003/04/02 09:15,,true,customer-01
-passenger-10,Olivia Pérez,olivia.perez@email.com,K564B6789,2007/01/14 14:30,Gluten-free meal,true,customer-01
+passenger-07,Yuki Tanaka,yuki.tanaka@email.com,N85R96374,2000/11/18 16:21,,false,customer-01
+passenger-08,Michael Brown,michael.brown@email.com,U15N75326,2005/08/05 00:08,Extra legroom,false,customer-01
+passenger-09,Lucas Martínez,lucas.martinez@email.com,J847A1234,2003/04/02 09:15,,false,customer-01
+passenger-10,Olivia Pérez,olivia.perez@email.com,K564B6789,2007/01/14 14:30,Gluten-free meal,false,customer-01
 passenger-11,Daniela Hernández,daniela.hernandez@email.com,L345D4567,2002/11/09 18:45,,false,customer-02
 passenger-12,Miguel Gómez,miguel.gomez@email.com,N812X9876,2003/02/20 11:25,Priority boarding,false,customer-01
 passenger-13,Sofia López,sofia.lopez@email.com,P654J3210,2004/07/06 06:15,,false,customer-01
