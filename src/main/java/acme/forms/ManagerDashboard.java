@@ -21,11 +21,14 @@ public class ManagerDashboard extends AbstractForm {
 	Double						onTimeDelayedLegsRatio;
 	Airport						mostPopularAirport;
 	Airport						lessPopularAirport;
-	int							numbLegPerStatus;
+	int							onTimeLegs;
+	int							delayedLegs;
+	int							cancelledLegs;
+	int							landedLegs;
 	Double						averageCostFlight;
 	Double						minimumCostFlight;
 	Double						maximumCostFlight;
-	Double						standartDeviationCost;
+	Double						standardDeviationCost;
 
 	// Derived attributes -----------------------------------------------------
 
