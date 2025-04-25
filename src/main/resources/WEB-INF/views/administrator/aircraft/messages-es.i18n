@@ -23,5 +23,7 @@ administrator.aircraft.form.button.delete = Borrar
 administrator.aircraft.form.button.disable = Deshabilitar
 administrator.aircraft.form.button.create = Crear
 
+administrator.aircraft.form.label.confirmation = Confirma que la acción que estás ejecutando es correcta
+
 acme.validation.range = Fuera de rango
 administrator.aircraft.delete.published-legs= No puedes borrar aeronaves con tramos publicados
