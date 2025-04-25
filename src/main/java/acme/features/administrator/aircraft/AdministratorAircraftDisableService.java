@@ -15,7 +15,7 @@ import acme.entities.aircraft.AircraftStatus;
 import acme.entities.airlines.Airline;
 
 @GuiService
-public class AdministratorAircraftUpdateService extends AbstractGuiService<Administrator, Aircraft> {
+public class AdministratorAircraftDisableService extends AbstractGuiService<Administrator, Aircraft> {
 
 	// Internal state ---------------------------------------------------------
 
@@ -63,6 +63,7 @@ public class AdministratorAircraftUpdateService extends AbstractGuiService<Admin
 
 	@Override
 	public void perform(final Aircraft aircraft) {
+		aircraft.setStatus(AircraftStatus.UNDER_MAINTENANCE);
 		this.repository.save(aircraft);
 	}
 

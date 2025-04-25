@@ -8,12 +8,13 @@
 	<acme:input-textbox code="administrator.aircraft.form.label.registrationNumber" path="registrationNumber"/>
 	<acme:input-integer code="administrator.aircraft.form.label.capacity" path="capacity"/>
 	<acme:input-integer code="administrator.aircraft.form.label.cargoWeight" path="cargoWeight"/>
-	<acme:input-select  code="administrator.aircraft.form.label.status" path="status"  choices="${statuses}"/>
+	<acme:input-select  code="administrator.aircraft.form.label.status" path="status"  choices="${statuses}" readonly="true"/>
 	<acme:input-textarea code="administrator.aircraft.form.label.details" path="details"/>
 	<acme:input-select  code="administrator.aircraft.form.label.airline" path="airline"  choices="${airlines}"/>
 
 	<jstl:choose>
 		<jstl:when test="${acme:anyOf(_command, 'show|update|delete|disable')}">
+			<acme:input-checkbox code="administrator.aircraft.form.label.confirmation" path="confirmation"/>
 			<acme:submit code="administrator.aircraft.form.button.update" action="/administrator/aircraft/update"/>
 			<acme:submit code="administrator.aircraft.form.button.delete" action="/administrator/aircraft/delete"/>
 			<acme:submit code="administrator.aircraft.form.button.disable" action="/administrator/aircraft/disable"/>
