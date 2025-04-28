@@ -56,18 +56,15 @@ public class CustomerBookingPublishService extends AbstractGuiService<Customer, 
 
 	@Override
 	public void validate(final Booking booking) {
-		boolean status = true;
 		int id = super.getRequest().getData("id", int.class);
 
 		// Validación de pasajeros
 		Collection<Passenger> passengers = this.repository.findPassengersByBookingId(id);
-		if (passengers.isEmpty()) {
-			status = false;
+		if (passengers.isEmpty())
 			super.state(false, "*", "customer.booking.publish.non-published-passengers");
-		} else
+		else
 			for (Passenger passenger : passengers)
 				if (passenger.isDraftMode()) {
-					status = false;
 					super.state(false, "*", "customer.booking.publish.non-published-passengers");
 					break;
 				}
@@ -76,7 +73,6 @@ public class CustomerBookingPublishService extends AbstractGuiService<Customer, 
 		Collection<BookingRecord> bookingRecords = this.repository.findBookingRecordsByBookingId(id);
 		for (BookingRecord br : bookingRecords)
 			if (br.isDraftMode()) {
-				status = false;
 				super.state(false, "*", "customer.booking.publish.non-published-bookingrecords");
 				break;
 			}
