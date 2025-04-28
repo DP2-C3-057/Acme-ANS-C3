@@ -9,6 +9,7 @@ import acme.client.components.models.Dataset;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.bookings.Booking;
+import acme.entities.bookings.BookingRecord;
 import acme.entities.passengers.Passenger;
 import acme.realms.customers.Customer;
 
@@ -55,19 +56,26 @@ public class CustomerBookingPublishService extends AbstractGuiService<Customer, 
 
 	@Override
 	public void validate(final Booking booking) {
-		boolean status = true;
-		int id;
-		id = super.getRequest().getData("id", int.class);
+		int id = super.getRequest().getData("id", int.class);
+
+		// Validación de pasajeros
 		Collection<Passenger> passengers = this.repository.findPassengersByBookingId(id);
 		if (passengers.isEmpty())
-			status = false;
+			super.state(false, "*", "customer.booking.publish.non-published-passengers");
 		else
 			for (Passenger passenger : passengers)
 				if (passenger.isDraftMode()) {
-					status = false;
+					super.state(false, "*", "customer.booking.publish.non-published-passengers");
 					break;
 				}
-		super.state(status, "*", "customer.booking.publish.non-published-passengers");
+
+		// Validación de booking records
+		Collection<BookingRecord> bookingRecords = this.repository.findBookingRecordsByBookingId(id);
+		for (BookingRecord br : bookingRecords)
+			if (br.isDraftMode()) {
+				super.state(false, "*", "customer.booking.publish.non-published-bookingrecords");
+				break;
+			}
 	}
 
 	@Override

@@ -17,3 +17,4 @@
  acme.validation.flightassignment.leg.overlap.message = Legs cannot be overlapped
  acme.validation.flightassignment.duty.pilot.message = Each leg can only have one pilot
  acme.validation.flightassignment.duty.copilot.message = Each leg can only have one copilot
+  

@@ -4,8 +4,8 @@
 <%@taglib prefix="acme" uri="http://acme-framework.org/"%>
 
 <acme:form> 
-	<acme:input-select code="customer.bookingRecord.form.label.booking.locatorCode" path="booking.locatorCode" choices="${bookingChoice}"/>
-	<acme:input-select code="customer.bookingRecord.form.label.passenger.fullName" path="passenger.fullName" choices="${passengerChoice}"/>
+	<acme:input-select code="customer.bookingRecord.form.label.booking.locatorCode" path="booking" choices="${bookingChoice}"/>
+	<acme:input-select code="customer.bookingRecord.form.label.passenger.fullName" path="passenger" choices="${passengerChoice}"/>
 	
 	<jstl:choose>
 		<jstl:when test="${acme:anyOf(_command, 'show|update|delete|publish') && draftMode == true}">

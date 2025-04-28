@@ -16,3 +16,4 @@
  acme.validation.flightassignment.leg.overlap.message = Los tramos asignados no se pueden solapar
  acme.validation.flightassignment.duty.pilot.message = Solo puede haber un piloto por tramo
  acme.validation.flightassignment.duty.copilot.message = Solo puede haber un copiloto por tramo
+ 
