@@ -51,7 +51,7 @@ public class ManagerFlightPublishService extends AbstractGuiService<Manager, Fli
 
 	@Override
 	public void bind(final Flight flight) {
-		super.bindObject(flight, "tag", "selfTransfer", "cost", "description");
+		;
 	}
 
 	@Override
