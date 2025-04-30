@@ -65,6 +65,7 @@ public class AdministratorAircraftShowService extends AbstractGuiService<Adminis
 		dataset.put("airlines", airlineChoices);
 		dataset.put("status", statusChoices.getSelected().getKey());
 		dataset.put("statuses", statusChoices);
+		dataset.put("readOnly", true);
 
 		super.getResponse().addData(dataset);
 	}

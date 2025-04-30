@@ -76,6 +76,7 @@ public class AdministratorAircraftCreateService extends AbstractGuiService<Admin
 		dataset.put("airlines", airlineChoices);
 		dataset.put("status", statusChoices.getSelected().getKey());
 		dataset.put("statuses", statusChoices);
+		dataset.put("readOnly", false);
 
 		super.getResponse().addData(dataset);
 	}
