@@ -3,6 +3,7 @@ package acme.features.manager.managerDashboard;
 
 import java.time.LocalDate;
 import java.time.ZoneId;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -57,8 +58,14 @@ public class ManagerDashboardShowService extends AbstractGuiService<Manager, Man
 
 		yearsToRetire = 65 - (LocalDate.now().getYear() - this.repository.getManagerById(managerId).getBirthdate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate().getYear());
 
-		mostPopularAirport = this.repository.airportPopularity(managerId).getFirst();
-		lessPopularAirport = this.repository.airportPopularity(managerId).getLast();
+		List<Airport> airportPopularity = this.repository.airportPopularity(managerId);
+		if (!airportPopularity.isEmpty()) {
+			mostPopularAirport = airportPopularity.getFirst();
+			lessPopularAirport = airportPopularity.getLast();
+		} else {
+			mostPopularAirport = null;
+			lessPopularAirport = null;
+		}
 
 		onTimeLegs = this.repository.onTimeLegs(managerId);
 		delayedLegs = this.repository.delayedLegs(managerId);
@@ -76,8 +83,13 @@ public class ManagerDashboardShowService extends AbstractGuiService<Manager, Man
 		dashboard.setRankingPosition(rankingPosition);
 		dashboard.setYearsToRetire(yearsToRetire);
 		dashboard.setOnTimeDelayedLegsRatio(onTimeDelayedLegsRatio);
-		dashboard.setMostPopularAirport(mostPopularAirport.getName());
-		dashboard.setLessPopularAirport(lessPopularAirport.getName());
+		if (!airportPopularity.isEmpty()) {
+			dashboard.setMostPopularAirport(mostPopularAirport.getName());
+			dashboard.setLessPopularAirport(lessPopularAirport.getName());
+		} else {
+			dashboard.setMostPopularAirport(null);
+			dashboard.setLessPopularAirport(null);
+		}
 		dashboard.setOnTimeLegs(onTimeLegs);
 		dashboard.setDelayedLegs(delayedLegs);
 		dashboard.setCancelledLegs(cancelledLegs);
