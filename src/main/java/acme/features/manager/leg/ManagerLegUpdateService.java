@@ -63,7 +63,11 @@ public class ManagerLegUpdateService extends AbstractGuiService<Manager, Leg> {
 
 		List<Leg> legs = this.repository.findAllLegsByFlightId(leg.getFlight().getId());
 		if (!legs.isEmpty()) {
-			legs.add(leg);
+			for (Leg thisLeg : legs)
+				if (thisLeg == leg) {
+					legs.remove(legs.indexOf(thisLeg));
+					legs.add(leg);
+				}
 			legs.sort(Comparator.comparing(Leg::getScheduledDeparture));
 			Airport actualAirport = legs.get(0).getDepartureAirport();
 			for (Leg actualLeg : legs)
