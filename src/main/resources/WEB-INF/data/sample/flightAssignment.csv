@@ -4,4 +4,4 @@ flight-assignment-02,CO_PILOT,2021/11/01 10:00,CONFIRMED,Tripulación de respald
 flight-assignment-03,CO_PILOT,2021/12/01 10:00,CONFIRMED,Requiere actualización del informe meteorológico antes del despegue,flightCrewMember-03,True,leg-03
 flight-assignment-04,PILOT,2021/09/01 10:00,CONFIRMED,Ruta del vuelo ajustada recientemente por restricciones de tráfico aéreo,flightCrewMember-04,True,leg-07
 flight-assignment-05,PILOT,2021/09/01 10:00,CONFIRMED,Ruta del vuelo ajustada recientemente por restricciones de tráfico aéreo,flightCrewMember-01,True,leg-07
-flight-assignment-06,LEAD_ATTENDANT,2020/04/16 14:01,CONFIRMED,TodoOK,flightCrewMember-01,True,leg-09
+flight-assignment-06,LEAD_ATTENDANT,2019/04/16 14:01,CONFIRMED,TodoOK,flightCrewMember-01,True,leg-10
