@@ -1,0 +1,29 @@
+# messages-en.i18n
+
+administrator.airline.form.title =Formuario de aerolineas
+administrator.airline.list.title = Listado de aerolineas
+
+administrator.airline.list.label.name = Nombre
+administrator.airline.list.label.IATACode = IATACode
+administrator.airline.list.label.type = Tipo
+administrator.airline.list.label.website = Sitio web
+
+administrator.airline.list.button.create = Crear
+
+administrator.airline.form.label.name = Nombre
+administrator.airline.form.label.IATACode = IATACode
+administrator.airline.form.label.type = Tipo
+administrator.airline.form.label.website = Sitio web
+administrator.airline.form.label.foundationMoment = Fundación
+administrator.airline.form.label.email = Email
+administrator.airline.form.label.phoneNumber = Número de teléfono
+
+administrator.airline.form.button.update = Actualizar
+administrator.airline.form.button.delete = Eliminar
+administrator.airline.form.button.create = Crear
+
+administrator.airline.form.label.confirmation = Confirma que la acción que estás ejecutando es correcta
+
+acme.validation.range = Fuera de rango
+acme.validation.iataCode.message = Formato no valido
+administrator.aircraft.delete.published-legs= You can't delete aircrafts with published legs
