@@ -76,6 +76,10 @@ public class CustomerBookingPublishService extends AbstractGuiService<Customer, 
 				super.state(false, "*", "customer.booking.publish.non-published-bookingrecords");
 				break;
 			}
+
+		// Validación de lastCardNible
+		if (booking.getLastCardNibble() == null || booking.getLastCardNibble().trim().isEmpty())
+			super.state(false, "lastCardNibble", "customer.booking.form.error.last-card-nible-required");
 	}
 
 	@Override
