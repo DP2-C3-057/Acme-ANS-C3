@@ -8,4 +8,4 @@ leg-06,FRZ0606,2000/01/01 0:00,2200/12/31 23:59,CANCELLED,false,flight-06,aircra
 leg-07,FRZ0707,2001/02/02 0:01,2199/11/30 23:58,LANDED,false,flight-07,aircraft-01,airport-02,airport-04
 leg-08,FRZ0808,2026/07/29 13:16,2026/07/29 17:48,ON_TIME,true,flight-08,aircraft-02,airport-03,airport-01
 leg-09,FRZ0909,2020/07/29 13:16,2020/07/29 17:48,ON_TIME,true,flight-09,aircraft-05,airport-03,airport-01
-leg-10,FRZ4567,2019/07/29 13:16,2019/07/29 17:48,LANDED,false,flight-10,aircraft-05,airport-02,airport-01
+leg-10,FRZ4567,2026/07/29 13:16,2026/07/29 17:48,LANDED,false,flight-10,aircraft-05,airport-02,airport-01
