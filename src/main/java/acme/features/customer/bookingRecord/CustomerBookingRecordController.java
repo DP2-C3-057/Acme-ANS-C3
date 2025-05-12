@@ -23,15 +23,15 @@ public class CustomerBookingRecordController extends AbstractGuiController<Custo
 
 	@Autowired
 	private CustomerBookingRecordCreateService	createService;
-	//
-	//	@Autowired
-	//	private CustomerBookingRecordUpdateService	updateService;
-	//
-	//	@Autowired
-	//	private CustomerBookingRecordDeleteService	deleteService;
-	//
-	//	@Autowired
-	//	private CustomerBookingRecordPublishService	publishService;
+
+	@Autowired
+	private CustomerBookingRecordUpdateService	updateService;
+
+	@Autowired
+	private CustomerBookingRecordDeleteService	deleteService;
+
+	@Autowired
+	private CustomerBookingRecordPublishService	publishService;
 
 	// Constructors -----------------------------------------------------------
 
@@ -41,9 +41,9 @@ public class CustomerBookingRecordController extends AbstractGuiController<Custo
 		super.addBasicCommand("list", this.listService);
 		super.addBasicCommand("show", this.showService);
 		super.addBasicCommand("create", this.createService);
-		//		super.addBasicCommand("update", this.updateService);
-		//		super.addBasicCommand("delete", this.deleteService);
-		//
-		//		super.addCustomCommand("publish", "update", this.publishService);
+		super.addBasicCommand("update", this.updateService);
+		super.addBasicCommand("delete", this.deleteService);
+
+		super.addCustomCommand("publish", "update", this.publishService);
 	}
 }

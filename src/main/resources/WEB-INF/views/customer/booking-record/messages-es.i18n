@@ -1,0 +1,21 @@
+# messages-en.i18n
+
+customer.booking-record.form.title = Formulario de registro de reservas
+customer.booking-record.list.title = Lista de relaciones
+
+customer.bookingRecord.form.label.booking.locatorCode = Reserva:
+customer.bookingRecord.form.label.passenger.fullName = Pasajero:
+
+customer.bookingRecord.form.button.update = Actualizar
+customer.bookingRecord.form.button.delete = Borrar
+customer.bookingRecord.form.button.publish = Publicar
+customer.bookingRecord.form.button.create = Crear
+
+customer.bookingRecord.list.label.booking.locatorCode = Reserva
+customer.bookingRecord.list.label.passenger.fullName = Pasajero
+customer.bookingRecord.list.label.draftMode = Modo borrador
+
+customer.bookingRecord.list.button.create = Crear
+
+customer.booking-record.error.passenger-draft = El pasajero asignado debe estar publicado.
+customer.booking-record.form.error.duplicate = Este pasajero ya está asociado a esta reserva

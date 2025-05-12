@@ -41,12 +41,15 @@ public class CustomerBookingRecordCreateService extends AbstractGuiService<Custo
 
 	@Override
 	public void bind(final BookingRecord br) {
-		super.bindObject(br, "booking.locatorCode", "passenger.fullName");
+		super.bindObject(br, "booking", "passenger");
 	}
 
 	@Override
 	public void validate(final BookingRecord br) {
-		;
+		if (br.getBooking() != null && br.getPassenger() != null) {
+			BookingRecord existing = this.repository.findByBookingIdAndPassengerId(br.getBooking().getId(), br.getPassenger().getId());
+			super.state(existing == null, "passenger", "customer.booking-record.form.error.duplicate");
+		}
 	}
 
 	@Override
@@ -67,12 +70,15 @@ public class CustomerBookingRecordCreateService extends AbstractGuiService<Custo
 
 		bookings = this.repository.findAllBookingsByCustomerId(customer);
 		bookingChoice = SelectChoices.from(bookings, "locatorCode", br.getBooking());
+
 		passengers = this.repository.findAllPassengersByCustomerId(customer);
 		passengerChoice = SelectChoices.from(passengers, "fullName", br.getPassenger());
 
-		dataset = super.unbindObject(br, "booking.locatorCode", "passenger.fullName", "draftMode");
+		dataset = super.unbindObject(br, "booking", "passenger", "draftMode");
 		dataset.put("bookingChoice", bookingChoice);
 		dataset.put("passengerChoice", passengerChoice);
+
 		super.getResponse().addData(dataset);
 	}
+
 }

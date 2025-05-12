@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 
 import acme.client.repositories.AbstractRepository;
 import acme.entities.bookings.Booking;
+import acme.entities.bookings.BookingRecord;
 import acme.entities.flights.Flight;
 import acme.entities.passengers.Passenger;
 
@@ -37,5 +38,8 @@ public interface CustomerBookingRepository extends AbstractRepository {
 	@Modifying
 	@Query("DELETE FROM BookingRecord br WHERE br.booking.id = :bookingId")
 	void deleteBookingRecordsByBookingId(@Param("bookingId") int bookingId);
+
+	@Query("SELECT br FROM BookingRecord br WHERE br.booking.id = :id")
+	Collection<BookingRecord> findBookingRecordsByBookingId(int id);
 
 }

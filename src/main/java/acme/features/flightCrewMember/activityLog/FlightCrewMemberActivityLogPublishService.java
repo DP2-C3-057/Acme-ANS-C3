@@ -29,7 +29,7 @@ public class FlightCrewMemberActivityLogPublishService extends AbstractGuiServic
 		logId = super.getRequest().getData("id", int.class);
 		log = this.repository.findActivityLogById(logId);
 
-		status = log != null && log.getDraftMode() && log.getFlightAssignment() != null && !log.getFlightAssignment().getDraftMode();
+		status = log != null && log.isDraftMode() && log.getFlightAssignment() != null && !log.getFlightAssignment().isDraftMode();
 
 		super.getResponse().setAuthorised(status);
 	}

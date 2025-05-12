@@ -23,5 +23,8 @@ administrator.aircraft.form.button.delete = Delete
 administrator.aircraft.form.button.disable = Disable
 administrator.aircraft.form.button.create = Create
 
+administrator.aircraft.form.label.confirmation = Confirm that the action you are committing is correct
+
 acme.validation.range = Out of range
+acme.validation.iataCode.message = Not valid formater
 administrator.aircraft.delete.published-legs= You can't delete aircrafts with published legs
