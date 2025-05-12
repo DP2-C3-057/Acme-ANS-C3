@@ -17,4 +17,5 @@
  acme.validation.flightassignment.leg.overlap.message = Legs cannot be overlapped
  acme.validation.flightassignment.duty.pilot.message = Each leg can only have one pilot
  acme.validation.flightassignment.duty.copilot.message = Each leg can only have one copilot
-   
+ acme.validation.locatorCode.message = Must be 6–8 characters in [A-Z0-9]
+ acme.validation.passenger.message = Must be 6–9 characters in [A-Z0-9]

@@ -25,5 +25,6 @@ customer.booking.list.label.draftMode = Borrador
 customer.booking.list.button.create = Crear
 
 customer.booking.delete.published-passengers= No puede borrar reservas con pasajeros publicados
-customer.booking.publish.non-published-legs= No puede publicar reservas con pasajeros sin publicar o sin pasajeros.
-customer.booking.publish.non-published-bookingrecords= Todos los registros de reserva asociados a la reserva deben publicarse.
+customer.booking.publish.non-published-legs= No puede publicar reservas con pasajeros sin publicar o sin pasajeros
+customer.booking.publish.non-published-bookingrecords= Todos los registros de reserva asociados a la reserva deben publicarse
+customer.booking.form.error.last-card-nible-required = Debes proporcionar los digitos finales de la tarjeta para publicar esta reserva
