@@ -80,10 +80,10 @@ public class FlightCrewMemberAssignmentUpdateService extends AbstractGuiService<
 		currentStatusChoice = SelectChoices.from(CurrentStatus.class, assignment.getCurrentStatus());
 
 		legs = this.repository.findAllLegsPublish();
-		legChoice = SelectChoices.from(legs, "id", assignment.getLeg());
+		legChoice = SelectChoices.from(legs, "flightNumber", assignment.getLeg());
 
 		flightCrewMembers = this.repository.findAllFlightCrewMembers();
-		flightCrewMemberChoice = SelectChoices.from(flightCrewMembers, "id", assignment.getFlightCrewMember());
+		flightCrewMemberChoice = SelectChoices.from(flightCrewMembers, "employeeCode", assignment.getFlightCrewMember());
 
 		dataset = super.unbindObject(assignment, "duty", "moment", "currentStatus", "remarks", "leg", "flightCrewMember", "draftMode");
 		dataset.put("dutyChoice", dutyChoice);

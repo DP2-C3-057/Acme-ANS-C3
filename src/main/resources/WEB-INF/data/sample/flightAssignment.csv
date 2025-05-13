@@ -1,12 +1,12 @@
 key,duty,moment,currentStatus,remarks,key:flightCrewMember,draftMode,key:leg
-flight-assignment-01,PILOT,2019/07/29 18:00,CONFIRMED,01,flightCrewMember-01,True,leg-10
-flight-assignment-02,CO_PILOT,2019/07/29 18:00,CONFIRMED,Asignado Copiloto para vuelo corto,flightCrewMember-02,True,leg-10
-flight-assignment-03,LEAD_ATTENDANT,2019/07/29 18:00,CONFIRMED,Asignado Líder de cabina para vuelo corto,flightCrewMember-03,True,leg-10
-flight-assignment-04,LEAD_ATTENDANT,2019/07/29 18:00,CONFIRMED,Asignado Tripulante de cabina para vuelo corto,flightCrewMember-04,True,leg-10
-flight-assignment-05,PILOT,2019/07/29 18:00,CONFIRMED,05,flightCrewMember-01,True,leg-01
-flight-assignment-06,PILOT,2019/07/29 18:00,CONFIRMED,06,flightCrewMember-01,True,leg-02
-flight-assignment-07,PILOT,2019/07/29 18:00,CONFIRMED,07,flightCrewMember-01,True,leg-03
-flight-assignment-08,PILOT,2019/07/29 18:00,CONFIRMED,08,flightCrewMember-01,True,leg-04
-flight-assignment-09,PILOT,2019/07/29 18:00,CONFIRMED,09,flightCrewMember-01,True,leg-05
-flight-assignment-10,PILOT,2019/07/29 18:00,CONFIRMED,10,flightCrewMember-01,True,leg-06
-flight-assignment-11,PILOT,2019/07/29 18:00,CONFIRMED,11,flightCrewMember-01,True,leg-07
+flight-assignment-01,PILOT,2019/12/29 18:00,CONFIRMED,Piloto leg 1,flightCrewMember-01,False,leg-01
+flight-assignment-02,CO_PILOT,2019/07/30 19:00,CONFIRMED,Copiloto leg 1,flightCrewMember-02,False,leg-01
+flight-assignment-03,LEAD_ATTENDANT,2019/07/30 19:10,CONFIRMED,Lead Attendant leg 1,flightCrewMember-03,False,leg-01
+flight-assignment-04,CABIN_ATTENDANT,2019/07/30 19:20,CONFIRMED,Cabin Attendant leg 1,flightCrewMember-04,False,leg-01
+flight-assignment-05,CO_PILOT,2020/06/12 19:20,CONFIRMED,Copiloto leg 9,flightCrewMember-01,False,leg-09
+flight-assignment-06,PILOT,2020/06/12 19:25,CONFIRMED,Piloto leg 9,flightCrewMember-02,False,leg-09
+flight-assignment-07,CABIN_ATTENDANT,2020/06/12 19:30,CANCELLED,Cabin Attendent leg 9,flightCrewMember-03,False,leg-09
+flight-assignment-08,LEAD_ATTENDANT,2022/03/12 19:25,PENDING,Lead Attendent leg 2,flightCrewMember-01,True,leg-02
+flight-assignment-09,PILOT,2022/03/12 19:30,PENDING,Piloto leg 2,flightCrewMember-02,True,leg-02
+flight-assignment-10,PILOT,2022/03/13 19:25,PENDING,Piloto leg 3,flightCrewMember-01,True,leg-03
+flight-assignment-11,CO_PILOT,2022/03/14 19:25,CONFIRMED,Piloto leg 4,flightCrewMember-01,True,leg-04

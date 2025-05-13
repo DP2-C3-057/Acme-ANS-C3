@@ -29,7 +29,7 @@ public class FlightCrewMemberActivityLogCreateService extends AbstractGuiService
 
 		assignmentId = super.getRequest().getData("masterId", int.class);
 		assignment = this.repository.findFlightAssignmentById(assignmentId);
-		status = assignment != null && assignment.isDraftMode() && super.getRequest().getPrincipal().hasRealm(assignment.getFlightCrewMember());
+		status = assignment != null && !assignment.isDraftMode() && super.getRequest().getPrincipal().hasRealm(assignment.getFlightCrewMember());
 
 		super.getResponse().setAuthorised(status);
 	}

@@ -6,6 +6,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import acme.client.repositories.AbstractRepository;
@@ -18,11 +19,11 @@ import acme.realms.flightCrewMembers.FlightCrewMember;
 @Repository
 public interface FlightCrewMemberAssignmentRepository extends AbstractRepository {
 
-	@Query("select f from FlightAssignment f where f.leg.scheduledArrival < CURRENT_TIMESTAMP and f.flightCrewMember.id = ?1")
-	Collection<FlightAssignment> assignmentsWithCompletedLegs(Integer member);
+	@Query("select f from FlightAssignment f where f.leg.scheduledArrival < :now and f.flightCrewMember.id = :memberId")
+	Collection<FlightAssignment> assignmentsWithCompletedLegs(@Param("memberId") Integer memberId, @Param("now") Date now);
 
-	@Query("select f from FlightAssignment f where f.leg.scheduledDeparture > CURRENT_TIMESTAMP and f.flightCrewMember.id = ?1")
-	Collection<FlightAssignment> assignmentsWithPlannedLegs(Integer member);
+	@Query("select f from FlightAssignment f where f.leg.scheduledDeparture > :now and f.flightCrewMember.id = :memberId")
+	Collection<FlightAssignment> assignmentsWithPlannedLegs(@Param("memberId") Integer memberId, @Param("now") Date now);
 
 	@Query("select f from FlightAssignment f where f.id = ?1")
 	FlightAssignment findFlightAssignmentById(int id);
@@ -48,7 +49,7 @@ public interface FlightCrewMemberAssignmentRepository extends AbstractRepository
 	@Query("SELECT fa.leg FROM FlightAssignment fa WHERE (fa.leg.scheduledDeparture < :arrival AND fa.leg.scheduledArrival > :departure) AND fa.leg.id <> :legId AND fa.flightCrewMember.id = :flightCrewMemberId")
 	List<Leg> findSimultaneousLegsByMemberId(Date departure, Date arrival, int legId, int flightCrewMemberId);
 
-	@Query("SELECT fa FROM FlightAssignment fa WHERE fa.leg = :flightAssignmentLeg and fa.duty = :duty")
+	@Query("SELECT fa FROM FlightAssignment fa WHERE fa.draftMode = false and fa.leg = :flightAssignmentLeg and fa.duty = :duty")
 	Collection<FlightAssignment> findFlightAssignmentByLegAndDuty(Leg flightAssignmentLeg, Duty duty);
 
 }

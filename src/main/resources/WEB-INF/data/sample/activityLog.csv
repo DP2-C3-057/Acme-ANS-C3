@@ -1,1 +1,8 @@
 key,registrationMoment,typeOfIncident,description,severityLevel,draftMode,key:flightAssignment
+activity-log-01,2020/04/17 18:00,Botón roto,Boton no enciende,10,True,flight-assignment-01
+activity-log-02,2020/07/30 18:00,Botón roto,Boton no enciende otra vez,0,True,flight-assignment-05
+activity-log-03,2020/07/30 18:10,Turbulencias,El avión no se estabilizaba correctamente,5,False,flight-assignment-05
+activity-log-04,2020/04/18 18:10,Palanca rota,Palanca no funciona,3,True,flight-assignment-02
+activity-log-05,2020/04/18 19:10,โลเร็ม อิปซัม,لوريم إيبسوم,6,False,flight-assignment-01
+activity-log-06,2020/04/18 19:15,洛伦·伊普森,<marquee>Hacked</marquee>,6,False,flight-assignment-01
+activity-log-07,2020/04/18 19:20,<script>alert(‘Hacked!’);</script>,' or 'A' = 'A,7,False,flight-assignment-01
