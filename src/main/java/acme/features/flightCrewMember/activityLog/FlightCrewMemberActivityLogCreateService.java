@@ -29,7 +29,7 @@ public class FlightCrewMemberActivityLogCreateService extends AbstractGuiService
 
 		assignmentId = super.getRequest().getData("masterId", int.class);
 		assignment = this.repository.findFlightAssignmentById(assignmentId);
-		status = assignment != null && assignment.isDraftMode() && super.getRequest().getPrincipal().hasRealm(assignment.getFlightCrewMember());
+		status = assignment != null && !assignment.isDraftMode() && super.getRequest().getPrincipal().hasRealm(assignment.getFlightCrewMember());
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -44,9 +44,9 @@ public class FlightCrewMemberActivityLogCreateService extends AbstractGuiService
 		assignment = this.repository.findFlightAssignmentById(masterId);
 
 		log = new ActivityLog();
+		log.setDraftMode(true);
 		log.setFlightAssignment(assignment);
 		log.setRegistrationMoment(MomentHelper.getCurrentMoment());
-		log.setDraftMode(false);
 
 		super.getBuffer().addData(log);
 	}
@@ -76,7 +76,7 @@ public class FlightCrewMemberActivityLogCreateService extends AbstractGuiService
 		assignments = this.repository.findAllFlightAssignments();
 		assignmentChoice = SelectChoices.from(assignments, "id", log.getFlightAssignment());
 
-		dataset = super.unbindObject(log, "registrationMoment", "typeOfIncident", "description", "severityLevel", "flightAssignment");
+		dataset = super.unbindObject(log, "registrationMoment", "typeOfIncident", "description", "severityLevel", "flightAssignment", "draftMode");
 		dataset.put("assignmentChoice", assignmentChoice);
 		dataset.put("masterId", super.getRequest().getData("masterId", int.class));
 

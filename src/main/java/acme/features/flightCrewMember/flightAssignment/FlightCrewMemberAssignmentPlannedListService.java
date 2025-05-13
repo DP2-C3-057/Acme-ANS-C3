@@ -2,10 +2,12 @@
 package acme.features.flightCrewMember.flightAssignment;
 
 import java.util.Collection;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.models.Dataset;
+import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.flightAssignments.FlightAssignment;
@@ -26,8 +28,10 @@ public class FlightCrewMemberAssignmentPlannedListService extends AbstractGuiSer
 	@Override
 	public void load() {
 		int memberId = super.getRequest().getPrincipal().getActiveRealm().getId();
-		Collection<FlightAssignment> assignments = this.repository.assignmentsWithPlannedLegs(memberId);
-		super.getBuffer().addData(assignments);
+
+		Date now = MomentHelper.getCurrentMoment();
+		Collection<FlightAssignment> planned = this.repository.assignmentsWithPlannedLegs(memberId, now);
+		super.getBuffer().addData(planned);
 	}
 
 	@Override
