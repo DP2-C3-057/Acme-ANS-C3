@@ -1,4 +1,19 @@
 key,lastUpdateMoment,step,resolutionPercentage,indicator,resolution,key:claim,key:assistanceAgent
 log-01,2020/07/19 01:28,Step de ejemplo,50.0,PENDING,Ejemplo de resolution,claim-01,agent-01
-log-02,2020/07/19 02:28,Step de ejemplo,60.0,PENDING,Ejemplo de resolution,claim-01,agent-01
-log-03,2020/07/19 03:28,Step de ejemplo,100,ACCEPTED,fs,claim-01,agent-01
+log-02,2000/01/02 00:00,Step de ejemplo,1.0,PENDING,Ejemplo de resolution,claim-02,agent-01
+log-03,2000/01/02 00:01,Step de ejemplo,1.2,PENDING,Ejemplo de resolution,claim-02,agent-01
+log-04,2019/01/02 00:00,Step de ejemplo,41.0,PENDING,Ejemplo de resolution,claim-02,agent-01
+log-05,2021/07/19 03:28,Ultima actualización,100,ACCEPTED,fs,claim-02,agent-01
+log-06,2020/02/02 00:00,a,1.0,PENDING,Ejemplo de resolution,claim-03,agent-01
+log-07,2020/03/02 00:00,aa,4.0,PENDING,Ejemplo de resolution,claim-03,agent-01
+log-08,2020/04/02 00:00,aaaaaaaaaaaaaaaa,11.0,PENDING,Ejemplo de resolution,claim-03,agent-01
+log-09,2020/05/02 00:00,aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa,21.0,PENDING,Ejemplo de resolution,claim-03,agent-01
+log-10,2020/06/02 00:00,aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa,30.0,PENDING,Ejemplo de resolution,claim-03,agent-01
+log-11,2010/01/02 00:00,aa,100.0,REJECTED,Ejemplo de resolution,claim-04,agent-01
+log-12,2016/01/02 00:00,Step de ejemplo,1.0,PENDING,Resolucion del claim,claim-05,agent-01
+log-13,2016/01/03 00:00,Step de ejemplo,2.0,PENDING,a,claim-05,agent-01
+log-14,2016/01/04 00:00,Step de ejemplo,3.0,PENDING,aa,claim-05,agent-01
+log-15,2016/01/05 00:00,Step de ejemplo,4.5,PENDING,aaaaaaaaaaaaaaaaaaaaaa,claim-05,agent-01
+log-16,2016/01/06 00:00,Step de ejemplo,5.0,PENDING,aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa,claim-05,agent-01
+log-17,2016/01/07 00:00,Step de ejemplo,6.0,PENDING,aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa,claim-05,agent-01
+log-18,2022/01/02 00:00,Step de ejemplo,30.0,PENDING,Resolucion del claim,claim-26,agent-02
