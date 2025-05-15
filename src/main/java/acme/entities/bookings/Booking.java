@@ -84,7 +84,7 @@ public class Booking extends AbstractEntity {
 
 		Double flightPrice = this.flight != null ? this.flight.getCost().getAmount() : 0.0;
 
-		String currency = this.flight != null ? this.flight.getCost().getCurrency() : null;
+		String currency = this.flight != null ? this.flight.getCost().getCurrency() : "EUR";
 
 		Integer passengerCount = repository.countPassengersByLocatorCode(this.locatorCode);
 		passengerCount = passengerCount != null ? passengerCount : 0;
