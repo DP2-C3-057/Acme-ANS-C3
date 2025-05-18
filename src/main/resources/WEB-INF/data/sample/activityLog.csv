@@ -6,3 +6,21 @@ activity-log-04,2020/04/18 18:10,Palanca rota,Palanca no funciona,3,True,flight-
 activity-log-05,2020/04/18 19:10,โลเร็ม อิปซัม,لوريم إيبسوم,6,False,flight-assignment-01
 activity-log-06,2020/04/18 19:15,洛伦·伊普森,<marquee>Hacked</marquee>,6,False,flight-assignment-01
 activity-log-07,2020/04/18 19:20,<script>alert(‘Hacked!’);</script>,' or 'A' = 'A,7,False,flight-assignment-01
+activity-log-08,2020/04/16 15:00,Cinturón suelto,Cinturón de seguridad no se ajusta correctamente,4,False,flight-assignment-13
+activity-log-09,2020/04/17 12:00,Asiento roto,El respaldo está flojo,3,True,flight-assignment-12
+activity-log-10,2020/04/17 12:30,โลเร็ม อิปซัม,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor",6,False,flight-assignment-34
+activity-log-11,2020/07/29 20:30,Café derramado,Derrame en zona de pasajeros,2,True,flight-assignment-33
+activity-log-12,2020/07/29 21:00,Lo,No se pudo contactar cabina con tripulación,7,False,flight-assignment-33
+activity-log-13,2020/07/29 23:59,Panel suelto,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor",5,False,flight-assignment-32
+activity-log-14,2020/04/16 23:59,"Lorem ipsum dolor sit amet, consectetur adipisci",Ruido constante en cabina por fuga,6,False,flight-assignment-34
+activity-log-15,2020/04/16 15:45,' or 'A' = 'A,Lo,3,True,flight-assignment-34
+activity-log-16,2020/04/17 09:00,"Lorem ipsum dolor sit amet, consectetur adipisci","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*",7,False,flight-assignment-12
+activity-log-17,2020/04/17 13:20,Derrame de líquido,L,1,True,flight-assignment-13
+activity-log-18,2020/04/18 08:10,L,Luz de emergencia no activa,8,False,flight-assignment-12
+activity-log-19,2020/04/19 10:05,<marquee>Hacked</marquee>,لوريم إيبسوم,5,False,flight-assignment-13
+activity-log-20,2020/07/29 18:10,Fallo de motor,洛伦·伊普森,9,False,flight-assignment-32
+activity-log-21,2020/07/29 19:45,L,Sistema GPS se reinició en pleno vuelo,7,False,flight-assignment-33
+activity-log-22,2020/07/29 18:25,لوريم إيبسوم,L,2,True,flight-assignment-32
+activity-log-23,2020/07/29 19:10,Lo,โลเร็ม อิปซัม,6,False,flight-assignment-33
+activity-log-24,2020/07/29 20:30,"Lorem ipsum dolor sit amet, consectetur adipisc",<script>alert(‘Hacked!’);</script>,4,True,flight-assignment-32
+activity-log-25,2020/07/29 23:59,"Lorem ipsum dolor sit amet, consectetur adipisc",Lo,3,False,flight-assignment-32
