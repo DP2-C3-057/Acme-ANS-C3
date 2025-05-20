@@ -68,13 +68,15 @@ public class ManagerLegCreateService extends AbstractGuiService<Manager, Leg> {
 
 	@Override
 	public void validate(final Leg leg) {
-		int masterId;
 		boolean correctAirportOrder = true;
 
-		masterId = super.getRequest().getData("masterId", int.class);
-		List<Leg> legs = this.repository.findAllLegsByFlightId(masterId);
+		List<Leg> legs = this.repository.findAllLegsByFlightId(leg.getFlight().getId());
 		if (!legs.isEmpty()) {
-			legs.add(leg);
+			for (Leg thisLeg : legs)
+				if (thisLeg == leg) {
+					legs.remove(legs.indexOf(thisLeg));
+					legs.add(leg);
+				}
 			legs.sort(Comparator.comparing(Leg::getScheduledDeparture));
 			Airport actualAirport = legs.get(0).getDepartureAirport();
 			for (Leg actualLeg : legs)
@@ -85,7 +87,7 @@ public class ManagerLegCreateService extends AbstractGuiService<Manager, Leg> {
 					actualAirport = actualLeg.getArrivalAirport();
 		}
 
-		super.state(correctAirportOrder, "departureAirport", "manager.leg.create.airportOrder");
+		super.state(correctAirportOrder, "departureAirport", "manager.leg.update.airportOrder");
 	}
 
 	@Override
