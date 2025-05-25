@@ -18,3 +18,4 @@
  acme.validation.flightassignment.duty.copilot.message = Solo puede haber un copiloto por tramo
  acme.validation.locatorCode.message = Debe tener entre 6 y 8 caracteres en [A-Z0-9]
  acme.validation.passenger.message = Debe tener entre 6 y 9 caracteres en [A-Z0-9]
+  acme.validation.lastCardNibble.message = Debe tener 4 dígitos
