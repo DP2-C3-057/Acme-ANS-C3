@@ -43,7 +43,7 @@
 		<link>
 			<name>target/classes</name>
 			<type>2</type>
-			<location>//C:/developer/Workspace-25/Projects/Acme-ANS-D04/target/classes/</location>
+			<locationURI>WORKSPACE_LOC/Projects/Acme-ANS-D04/target/classes</locationURI>
 		</link>
 	</linkedResources>
 </projectDescription>
