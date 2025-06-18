@@ -1,0 +1,12 @@
+# messages-en.i18n
+
+assistance-agent.claim.list.title = Listing of claims 
+
+assistance-agent.claim.list.label.registrationMoment = Registration moment
+assistance-agent.claim.list.label.passengerEmail = Email
+assistance-agent.claim.list.label.description = Description
+assistance-agent.claim.list.label.type = Type
+assistance-agent.claim.list.label.indicator = Indicator
+assistance-agent.claim.list.label.leg = Leg
+
+assistance-agent.claim.list.button.create = Create
