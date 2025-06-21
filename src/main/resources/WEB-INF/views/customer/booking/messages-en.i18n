@@ -28,3 +28,4 @@ customer.booking.delete.published-passengers= You can't delete bookings with pub
 customer.booking.publish.non-published-passengers= You can't publish bookings with unpublished passengers or none
 customer.booking.publish.non-published-bookingrecords= All booking records associated with the booking must be published
 customer.booking.form.error.last-card-nible-required = You must provide the last card nibble to publish this booking
+customer.booking.form.error.duplicated-locator-code=The locator code is already in use
