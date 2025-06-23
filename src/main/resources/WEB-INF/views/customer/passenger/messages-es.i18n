@@ -23,3 +23,5 @@ customer.passenger.list.label.specialNeeds = Necesidades especiales
 customer.passenger.list.label.draftMode = Borrador
 
 customer.passenger.list.button.create = Crear
+
+customer.passenger.form.error.duplicate-passport = El número de pasaporte ya está en uso
