@@ -38,4 +38,7 @@ public interface CustomerPassengerRepository extends AbstractRepository {
 	@Query("DELETE FROM BookingRecord br WHERE br.passenger.id = :passengerId")
 	void deleteBookingRecordsByPassengerId(@Param("passengerId") int passengerId);
 
+	@Query("SELECT p FROM Passenger p WHERE p.customer.id = :customerId AND p.passportNumber = :passportNumber")
+	Passenger findByCustomerIdAndPassportNumber(int customerId, String passportNumber);
+
 }

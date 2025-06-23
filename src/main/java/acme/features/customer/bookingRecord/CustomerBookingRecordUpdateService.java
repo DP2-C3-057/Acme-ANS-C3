@@ -59,7 +59,8 @@ public class CustomerBookingRecordUpdateService extends AbstractGuiService<Custo
 	public void validate(final BookingRecord br) {
 		if (br.getBooking() != null && br.getPassenger() != null) {
 			BookingRecord existing = this.repository.findByBookingIdAndPassengerId(br.getBooking().getId(), br.getPassenger().getId());
-			super.state(existing == null, "passenger", "customer.booking-record.form.error.duplicate");
+			if (existing != null && existing.getId() != br.getId())
+				super.state(false, "passenger", "customer.booking-record.form.error.duplicate");
 		}
 	}
 
