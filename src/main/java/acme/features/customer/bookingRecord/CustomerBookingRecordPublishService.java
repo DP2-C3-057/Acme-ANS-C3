@@ -63,7 +63,8 @@ public class CustomerBookingRecordPublishService extends AbstractGuiService<Cust
 		//Validacion de relacion ya existnte
 		if (br.getBooking() != null && br.getPassenger() != null) {
 			BookingRecord existing = this.repository.findByBookingIdAndPassengerId(br.getBooking().getId(), br.getPassenger().getId());
-			super.state(existing == null, "passenger", "customer.booking-record.form.error.duplicate");
+			if (existing != null && existing.getId() != br.getId())
+				super.state(false, "passenger", "customer.booking-record.form.error.duplicate");
 		}
 	}
 

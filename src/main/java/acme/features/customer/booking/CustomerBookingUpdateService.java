@@ -59,7 +59,7 @@ public class CustomerBookingUpdateService extends AbstractGuiService<Customer, B
 	public void validate(final Booking booking) {
 		if (booking.getLocatorCode() != null) {
 			Booking existing = this.repository.findByLocatorCode(booking.getLocatorCode());
-			if (existing != null)
+			if (existing != null && existing.getId() != booking.getId())
 				super.state(false, "locatorCode", "customer.booking.form.error.duplicated-locator-code");
 		}
 	}
