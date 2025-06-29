@@ -22,7 +22,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	
 	<artifactId>Acme-ANS</artifactId>
-	<version>D05</version> <!-- Omit the version tag unless it's different from the parent version -->
+	<version>C2</version> <!-- Omit the version tag unless it's different from the parent version -->
 	<packaging>war</packaging>
 	
 	<parent>
