@@ -84,6 +84,13 @@ public class CustomerBookingPublishService extends AbstractGuiService<Customer, 
 		// Validación de lastCardNible
 		if (booking.getLastCardNibble() == null || booking.getLastCardNibble().trim().isEmpty())
 			super.state(false, "lastCardNibble", "customer.booking.form.error.last-card-nible-required");
+
+		// Validación de locatorCode duplicados
+		if (booking.getLocatorCode() != null) {
+			Booking existing = this.repository.findByLocatorCode(booking.getLocatorCode());
+			if (existing != null && existing.getId() != booking.getId())
+				super.state(false, "locatorCode", "customer.booking.form.error.duplicated-locator-code");
+		}
 	}
 
 	@Override

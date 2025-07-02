@@ -54,7 +54,11 @@ public class CustomerPassengerUpdateService extends AbstractGuiService<Customer,
 
 	@Override
 	public void validate(final Passenger passenger) {
-		;
+		if (passenger.getPassportNumber() != null) {
+			Passenger existing = this.repository.findByCustomerIdAndPassportNumber(passenger.getCustomer().getId(), passenger.getPassportNumber());
+			if (existing != null && existing.getId() != passenger.getId())
+				super.state(false, "passportNumber", "customer.passenger.form.error.duplicate-passport");
+		}
 	}
 
 	@Override

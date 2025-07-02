@@ -52,7 +52,11 @@ public class CustomerBookingCreateService extends AbstractGuiService<Customer, B
 
 	@Override
 	public void validate(final Booking booking) {
-		;
+		if (booking.getLocatorCode() != null) {
+			Booking existing = this.repository.findByLocatorCode(booking.getLocatorCode());
+			if (existing != null)
+				super.state(false, "locatorCode", "customer.booking.form.error.duplicated-locator-code");
+		}
 	}
 
 	@Override

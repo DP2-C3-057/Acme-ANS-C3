@@ -23,3 +23,5 @@ customer.passenger.list.label.specialNeeds = Special needs
 customer.passenger.list.label.draftMode = Draft Mode
 
 customer.passenger.list.button.create = Create
+
+customer.passenger.form.error.duplicate-passport = The passport number is already in use

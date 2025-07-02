@@ -59,6 +59,13 @@ public class CustomerBookingRecordPublishService extends AbstractGuiService<Cust
 	public void validate(final BookingRecord br) {
 		if (br.getPassenger() != null && br.getPassenger().isDraftMode())
 			super.state(false, "passenger", "customer.booking-record.error.passenger-draft");
+
+		//Validacion de relacion ya existnte
+		if (br.getBooking() != null && br.getPassenger() != null) {
+			BookingRecord existing = this.repository.findByBookingIdAndPassengerId(br.getBooking().getId(), br.getPassenger().getId());
+			if (existing != null && existing.getId() != br.getId())
+				super.state(false, "passenger", "customer.booking-record.form.error.duplicate");
+		}
 	}
 
 	@Override
