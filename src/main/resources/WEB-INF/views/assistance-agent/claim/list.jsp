@@ -9,7 +9,7 @@
     <acme:list-column code="assistance-agent.claim.list.label.description" path="description" width="30%"/>
     <acme:list-column code="assistance-agent.claim.list.label.type" path="type" width="10%"/>
     <acme:list-column code="assistance-agent.claim.list.label.indicator" path="indicator" width="10%"/>
-    <acme:list-column code="assistance-agent.claim.list.label.leg" path="leg.flightNumber" width="10%"/>
+    <acme:list-column code="assistance-agent.claim.list.label.leg" path="legFlightNumber" width="10%"/>
 </acme:list>
 
 <jstl:if test="${_command == 'list'}">

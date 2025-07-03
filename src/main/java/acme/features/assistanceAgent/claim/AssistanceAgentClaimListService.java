@@ -33,6 +33,7 @@ public class AssistanceAgentClaimListService extends AbstractGuiService<Assistan
 	@Override
 	public void unbind(final Claim claim) {
 		Dataset dataset = super.unbindObject(claim, "registrationMoment", "passengerEmail", "description", "type", "indicator");
+		dataset.put("legFlightNumber", claim.getLeg().getFlightNumber());
 		super.getResponse().addData(dataset);
 	}
 }
