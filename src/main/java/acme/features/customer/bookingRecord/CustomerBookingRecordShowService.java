@@ -58,17 +58,24 @@ public class CustomerBookingRecordShowService extends AbstractGuiService<Custome
 		SelectChoices passengerChoice;
 		Collection<Passenger> passengers;
 
-		Integer customer;
-		customer = super.getRequest().getPrincipal().getActiveRealm().getId();
+		final Integer customer = super.getRequest().getPrincipal().getActiveRealm().getId();
 
-		bookings = this.repository.findAllBookingsByCustomerId(customer);
+		final java.util.List<Booking> draftBookings = new java.util.ArrayList<>(this.repository.findDraftBookingsByCustomerId(customer));
+
+		if (br.getBooking() != null && !br.getBooking().isDraftMode() && draftBookings.stream().noneMatch(b -> b.getId() == br.getBooking().getId()))
+			draftBookings.add(0, br.getBooking());
+
+		bookings = draftBookings;
 		bookingChoice = SelectChoices.from(bookings, "locatorCode", br.getBooking());
+
 		passengers = this.repository.findAllPassengersByCustomerId(customer);
 		passengerChoice = SelectChoices.from(passengers, "fullName", br.getPassenger());
 
 		dataset = super.unbindObject(br, "booking.locatorCode", "passenger.fullName", "draftMode");
 		dataset.put("bookingChoice", bookingChoice);
 		dataset.put("passengerChoice", passengerChoice);
+
 		super.getResponse().addData(dataset);
 	}
+
 }

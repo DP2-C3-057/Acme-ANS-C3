@@ -19,3 +19,4 @@ customer.bookingRecord.list.button.create = Crear
 
 customer.booking-record.error.passenger-draft = El pasajero asignado debe estar publicado.
 customer.booking-record.form.error.duplicate = Este pasajero ya está asociado a esta reserva
+customer.booking-record.form.error.booking-published = No es posible asignar pasajeros a una reserva publicada.
