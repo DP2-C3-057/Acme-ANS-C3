@@ -47,8 +47,10 @@ public class CustomerBookingRecordCreateService extends AbstractGuiService<Custo
 	@Override
 	public void validate(final BookingRecord br) {
 		if (br.getBooking() != null && br.getPassenger() != null) {
-			BookingRecord existing = this.repository.findByBookingIdAndPassengerId(br.getBooking().getId(), br.getPassenger().getId());
+			final BookingRecord existing = this.repository.findByBookingIdAndPassengerId(br.getBooking().getId(), br.getPassenger().getId());
 			super.state(existing == null, "passenger", "customer.booking-record.form.error.duplicate");
+
+			super.state(br.getBooking().isDraftMode(), "booking", "customer.booking-record.form.error.booking-published");
 		}
 	}
 
@@ -65,10 +67,9 @@ public class CustomerBookingRecordCreateService extends AbstractGuiService<Custo
 		SelectChoices passengerChoice;
 		Collection<Passenger> passengers;
 
-		Integer customer;
-		customer = super.getRequest().getPrincipal().getActiveRealm().getId();
+		final Integer customer = super.getRequest().getPrincipal().getActiveRealm().getId();
 
-		bookings = this.repository.findAllBookingsByCustomerId(customer);
+		bookings = this.repository.findDraftBookingsByCustomerId(customer);
 		bookingChoice = SelectChoices.from(bookings, "locatorCode", br.getBooking());
 
 		passengers = this.repository.findAllPassengersByCustomerId(customer);
