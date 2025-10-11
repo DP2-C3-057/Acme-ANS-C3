@@ -52,7 +52,22 @@ public class CustomerBookingRecordPublishService extends AbstractGuiService<Cust
 
 	@Override
 	public void bind(final BookingRecord br) {
-		super.bindObject(br, "booking", "passenger");
+		int customerId = super.getRequest().getPrincipal().getActiveRealm().getId();
+
+		Integer bookingId = super.getRequest().getData("booking", int.class);
+		Integer passengerId = super.getRequest().getData("passenger", int.class);
+
+		var booking = this.repository.findDraftBookingByIdAndCustomerId(bookingId, customerId);
+		var passenger = this.repository.findPassengerByIdAndCustomerId(passengerId, customerId);
+
+		if (booking == null)
+			throw new RuntimeException("Security violation: attempted to assign booking not owned by customer.");
+
+		if (passenger == null)
+			throw new RuntimeException("Security violation: attempted to assign passenger not owned by customer.");
+
+		br.setBooking(booking);
+		br.setPassenger(passenger);
 	}
 
 	@Override
