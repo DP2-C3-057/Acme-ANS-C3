@@ -29,15 +29,30 @@ public class CustomerBookingPublishService extends AbstractGuiService<Customer, 
 
 	@Override
 	public void authorise() {
-		boolean status;
-		int bookingId;
-		Booking booking;
-		Customer customer;
+		boolean status = false;
 
-		bookingId = super.getRequest().getData("id", int.class);
-		booking = this.repository.findBookingById(bookingId);
-		customer = booking == null ? null : booking.getCustomer();
-		status = booking != null && booking.isDraftMode() && super.getRequest().getPrincipal().hasRealm(customer);
+		try {
+			int bookingId = super.getRequest().getData("id", int.class);
+			Integer flightId = super.getRequest().getData("flight", int.class);
+			String travelClassValue = super.getRequest().getData("travelClass", String.class);
+
+			Booking booking = this.repository.findBookingById(bookingId);
+			Customer customer = booking == null ? null : booking.getCustomer();
+			Flight flight = flightId == null ? null : this.repository.findFlightById(flightId);
+
+			boolean validTravelClass;
+			try {
+				TravelClass.valueOf(travelClassValue);
+				validTravelClass = true;
+			} catch (Exception e) {
+				validTravelClass = false;
+			}
+
+			status = booking != null && booking.isDraftMode() && flight != null && !flight.isDraftMode() && validTravelClass && super.getRequest().getPrincipal().hasRealm(customer);
+
+		} catch (Exception e) {
+			status = false;
+		}
 
 		super.getResponse().setAuthorised(status);
 	}

@@ -27,7 +27,32 @@ public class CustomerBookingCreateService extends AbstractGuiService<Customer, B
 
 	@Override
 	public void authorise() {
-		super.getResponse().setAuthorised(true);
+		boolean status = false;
+		String method = super.getRequest().getMethod();
+
+		try {
+			if (method.equals("GET"))
+				status = super.getRequest().getPrincipal().hasRealmOfType(Customer.class);
+			else if (method.equals("POST")) {
+				Integer flightId = super.getRequest().getData("flight", int.class);
+				String travelClassValue = super.getRequest().getData("travelClass", String.class);
+
+				Flight flight = flightId == null ? null : this.repository.findFlightById(flightId);
+				boolean validTravelClass = false;
+				try {
+					TravelClass.valueOf(travelClassValue);
+					validTravelClass = true;
+				} catch (Exception e) {
+					validTravelClass = false;
+				}
+
+				status = flight != null && !flight.isDraftMode() && validTravelClass && super.getRequest().getPrincipal().hasRealmOfType(Customer.class);
+			}
+		} catch (Exception e) {
+			status = false;
+		}
+
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override

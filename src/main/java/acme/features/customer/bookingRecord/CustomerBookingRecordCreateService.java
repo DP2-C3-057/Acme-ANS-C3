@@ -26,7 +26,33 @@ public class CustomerBookingRecordCreateService extends AbstractGuiService<Custo
 
 	@Override
 	public void authorise() {
-		super.getResponse().setAuthorised(true);
+		boolean status = false;
+		String method = super.getRequest().getMethod();
+
+		if (method.equals("GET"))
+			status = super.getRequest().getPrincipal().hasRealmOfType(Customer.class);
+		else if (method.equals("POST")) {
+			Integer bookingId, passengerId;
+			Booking booking;
+			Passenger passenger;
+			Customer customer;
+
+			try {
+				bookingId = super.getRequest().getData("booking", int.class);
+				passengerId = super.getRequest().getData("passenger", int.class);
+			} catch (final Exception e) {
+				super.getResponse().setAuthorised(false);
+				return;
+			}
+
+			booking = bookingId == null ? null : this.repository.findBookingById(bookingId);
+			passenger = passengerId == null ? null : this.repository.findPassengerById(passengerId);
+			customer = booking == null ? null : booking.getCustomer();
+
+			status = booking != null && passenger != null && booking.getCustomer().equals(passenger.getCustomer()) && booking.isDraftMode() && super.getRequest().getPrincipal().hasRealm(customer);
+		}
+
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
@@ -41,22 +67,7 @@ public class CustomerBookingRecordCreateService extends AbstractGuiService<Custo
 
 	@Override
 	public void bind(final BookingRecord br) {
-		int customerId = super.getRequest().getPrincipal().getActiveRealm().getId();
-
-		Integer bookingId = super.getRequest().getData("booking", int.class);
-		Integer passengerId = super.getRequest().getData("passenger", int.class);
-
-		var booking = this.repository.findDraftBookingByIdAndCustomerId(bookingId, customerId);
-		var passenger = this.repository.findPassengerByIdAndCustomerId(passengerId, customerId);
-
-		if (booking == null)
-			throw new RuntimeException("Security violation: attempted to assign booking not owned by customer.");
-
-		if (passenger == null)
-			throw new RuntimeException("Security violation: attempted to assign passenger not owned by customer.");
-
-		br.setBooking(booking);
-		br.setPassenger(passenger);
+		super.bindObject(br, "booking", "passenger");
 	}
 
 	@Override
