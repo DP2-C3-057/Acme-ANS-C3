@@ -10,9 +10,9 @@ import acme.client.components.views.SelectChoices;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.bookings.Booking;
+import acme.entities.bookings.BookingRecord;
 import acme.entities.bookings.TravelClass;
 import acme.entities.flights.Flight;
-import acme.entities.passengers.Passenger;
 import acme.realms.customers.Customer;
 
 @GuiService
@@ -59,16 +59,17 @@ public class CustomerBookingDeleteService extends AbstractGuiService<Customer, B
 	@Override
 	public void validate(final Booking booking) {
 		boolean status = true;
-		int id;
-		id = super.getRequest().getData("id", int.class);
-		Collection<Passenger> passengers = this.repository.findPassengersByBookingId(id);
-		if (!passengers.isEmpty())
-			for (Passenger passenger : passengers)
-				if (!passenger.isDraftMode()) {
+		int id = super.getRequest().getData("id", int.class);
+
+		Collection<BookingRecord> bookingRecords = this.repository.findBookingRecordsByBookingId(id);
+		if (!bookingRecords.isEmpty())
+			for (BookingRecord br : bookingRecords)
+				if (!br.isDraftMode()) {
 					status = false;
 					break;
 				}
-		super.state(status, "*", "customer.booking.delete.published-passengers");
+
+		super.state(status, "*", "customer.booking.delete.published-bookingrecords");
 	}
 
 	@Override

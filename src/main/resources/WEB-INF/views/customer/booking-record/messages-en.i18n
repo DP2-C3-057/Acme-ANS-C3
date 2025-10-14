@@ -20,3 +20,5 @@ customer.bookingRecord.list.button.create = Create
 customer.booking-record.error.passenger-draft = The assigned passenger must be published.
 customer.booking-record.form.error.duplicate = This passenger is already associated with this reservation
 customer.booking-record.form.error.booking-published = It is not possible to assign passengers to a published reservation.
+customer.booking-record.form.error.booking-not-owned = It is not possible to assign a booking that does not belong to the logged-in customer.
+customer.booking-record.form.error.passenger-not-owned = It is not possible to assign a passenger that does not belong to the logged-in customer.

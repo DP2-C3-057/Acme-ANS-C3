@@ -22,12 +22,25 @@ public class CustomerBookingRecordUpdateService extends AbstractGuiService<Custo
 
 	@Override
 	public void authorise() {
-		boolean status;
-		int masterId = super.getRequest().getData("id", int.class);
-		BookingRecord br = this.repository.findBookingRecordById(masterId);
-		Customer customer = br == null ? null : br.getBooking().getCustomer();
+		boolean status = false;
 
-		status = br != null && br.isDraftMode() && br.getBooking() != null && br.getBooking().isDraftMode() && super.getRequest().getPrincipal().hasRealm(customer);
+		try {
+			int masterId = super.getRequest().getData("id", int.class);
+			BookingRecord br = this.repository.findBookingRecordById(masterId);
+			Customer customer = br == null ? null : br.getBooking().getCustomer();
+
+			Integer bookingId = super.getRequest().getData("booking", int.class);
+			Integer passengerId = super.getRequest().getData("passenger", int.class);
+
+			var booking = bookingId == null ? null : this.repository.findBookingById(bookingId);
+			var passenger = passengerId == null ? null : this.repository.findPassengerById(passengerId);
+
+			status = br != null && booking != null && passenger != null && booking.getCustomer().equals(passenger.getCustomer()) && br.getBooking().getCustomer().equals(booking.getCustomer()) && booking.isDraftMode() && br.isDraftMode()
+				&& super.getRequest().getPrincipal().hasRealm(customer);
+
+		} catch (Exception e) {
+			status = false;
+		}
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -56,6 +69,11 @@ public class CustomerBookingRecordUpdateService extends AbstractGuiService<Custo
 				super.state(false, "passenger", "customer.booking-record.form.error.duplicate");
 
 			super.state(br.getBooking().isDraftMode(), "booking", "customer.booking-record.form.error.booking-published");
+
+			int activeCustomerId = super.getRequest().getPrincipal().getActiveRealm().getId();
+			int passengerCustomerId = br.getPassenger().getCustomer().getId();
+
+			super.state(activeCustomerId == passengerCustomerId, "passenger", "customer.booking-record.form.error.passenger-not-owned");
 		}
 	}
 
